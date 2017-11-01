@@ -1,0 +1,25 @@
+#Config file with all parameters
+
+url: 'http://vgibox.eu/repository/api.php'
+
+# Parameters to have id list
+
+parameters_id:
+  action: 'query'
+  format: 'json'
+  list: 'categorymembers'
+  cmtitle: 'Category:VGI_Domain'
+
+# Paramaters to extract content of a page
+parameters_extract_content:
+  action: 'query'
+  format: 'json'
+  prop: 'revisions'
+  rvprop: 'content'
+
+regex:
+  get_abstract: '{(.)*}'
+
+output:
+  file: 'testo.txt'
+  folder: 'Abstracts' 
