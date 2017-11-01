@@ -56,6 +56,9 @@ def get_abstract(id, parameters_extract_content):
 
 def get_all_abstract(list_all_id, parameters_extract_content):
     # Collect all abstract
+    # for id in list_all_id:
+    #    print('lol')
+    pass
 
 
 def query(url, request):
@@ -99,8 +102,10 @@ if __name__ == '__main__':
     list_all_id = get_all_page_id(url, parameters_id)
 
     parameters_extract_content = config['parameters_extract_content']
-    get_abstract('687', parameters_extract_content)
+    # get_abstract('687', parameters_extract_content)
+
+    get_all_abstract(list_all_id, parameters_extract_content)
 
     # Write an abstract into a file
-    output = config['output']['file']
-    write_string_into_file(output, abstract)
+    # output = config['output']['file']
+    # write_string_into_file(output, abstract)
