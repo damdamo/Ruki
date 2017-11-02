@@ -7,68 +7,65 @@ import re
 
 
 def load_config(file):
-    # Load the config file
+    """ Load the config file """
     with open(config_file, 'r') as config_stream:
         config = yaml.safe_load(config_stream)
     return config
 
 
 def write_abstract_into_file(file_name, abstract):
-    # Take a string and write it into a file
+    """ Take a string and write it into a file """
     with open(file_name, 'a') as output_file:
         print(abstract)
-        output = '{}\n'.format(abstract)
-        output_file.write("{}".format(output))
+        if abstract != '':
+            output = '{}\n'.format(abstract)
+            output_file.write("{}".format(output))
 
 
 def get_page_id(dic):
-    # Find id of a page and return it in a string type
+    """ Find id of a page and return it in a string type """
     list_article = dic['categorymembers']
     for element in list_article:
         yield str(element['pageid'])
 
 
 def get_all_page_id(url, parameters_id):
-    # Get all page id from all articles
+    """ Get all page id from all articles """
     list_id = []
     # We obtain all id page
     for element in query(url, parameters_id):
         yield get_page_id(element)
 
 
-def get_abstract(gen_id, parameters_extract_content):
-    # Get abstract from a specific page
-    # More a test function
-    param = parameters_extract_content.copy()
+def clean_abstract(abstract):
+    """ Allow to remove useless component in the abstract
+    like link. Regex can clean link and square roots """
+    regex_link = re.compile('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
+    regex_square_bracket = re.compile('[\[\]]')
+    clean_abstract = re.sub(regex_link, '', abstract)
+    clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
+    return clean_abstract
 
-    for my_id in gen_id:
-        param['pageids'] = id
 
-    for element in query(url, param):
-        content = element['pages'][id]['revisions'][0]['*']
-        # We clear all line break (need for regex)
-        content = content.replace('\n', ' ')
-
+def get_abstract_from_content(content):
+    """ Get abstract from a content of a specific page """
+    # We clear all line break (need for regex)
+    content_mod = content.replace('\n', ' ')
     # Regex allow to keep only abstract
-    regex_pattern = re.compile(config['regex']['get_abstract'])
-    abstract = re.sub(regex_pattern, '', content)
-    return abstract
+    # regex_pattern = re.compile(config['regex']['get_abstract'])
+    regex_get_abstract = re.compile('{(.)*}')
+    abstract = re.sub(regex_get_abstract, '', content_mod)
+    return clean_abstract(abstract)
 
 
 def get_all_abstract(list_all_id, parameters_extract_content):
-    # Collect all abstract
+    """ Collect all abstract """
     for gen_id in list_all_id:
         for my_id in gen_id:
             parameters_extract_content['pageids'] = my_id
             for element in query(url, parameters_extract_content):
                 content = element['pages'][my_id]['revisions'][0]['*']
-                # We clear all line break (need for regex)
-                content = content.replace('\n', ' ')
-
-            # Regex allow to keep only abstract
-            regex_pattern = re.compile(config['regex']['get_abstract'])
-            abstract = re.sub(regex_pattern, '', content)
-            yield abstract
+            yield get_abstract_from_content(content)
 
 
 def query(url, request):
@@ -123,3 +120,10 @@ if __name__ == '__main__':
     # Write an abstract into a file
     # output = config['output']['file']
     # write_string_into_file(output, abstract)
+
+
+    """
+    <keywords> <key></key> </keywords>
+    <title></title>
+    <sentences></sentences>
+    """

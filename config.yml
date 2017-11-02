@@ -8,7 +8,8 @@ parameters_id:
   action: 'query'
   format: 'json'
   list: 'categorymembers'
-  cmtitle: 'Category:VGI_Domain'
+  #cmtitle: 'Category:VGI_Domain'
+  cmtitle: 'Category:Publication'
 
 # Paramaters to extract content of a page
 parameters_extract_content:
@@ -17,9 +18,6 @@ parameters_extract_content:
   prop: 'revisions'
   rvprop: 'content'
 
-regex:
-  get_abstract: '{(.)*}'
-
 output:
   file: 'testo.txt'
-  folder: 'Abstracts' 
+  folder: 'Abstracts'
