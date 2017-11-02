@@ -19,5 +19,9 @@ parameters_extract_content:
   rvprop: 'content'
 
 output:
-  file: 'testo.txt'
-  folder: 'Abstracts'
+  file: 'abstracts'
+  folder: 'Abstracts/'
+
+options:
+  multiple_file: false
+  xml: true

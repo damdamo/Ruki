@@ -12,14 +12,39 @@ def load_config(file):
         config = yaml.safe_load(config_stream)
     return config
 
+def query(url, request):
+    request['action'] = 'query'
+    request['format'] = 'json'
+    last_continue = {}
+    while True:
+        # Clone original request
+        req = request.copy()
+        # Modify it with the values returned in the 'continue' section of the
+        # last result.
+        req.update(last_continue)
+        # Call API
+        result = requests.get(url, params=req).json()
+        if 'error' in result:
+            raise Error(result['error'])
+        if 'warnings' in result:
+            print(result['warnings'])
+        if 'query' in result:
+            yield result['query']
+        if 'continue' not in result:
+            break
+        last_continue = result['continue']
 
-def write_abstract_into_file(file_name, abstract):
+def write_abstract_into_file(file_name, abstract, xml_option):
     """ Take a string and write it into a file """
     with open(file_name, 'a') as output_file:
-        print(abstract)
         if abstract != '':
-            output = '{}\n'.format(abstract)
+            if not xml_option:
+                output = '{}\n'.format(abstract)
+            else:
+                output = '<sentences>{}</sentences>\n'.format(abstract)
+
             output_file.write("{}".format(output))
+
 
 
 def get_page_id(dic):
@@ -58,47 +83,20 @@ def get_abstract_from_content(content):
     return clean_abstract(abstract)
 
 
-def get_all_abstract(list_all_id, parameters_extract_content):
+def get_all_abstract(url, list_all_id, parameters_extract_content):
     """ Collect all abstract """
     for gen_id in list_all_id:
         for my_id in gen_id:
             parameters_extract_content['pageids'] = my_id
             for element in query(url, parameters_extract_content):
                 content = element['pages'][my_id]['revisions'][0]['*']
-            yield get_abstract_from_content(content)
+            yield my_id, get_abstract_from_content(content)
 
+def extract_abstracts(config_file):
+    """ Extract all abstract of all Publication in the website
+    and put it in a single file or multiple files. It depends
+    options in the file config """
 
-def query(url, request):
-    request['action'] = 'query'
-    request['format'] = 'json'
-    last_continue = {}
-    while True:
-        # Clone original request
-        req = request.copy()
-        # Modify it with the values returned in the 'continue' section of the
-        # last result.
-        req.update(last_continue)
-        # Call API
-        result = requests.get(url, params=req).json()
-        if 'error' in result:
-            raise Error(result['error'])
-        if 'warnings' in result:
-            print(result['warnings'])
-        if 'query' in result:
-            yield result['query']
-        if 'continue' not in result:
-            break
-        last_continue = result['continue']
-
-
-if __name__ == '__main__':
-
-    # url_to_extract = "http://vgibox.eu/repository/api.php?action=query&list=categorymembers&cmtitle=Category:VGI_Domain&format=json&continue="
-    # Exemple d'url pour récupérer la page par l'id
-    # http://vgibox.eu/repository/index.php?curid=919
-
-    # load file configuration
-    config_file = 'config.yml'
     config = load_config(config_file)
 
     # We extract id from articles
@@ -109,18 +107,36 @@ if __name__ == '__main__':
     list_all_id = get_all_page_id(url, parameters_id)
 
     parameters_extract_content = config['parameters_extract_content']
-    # get_abstract('687', parameters_extract_content)
 
+    #An indicator to know where we are in the process
     i = 0
-    for abstract in get_all_abstract(list_all_id, parameters_extract_content):
-        print(i)
-        write_abstract_into_file(config['output']['file'], abstract)
-        i = i + 1
 
-    # Write an abstract into a file
-    # output = config['output']['file']
-    # write_string_into_file(output, abstract)
+    if config['options']['xml']:
+        file_extension = '.xml'
+    else:
+        file_extension = '.txt'
 
+    if not config['options']['multiple_file']:
+        for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
+            print(i)
+            write_abstract_into_file(config['output']['file']+file_extension, abstract, config['options']['xml'])
+            i = i + 1
+    else:
+        for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
+            print(i)
+            name_file = config['output']['folder'] + doc_id + file_extension
+            write_abstract_into_file(name_file, abstract, config['options']['xml'])
+            i = i + 1
+
+if __name__ == '__main__':
+
+    # url_to_extract = "http://vgibox.eu/repository/api.php?action=query&list=categorymembers&cmtitle=Category:VGI_Domain&format=json&continue="
+    # Exemple d'url pour récupérer la page par l'id
+    # http://vgibox.eu/repository/index.php?curid=919
+
+    # load file configuration
+    config_file = 'config.yml'
+    extract_abstracts(config_file)
 
     """
     <keywords> <key></key> </keywords>
