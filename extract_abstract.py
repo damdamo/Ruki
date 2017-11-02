@@ -12,7 +12,10 @@ def load_config(file):
         config = yaml.safe_load(config_stream)
     return config
 
+
 def query(url, request):
+    """ Allow to make a query and collect informations about page
+    In our case we use it to have id from publications"""
     request['action'] = 'query'
     request['format'] = 'json'
     last_continue = {}
@@ -34,6 +37,7 @@ def query(url, request):
             break
         last_continue = result['continue']
 
+
 def write_abstract_into_file(file_name, abstract, xml_option):
     """ Take a string and write it into a file """
     with open(file_name, 'a') as output_file:
@@ -44,7 +48,6 @@ def write_abstract_into_file(file_name, abstract, xml_option):
                 output = '<sentences>{}</sentences>\n'.format(abstract)
 
             output_file.write("{}".format(output))
-
 
 
 def get_page_id(dic):
@@ -65,7 +68,8 @@ def get_all_page_id(url, parameters_id):
 def clean_abstract(abstract):
     """ Allow to remove useless component in the abstract
     like link. Regex can clean link and square roots """
-    regex_link = re.compile('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
+    regex_link = re.compile(
+        'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
     regex_square_bracket = re.compile('[\[\]]')
     clean_abstract = re.sub(regex_link, '', abstract)
     clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
@@ -92,6 +96,7 @@ def get_all_abstract(url, list_all_id, parameters_extract_content):
                 content = element['pages'][my_id]['revisions'][0]['*']
             yield my_id, get_abstract_from_content(content)
 
+
 def extract_abstracts(config_file):
     """ Extract all abstract of all Publication in the website
     and put it in a single file or multiple files. It depends
@@ -108,7 +113,7 @@ def extract_abstracts(config_file):
 
     parameters_extract_content = config['parameters_extract_content']
 
-    #An indicator to know where we are in the process
+    # An indicator to know where we are in the process
     i = 0
 
     if config['options']['xml']:
@@ -119,14 +124,17 @@ def extract_abstracts(config_file):
     if not config['options']['multiple_file']:
         for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
             print(i)
-            write_abstract_into_file(config['output']['file']+file_extension, abstract, config['options']['xml'])
+            name_file = config['output']['file'] + file_extension
+            write_abstract_into_file(, abstract, config['options']['xml'])
             i = i + 1
     else:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
             print(i)
             name_file = config['output']['folder'] + doc_id + file_extension
-            write_abstract_into_file(name_file, abstract, config['options']['xml'])
+            write_abstract_into_file(
+                name_file, abstract, config['options']['xml'])
             i = i + 1
+
 
 if __name__ == '__main__':
 
