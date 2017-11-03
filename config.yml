@@ -22,6 +22,13 @@ output:
   file: 'abstracts'
   folder: 'Abstracts/'
 
+# Options can modify format, number of file, number of parameters
+# multiple_file: decide if there is one file for all abstracts or
+# one file per abstract
+# xml: Add xml tags to describe content
+# keywords: Add keywords in addition to abstracts
+# title: Add title in addition to abstracts
+
 options:
   multiple_file: false
   xml: true

@@ -125,7 +125,8 @@ def extract_abstracts(config_file):
         for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
             print(i)
             name_file = config['output']['file'] + file_extension
-            write_abstract_into_file(, abstract, config['options']['xml'])
+            write_abstract_into_file(
+                name_file, abstract, config['options']['xml'])
             i = i + 1
     else:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content):
