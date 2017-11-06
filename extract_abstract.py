@@ -6,6 +6,7 @@ import yaml
 import re
 
 
+
 def load_config(file):
     """ Load the config file """
     with open(config_file, 'r') as config_stream:
@@ -38,12 +39,20 @@ def query(url, request):
         last_continue = result['continue']
 
 
-def write_abstract_into_file(file_name, abstract):
+def write_abstract_into_file(file_name, abstract, options):
     """ Take a string and write it into a file """
-    with open(file_name, 'a') as output_file:
-        if abstract != '':
-            output = '{}\n'.format(abstract)
-            output_file.write("{}".format(output))
+    # If we have multiple file we write on it
+    if options['multiple_file']:
+        with open(file_name, 'w') as output_file:
+            if abstract != '':
+                output = '{}\n'.format(abstract)
+                output_file.write("{}".format(output))
+    # if we have a single file we just append the content
+    else:
+        with open(file_name, 'a') as output_file:
+            if abstract != '':
+                output = '{}\n'.format(abstract)
+                output_file.write("{}".format(output))
 
 
 def get_page_id(dic):
@@ -69,6 +78,7 @@ def clean_abstract(abstract):
     regex_square_bracket = re.compile('[\[\]]')
     clean_abstract = re.sub(regex_link, '', abstract)
     clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
+
     return clean_abstract
 
 
@@ -80,14 +90,15 @@ def get_keywords(content):
     # We verify that keywords exist
     if keywords is not None:
         keywords = keywords.group(0)
-        print(keywords)
         # We keep only keywords
         keywords = keywords.replace('Keywords=', '')
-        table_keywords = keywords.split(',')
-        # There is an empty word because the format of data is like:
+        keywords = keywords.replace('\n', '')
+        # For split we use a coma + a space
+        table_keywords = keywords.split(', ')
+        # We suppress the coma of the last word because we have a format like:
         # Keywords= k1, k2, k3, (with a comma at the end)
-        # So we suppress the last word of the list which is empty
-        table_keywords.pop()
+        table_keywords[len(table_keywords)-1] = table_keywords[len(table_keywords)-1].replace(',','')
+
         return table_keywords
 
     # If there are any keywords, we return an empty table
@@ -102,8 +113,9 @@ def get_abstract_from_content(content, options):
     # Option to keep keywords
     if options['keywords']:
         table_keywords = get_keywords(content)
-        regex_get_abstract = re.compile('{(.)*}')
+        regex_get_abstract = re.compile('{(.)*} ')
         abstract = re.sub(regex_get_abstract, '', content_mod)
+        print(abstract)
 
         if options['xml']:
             abstract = '<sentences>' + abstract + '</sentences>'
@@ -112,6 +124,16 @@ def get_abstract_from_content(content, options):
                 keywords_xml = keywords_xml + '<keyword>' + keyword + '</keyword>'
             abstract = keywords_xml + '\n' + abstract
         else:
+            keywords = ''
+            # First is just to don't put a coma before the first word
+            first = True
+            for keyword in table_keywords:
+                if first:
+                    keywords = keyword
+                    first = False
+                else:
+                    keywords = keywords + ',' + keyword
+
             abstract = keywords + '\n' + abstract
 
     else:
@@ -133,13 +155,13 @@ def get_all_abstract(url, list_all_id, parameters_extract_content, options):
                 if options['title']:
                     if options['xml']:
                         # content = '<title>' + element['pages'][my_id]['title'] + '</title>\n' + content
-                        lol = '<title >' + element['pages'][my_id]['title'] + ' </title >\n' + get_abstract_from_content(content, options)
+                        content = '<title>' + element['pages'][my_id]['title'] + ' </title>\n' + get_abstract_from_content(content, options)
                         # yield my_id, get_abstract_from_content(content, options)
-                        yield my_id, lol
+                        yield my_id, content
                     else:
-                        lol = element['pages'][my_id]['title'] + '\n' + get_abstract_from_content(content, options)
+                        content = element['pages'][my_id]['title'] + '\n' + get_abstract_from_content(content, options)
                         # yield my_id, get_abstract_from_content(content, options)
-                        yield my_id, lol
+                        yield my_id, content
                 else:
                     yield my_id, get_abstract_from_content(content, options)
 
@@ -172,13 +194,13 @@ def extract_abstracts(config_file):
         for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
             print(i)
             name_file = config['output']['file'] + file_extension
-            write_abstract_into_file(name_file, abstract)
+            write_abstract_into_file(name_file, abstract, config['options'])
             i = i + 1
     else:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
             print(i)
             name_file = config['output']['folder'] + doc_id + file_extension
-            write_abstract_into_file(name_file, abstract)
+            write_abstract_into_file(name_file, abstract, config['options'])
             i = i + 1
 
 
