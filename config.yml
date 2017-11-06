@@ -32,5 +32,5 @@ output:
 options:
   multiple_file: false
   xml: true
-  keywords: false
-  title: false
+  keywords: true
+  title: true
