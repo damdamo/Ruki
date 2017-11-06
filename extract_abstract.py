@@ -6,7 +6,6 @@ import yaml
 import re
 
 
-
 def load_config(file):
     """ Load the config file """
     with open(config_file, 'r') as config_stream:
@@ -39,7 +38,7 @@ def query(url, request):
         last_continue = result['continue']
 
 
-def write_abstract_into_file(file_name, abstract, options):
+def write_content_into_file(file_name, abstract, options):
     """ Take a string and write it into a file """
     # If we have multiple file we write on it
     if options['multiple_file']:
@@ -72,12 +71,14 @@ def get_all_page_id(url, parameters_id):
 
 def clean_abstract(abstract):
     """ Allow to remove useless component in the abstract
-    like link. Regex can clean link and square roots """
+    like link. Regex can clean link and square roots
+    We replace '&' by 'and' because it's not valide for xml"""
     regex_link = re.compile(
         'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
     regex_square_bracket = re.compile('[\[\]]')
     clean_abstract = re.sub(regex_link, '', abstract)
     clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
+    clean_abstract = clean_abstract.replace('&', 'and')
 
     return clean_abstract
 
@@ -97,7 +98,8 @@ def get_keywords(content):
         table_keywords = keywords.split(', ')
         # We suppress the coma of the last word because we have a format like:
         # Keywords= k1, k2, k3, (with a comma at the end)
-        table_keywords[len(table_keywords)-1] = table_keywords[len(table_keywords)-1].replace(',','')
+        table_keywords[len(
+            table_keywords) - 1] = table_keywords[len(table_keywords) - 1].replace(',', '')
 
         return table_keywords
 
@@ -113,12 +115,13 @@ def get_abstract_from_content(content, options):
     # Option to keep keywords
     if options['keywords']:
         table_keywords = get_keywords(content)
-        regex_get_abstract = re.compile('{(.)*} ')
+        regex_get_abstract = re.compile('{(.)*}( )?')
         abstract = re.sub(regex_get_abstract, '', content_mod)
+        print(content_mod)
         print(abstract)
 
         if options['xml']:
-            abstract = '<sentences>' + abstract + '</sentences>'
+            abstract = '<sentences>\n' + abstract + '\n</sentences>'
             keywords_xml = ''
             for keyword in table_keywords:
                 keywords_xml = keywords_xml + '<keyword>' + keyword + '</keyword>'
@@ -140,7 +143,7 @@ def get_abstract_from_content(content, options):
         regex_get_abstract = re.compile('{(.)*}')
         abstract = re.sub(regex_get_abstract, '', content_mod)
         if options['xml']:
-            abstract = '<sentences>' + abstract + '</sentences>'
+            abstract = '<sentences>\n' + abstract + '\n</sentences>'
 
     return clean_abstract(abstract)
 
@@ -155,12 +158,17 @@ def get_all_abstract(url, list_all_id, parameters_extract_content, options):
                 if options['title']:
                     if options['xml']:
                         # content = '<title>' + element['pages'][my_id]['title'] + '</title>\n' + content
-                        content = '<title>' + element['pages'][my_id]['title'] + ' </title>\n' + get_abstract_from_content(content, options)
-                        # yield my_id, get_abstract_from_content(content, options)
+                        content = '<title>' + \
+                            element['pages'][my_id]['title'] + ' </title>\n' + \
+                            get_abstract_from_content(content, options)
+                        # yield my_id, get_abstract_from_content(content,
+                        # options)
                         yield my_id, content
                     else:
-                        content = element['pages'][my_id]['title'] + '\n' + get_abstract_from_content(content, options)
-                        # yield my_id, get_abstract_from_content(content, options)
+                        content = element['pages'][my_id]['title'] + \
+                            '\n' + get_abstract_from_content(content, options)
+                        # yield my_id, get_abstract_from_content(content,
+                        # options)
                         yield my_id, content
                 else:
                     yield my_id, get_abstract_from_content(content, options)
@@ -190,18 +198,27 @@ def extract_abstracts(config_file):
     else:
         file_extension = '.txt'
 
-    if not config['options']['multiple_file']:
-        for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
-            print(i)
-            name_file = config['output']['file'] + file_extension
-            write_abstract_into_file(name_file, abstract, config['options'])
-            i = i + 1
-    else:
+    if config['options']['multiple_file']:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
             print(i)
             name_file = config['output']['folder'] + doc_id + file_extension
-            write_abstract_into_file(name_file, abstract, config['options'])
+            if config['options']['xml']:
+                abstract = '<informations>\n{}\n</informations>'.format(abstract)
+            write_content_into_file(name_file, abstract, config['options'])
             i = i + 1
+    else:
+        name_file = config['output']['file'] + file_extension
+        if config['options']['xml']:
+            write_content_into_file(name_file, '<informations>', config['options'])
+
+        for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
+            print(i)
+
+            write_content_into_file(name_file, abstract, config['options'])
+            i = i + 1
+
+        if config['options']['xml']:
+            write_content_into_file(name_file, '</informations>', config['options'])
 
 
 if __name__ == '__main__':
