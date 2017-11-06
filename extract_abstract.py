@@ -71,6 +71,7 @@ def clean_abstract(abstract):
     clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
     return clean_abstract
 
+
 def get_keywords(content):
     """ Collect all keywords from content with parsing"""
     regex_get_keywords = re.compile('Keywords=(.)*\n')
@@ -80,7 +81,7 @@ def get_keywords(content):
     if keywords is not None:
         keywords = keywords.group(0)
         print(keywords)
-        #We keep only keywords
+        # We keep only keywords
         keywords = keywords.replace('Keywords=', '')
         table_keywords = keywords.split(',')
         # There is an empty word because the format of data is like:
@@ -131,10 +132,16 @@ def get_all_abstract(url, list_all_id, parameters_extract_content, options):
                 content = element['pages'][my_id]['revisions'][0]['*']
                 if options['title']:
                     if options['xml']:
-                        content = '<title>' + element['pages'][my_id]['title'] + '</title>\n' + content
+                        # content = '<title>' + element['pages'][my_id]['title'] + '</title>\n' + content
+                        lol = '<title >' + element['pages'][my_id]['title'] + ' </title >\n' + get_abstract_from_content(content, options)
+                        # yield my_id, get_abstract_from_content(content, options)
+                        yield my_id, lol
                     else:
-                        content = element['pages'][my_id]['title'] + '\n' + content
-            yield my_id, get_abstract_from_content(content, options)
+                        lol = element['pages'][my_id]['title'] + '\n' + get_abstract_from_content(content, options)
+                        # yield my_id, get_abstract_from_content(content, options)
+                        yield my_id, lol
+                else:
+                    yield my_id, get_abstract_from_content(content, options)
 
 
 def extract_abstracts(config_file):
