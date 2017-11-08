@@ -122,7 +122,8 @@ def get_abstract_from_content(content, options):
             abstract = '<sentences>\n{}</sentences>'.format(abstract)
             keywords_xml = ''
             for keyword in table_keywords:
-                keywords_xml = '{}<keyword>{}</keyword>'.format(keywords_xml, keyword)
+                keywords_xml = '{}<keyword>{}</keyword>'.format(
+                    keywords_xml, keyword)
             abstract = '{}\n{}'.format(keywords_xml, abstract)
         else:
             keywords = ''
@@ -155,10 +156,12 @@ def get_all_abstract(url, list_all_id, parameters_extract_content, options):
                 content = element['pages'][my_id]['revisions'][0]['*']
                 if options['title']:
                     if options['xml']:
-                        content = '<title>{}</title>\n{}'.format(element['pages'][my_id]['title'], get_abstract_from_content(content, options))
+                        content = '<title>{}</title>\n{}'.format(
+                            element['pages'][my_id]['title'], get_abstract_from_content(content, options))
                         yield my_id, content
                     else:
-                        content = '{}\n{}'.format(element['pages'][my_id]['title'], get_abstract_from_content(content, options))
+                        content = '{}\n{}'.format(
+                            element['pages'][my_id]['title'], get_abstract_from_content(content, options))
                         yield my_id, content
                 else:
                     yield my_id, get_abstract_from_content(content, options)
@@ -190,15 +193,18 @@ def extract_abstracts(config_file):
     if config['options']['multiple_file']:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
             print(i)
-            name_file = '{}{}{}'.format(config['output']['folder'],doc_id,file_extension)
+            name_file = '{}{}{}'.format(
+                config['output']['folder'], doc_id, file_extension)
             if config['options']['xml']:
-                abstract = '<informations>\n{}\n</informations>'.format(abstract)
+                abstract = '<informations>\n{}\n</informations>'.format(
+                    abstract)
             write_content_into_file(name_file, abstract, config['options'])
             i = i + 1
     else:
-        name_file = '{}{}'.format(config['output']['file'],file_extension)
+        name_file = '{}{}'.format(config['output']['file'], file_extension)
         if config['options']['xml']:
-            write_content_into_file(name_file, '<informations>', config['options'])
+            write_content_into_file(
+                name_file, '<informations>', config['options'])
 
         for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
             print(i)
@@ -207,7 +213,8 @@ def extract_abstracts(config_file):
             i = i + 1
 
         if config['options']['xml']:
-            write_content_into_file(name_file, '</informations>', config['options'])
+            write_content_into_file(
+                name_file, '</informations>', config['options'])
 
 
 if __name__ == '__main__':
