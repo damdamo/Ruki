@@ -192,9 +192,10 @@ def extract_abstracts(config_file):
 
     if config['options']['multiple_file']:
         for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
-            print(i)
+            print('Abstract number: {}'.format(i))
             name_file = '{}{}{}'.format(
                 config['output']['folder'], doc_id, file_extension)
+                
             if config['options']['xml']:
                 abstract = '<informations>\n{}\n</informations>'.format(
                     abstract)
@@ -207,8 +208,7 @@ def extract_abstracts(config_file):
                 name_file, '<informations>', config['options'])
 
         for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
-            print(i)
-
+            print('Abstract: {}'.format(i))
             write_content_into_file(name_file, abstract, config['options'])
             i = i + 1
 
@@ -224,7 +224,7 @@ if __name__ == '__main__':
     # http://vgibox.eu/repository/index.php?curid=919
 
     # load file configuration
-    config_file = 'config.yml'
+    config_file = 'config/config.yml'
     extract_abstracts(config_file)
 
     """

@@ -22,7 +22,7 @@ parameters_extract_content:
 
 output:
   file: 'Results/Extracts/Single/abstracts'
-  folder: 'Results/Extracts/Multiple'
+  folder: 'Results/Extracts/Multiple/'
 
 # Options can modify format, number of file, number of parameters
 # multiple_file: decide if there is one file for all abstracts or
@@ -32,7 +32,7 @@ output:
 # title: Add title in addition to abstracts
 
 options:
-  multiple_file: false
+  multiple_file: true
   xml: false
   keywords: false
   title: false
