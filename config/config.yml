@@ -1,0 +1,38 @@
+#Config file with all parameters
+
+url: 'http://vgibox.eu/repository/api.php'
+
+# Parameters to have id list
+# continue is just to silence the warning
+
+parameters_id:
+  action: 'query'
+  format: 'json'
+  list: 'categorymembers'
+  # cmtitle: 'Category:VGI_Domain'
+  cmtitle: 'Category:Publication'
+  continue: ''
+
+# Paramaters to extract content of a page
+parameters_extract_content:
+  action: 'query'
+  format: 'json'
+  prop: 'revisions'
+  rvprop: 'content'
+
+output:
+  file: 'abstracts'
+  folder: 'Abstracts/'
+
+# Options can modify format, number of file, number of parameters
+# multiple_file: decide if there is one file for all abstracts or
+# one file per abstract
+# xml: Add xml tags to describe content
+# keywords: Add keywords in addition to abstracts
+# title: Add title in addition to abstracts
+
+options:
+  multiple_file: false
+  xml: false
+  keywords: false
+  title: false
