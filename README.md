@@ -32,6 +32,6 @@ You have some options to complete the collect (with true or false):
 XML hierarchy:  
 * < informations >  
   * < title > ... < /title >  
-  * < keyword >keyword_1< /keyword >...<keyword>keyword_n</keyword>
+  * < keyword >keyword_1< /keyword >...<keyword>keyword_n< /keyword >
   * < sentences > ... < /sentences >
 * < /informations >
