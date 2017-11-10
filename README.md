@@ -1,4 +1,4 @@
-# Master Project
+# RUKI: Reconciliation and unification for knowledge information
 -------
 
 
@@ -13,7 +13,7 @@ https://www.mediawiki.org/wiki/API:Query
 
 We collect all abstract of all publications with different possibility.
 
-## Usage
+### Usage
 
 If you want to use this code it's very simple, you just need to modify
 the config file and call the script like this:
@@ -23,6 +23,44 @@ python3 extract_abstracts.py
 ``
 
 You can see your file/files fill with abstracts.  
+
+### Configuration
+
+This is an configuration example of what you have:
+
+```yaml
+url: 'http://vgibox.eu/repository/api.php'
+
+# Parameters to have id list
+# continue is just to silence the warning
+
+parameters_id:
+  action: 'query'
+  format: 'json'
+  list: 'categorymembers'
+  # cmtitle: 'Category:VGI_Domain'
+  cmtitle: 'Category:Publication'
+  continue: ''
+
+# Paramaters to extract content of a page
+parameters_extract_content:
+  action: 'query'
+  format: 'json'
+  prop: 'revisions'
+  rvprop: 'content'
+
+output:
+  file: 'Results/Extracts/Single/abstracts'
+  folder: 'Results/Extracts/Multiple/'
+
+options:
+  multiple_file: true
+  xml: false
+  keywords: false
+  title: false
+
+```
+
 You have some options to complete the collect (with true or false):  
 * multiple_file: You can decide to have one abstract per file or just one file with all abstracts
 * keywords: Moreover abstracts, you can add keywords that are avaible in the same page of abstract to have more informations
@@ -35,3 +73,5 @@ XML hierarchy:
   * < keyword >keyword_1< /keyword >...<keyword>keyword_n< /keyword >
   * < sentences > ... < /sentences >
 * < /informations >
+
+Normally, you just need to modify 'output' and 'options'. 
