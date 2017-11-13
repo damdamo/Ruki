@@ -1,0 +1,5210 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://vgibox.eu/onto"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://vgibox.eu/onto">
+    <Prefix name="" IRI="http://vgibox.eu/onto"/>
+    <Prefix name="wn" IRI="http://www.wordnet.org/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="vgi" IRI="http://vgibox.eu/onto#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#digital_spatial_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#real_time_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#commercial_vgi_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contextual_social_media_data_collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#place_entity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_administration_and_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collaborative_mapping_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toponym_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#diversity_and_heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#empowers_the_user"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data-intensive_computational_social_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geospatial_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#routing_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#clustering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Geographic_Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#large_data_collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#paradigm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#extracting_precise_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#visual_analytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#official_mapping_agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#free_world_digital_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open_resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#android_mobile_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#perceive_and_evaluate_environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mapping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#forest_game_species"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#expert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#planning_intelligence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unique_coordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instagram_extractor_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semi-structured_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#and_mobile_clients_for_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#qualitative_spatial_relation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#traffic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#barrier_for_participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#field_work"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#analytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cadastral_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location_sensing_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_space_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nighttime_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_disaster_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fast_lookup_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#volunteered_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#route_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mapping_activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#typing_error"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#predictive_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_display"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#raw_sensor_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#topological_and-or_semantic_property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dynamic_traffic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#expert_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vgi_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_sharing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contributing_scenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#characteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mapping_agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#assessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#topic-specific_keyword"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#morphological_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_city"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#affective_responses_to_environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user-generated_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizens_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatio-temporal_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#multimedia_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sequential_learning_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intrinsic_and_extrinsic_geographic_property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semi-hybrid_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instagram_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#clustering_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#giscience_community"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#surveillance_and_control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hydrological_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_streaming_api"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collaborative_human-computer_analytical_activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classifying_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unfamiliar_environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collaborative_mapping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#decision_support_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#attribute_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#heterogeneous_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#qualitative_spatial_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentimental_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#editor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intersection_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_administrative_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_generated_geographic_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#digital_orthophoto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#enhanced_emoticon_classifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gps_coordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#national_mapping_agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#humidity_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#handheld_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_language_processing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#online_database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_footprint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#physical_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ubiquitous_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#regional_spatial_data_infrastructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ambient_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#text_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#socio-technical_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#model-driven_decision_making"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#large-scale_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_movement_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#three_d_city_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unstructured_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#digitise_object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_precision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#computer_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collective_tagging_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#computational_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reference_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#not_expert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#k-means_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#android_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#overall_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#multimedia_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#source_dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#indoor_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unstructured_social_media_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mathematical_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#captured_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#api"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#noise_level_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#impact_on_other_contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#extrinsic_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user-generated_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#coordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#skilled_expert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#thematic_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#invasive_and_disease_vector_species"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_validation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#species"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#census_work"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#offline_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#government_agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_administration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#microblogging_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#metadata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nested_reinforcement_learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-spatial_event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wn:person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#expert_validation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geosocial_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collective_intelligence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mosquito_control_agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#urban_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#official_procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#remote_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile_crowd_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intrinsic_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#current_location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environmental_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#high_level_task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#users_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#postgresql-postgis_database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contributed_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_information_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#uneven_participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_application_programming_interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#digital_elevation_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#global_sensor_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#software_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intrinsic_and_extrinsic_characteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#google_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_city_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#massive_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instrumentation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#integrative_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_distribution_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#harmonized_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rained_volunteer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#conventional_small_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#precision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#map_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#starlight_visual_information_system_software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environmental_collaborative_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rewarding_response_for_the_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#display"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_authority"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#validation_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#route"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geotagged_social_media_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_geospatial_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#app_user"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizens_as_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#high_resolution_satellite_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_mobility_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#text_mining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#large_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smgi_analytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#disaster_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_and_temporal_heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#filter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#photos_location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#object-based_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#making"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#database_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#policy_making"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_characteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#polarity_classifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tagging_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#emergency_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#intelligence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#density_based_clustering_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_administration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bus_station"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#authority"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#informal_language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#online_orthophoto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_phenomena"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#raster_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#active_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user-constructed_filter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#air_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sfpark_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_behavior_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#danger_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowd-sourced_web_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#areal_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#virtual_machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#aggregated_mobility_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#agricultural_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cartographic_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#terrain_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_city"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#quality_assurance_editor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#taxonomic_validation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_generated_spatial_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#enriched_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_information_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#urban_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#station"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#measurement_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-located_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#media"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environmental_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#topological_relation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#learning_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#georeferenced_user-generated_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classication_processs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#position_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_practice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#discipline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizens_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cadastral_procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mass_movement_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#big_data_paradigm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vgi_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#assessing_the_representativenes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#authoritative_data_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#monitoring_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowd_sentiment_measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cadastral_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#game_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#internal_linear_structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#distributed__less_coordinated_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_behavioral_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#representativenes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tweet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#planning_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geocollaboration_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_volunteer_work"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geospatial_information_crowdsourcing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#logical_consistency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_information_infrastructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#amateurs_data_production"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#georeferenced_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographical_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#volunteered_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#participation_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_coordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentiment_polarity_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_urban_mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#footprint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#digital_footprint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#parking_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#convolutional_neural_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_metadata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#perspective_cadastral_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#biological_observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collaboration_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_generated_geographical_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instant_messaging_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gps_metadata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hierarchical_agglomerative_clustering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#navigation_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#training_data_set"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_api"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#evaluation_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-referenced_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#microblogging_service"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wn:procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#active_surveillance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#small_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contextual_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_data_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#consistency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#enrich_the_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#production"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#attribute_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#processing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#meteorological_measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing_cadastral_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#practice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#a_priori_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open_source_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#travel_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reference_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#innovative_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentiwordnet_classifier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mapping_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#volunteer_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsoucerd_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#administration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mashup_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dynamic_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#map-based_social_networking_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#corine_nomenclature_for_land_use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_api"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user-generated_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geotagged_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rich_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#natural_geographic_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_database"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_experience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#biological_monitoring_or_surveillance_program"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vector_data_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile_crowdsourcing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crises_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#parking_place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#georeferenced_social_media_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human-machine_interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_economy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#quality_assessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#disease_vector_species"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_science_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_data_collection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#community_mapping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vernacular_geography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_location_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#satellite_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensing_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowd-sensing_based_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_web_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wiki_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ground-truth_data_set"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dynamic_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#remote_sensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#simulation_software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gaining_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#innovation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user_interests_investigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geospatial_web_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#non-expert_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#remote_sensing_and_automation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-tagged_tweet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#volunteer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reliable_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#support_vector_machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sdi_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#elementary_task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cultural_innovation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#xen_cloud_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#point-to-point_navigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#landmark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#investigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#traditional_geospatial_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#relevant_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bottom-up_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_entity_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_and_spatial_characteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_networking_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensor_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing_tools_and_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#observer_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#peer_production"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#of_vgi_and_crowdsourcing_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#supervised_machine_learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#application_programming_interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location_based_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#computational_social_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#multi-proxy_validation_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#novice_practice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hydrological_observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#producers_profile"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ogc_standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#web_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#interactive_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#acquisition_procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#time_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#agency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#linked_data_paradigm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human-centered_geospatial_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human_geography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#authoritative_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#object_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_data_infrastructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#enriching_scenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#big_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#timetable_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#about_farmland_habitats_and_species"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#behavioural_knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open_street_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#global_positioning_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#satellite_navigation_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#feature_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#official_digital_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#orthophoto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#image_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geotagged_social_media"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gathering_specific_and_structured_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensed_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#machine_learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#xml_message"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#active_surveillance_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lexicon-based_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#interactive_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fostering_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographical_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_and_temporal_context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#human_experience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open-source_software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bayesian_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mobile_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#named_entity_extraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#knowledge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#suitable_landmark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#breeding_bird_survey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#flow_map"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wn:activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#real-world_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#community-based_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#humanitarian-aid_organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#scenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_participation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fitness_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#self-produced_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#positional_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#web_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location-based_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#phenomena"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#building_footprint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#subjectivity_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unified_query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#online_collaborative_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#googlemaps_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geospatial_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#non-governmental_organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classication_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fitness_for_use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fuel_station"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#computationally_supported_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hand-crafted_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hierarchical_clustering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#field"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#topological_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#commercial_and_vgi_dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#time_context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#activity_pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#authoritative_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#extraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#governmental_crowdsourced_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#manual_visual_investigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geospatial_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#work"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smart_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_surveillance_and_control_program"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#city_structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#heart-rate_measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#high_contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#community"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#document_model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#city"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#public_authority"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#user-behavioral_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#research_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_and_temporal_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentiment_analysis_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#location-based_social_platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#road_network_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#apriori_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#georeferenced_tweet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#locations_and_route"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#contributors_heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#symbolic_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#resulting_dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#inspire_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-referenced_content"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crisis_management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#up-to-date_land_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#urban_walking_community"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classifier"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#remote_volunteer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#internet-based_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#field_measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#survey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dbscan_clustering_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_science_project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#classification_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#deep_learning_technique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sentiment_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#quality_assessment_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#task"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#online_dynamic_map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#query_language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#collaborative_cloud_computing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#surveillance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#information_extraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hot-spot_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#error"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#harmonized_monitoring_procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wearable_device"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#surveillance_and_control_program"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#web_feature_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cloud_computing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#app_user_validation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#taxonomic_error"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#meaningful_query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_media_data_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#routing_and_navigation_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#local_spatial_distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourcing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#open_standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#hybrid_geography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#urban_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#new_source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geotagged_twitter_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#source"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#butterfly_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#overlay_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#tagging_application"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#experience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#urban_and_regional_planning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#multiple_map_display"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#citizen_as_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Information_Representation_Object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#multimedia_content_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsensed_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#formal_error"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#named-entity_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sensing_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_information_science"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geographic_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#quality_control"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#humanenvironment_interaction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_stream_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#named_entity_recognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#web_mapping_tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#automation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#triangulated_irregular_network"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#synthetic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#extract_landmark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smarter_city"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#navigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatio-temporal_clustering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pedestrian_navigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_representativenes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_editor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#twitter_application_program_interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#meta-level_query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#density_based_scan_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#voluntary_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#harvesting_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#analysis-relevant_keyword"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mining_process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#position_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#instrumental_precision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_cover"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semantic_property"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#deep_learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#automatic_filter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cover"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#heavy-tailed_distribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#voluntary_science_monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#amazon_web_service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#active_contribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_collection_and_sharing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#osm_place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unsupervised_learning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#poorly_structured_dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#nsdi_standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_processing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cadastral_survey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#problems_in_public_economy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#information_use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatio-temporal_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#visual_object"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_mining_algorithm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#unsupervised_machine_learning_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#checking_scenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#geo-crowd_sourcing_paradigm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#efficient_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sharing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#appropriate_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#gps_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_geographic_information_phenomena"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#passive_and_active_surveillance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#economy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_geographic_information"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#decision-making_policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#infrastructure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#standard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#linked_data"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fitness_for_a_particular_use"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#coverage_area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#map"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowdsourced_paradigm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#technological_and_cultural_innovation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_data_mining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#non-professional_contributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatial_relation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#birds-eye_image"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#car-based_navigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#spatio-temporal_dataset"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#data_analysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#knowledge_organization_system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#abnormal_and_disastrous_event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#textual_feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#standard-compliant_interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#opinion_mining"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#program"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#co-occurrence_and_data_mining_method"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#measurement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#crowd-sensing_activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#toponyms_footprint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#land_management_policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#high_terminological_heterogeneity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#validation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#quality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#social_approach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#environmental_impact_assessment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#virtual_logical_sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#management"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temporal_accuracy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#science"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#crowdsensed_data"/>
+        <Class IRI="#crowdsourced_data"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#discipline"/>
+        <Class IRI="#field"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#human_sensor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#sensor"/>
+            <Class abbreviatedIRI="wn:person"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#a_priori_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#abnormal_and_disastrous_event"/>
+        <Class IRI="#event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#about_farmland_habitats_and_species"/>
+        <Class IRI="#species"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#accuracy"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#acquisition_procedure"/>
+        <Class IRI="#procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#active_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#active_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#active_surveillance"/>
+        <Class IRI="#surveillance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#active_surveillance_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#activity_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#administration"/>
+        <Class IRI="#organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#affective_responses_to_environment"/>
+        <Class IRI="#environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#agency"/>
+        <Class IRI="#organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#aggregated_mobility_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#agricultural_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#air_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#algorithm"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#amateurs_data_production"/>
+        <Class IRI="#production"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#amazon_web_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ambient_geographic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#analysis"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#analysis-relevant_keyword"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#analytics"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#and_mobile_clients_for_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#android_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#android_mobile_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#api"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#app_user"/>
+        <Class IRI="#user"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#app_user_validation"/>
+        <Class IRI="#validation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#application"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#application_programming_interface"/>
+        <Class IRI="#interface"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#approach"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#appropriate_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#apriori_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#area"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#areal_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#assessing_the_representativenes"/>
+        <Class IRI="#representativenes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#assessment"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#attribute_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#attribute_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#authoritative_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#authoritative_data_source"/>
+        <Class IRI="#source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#authoritative_geographic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#automatic_filter"/>
+        <Class IRI="#filter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#barrier_for_participation"/>
+        <Class IRI="#participation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bayesian_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#behavioural_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#big_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#big_data_paradigm"/>
+        <Class IRI="#paradigm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#biological_monitoring_or_surveillance_program"/>
+        <Class IRI="#program"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#biological_observation"/>
+        <Class IRI="#observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#birds-eye_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bottom-up_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#breeding_bird_survey"/>
+        <Class IRI="#survey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#building_footprint"/>
+        <Class IRI="#footprint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bus_station"/>
+        <Class IRI="#station"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#butterfly_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cadastral_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cadastral_procedure"/>
+        <Class IRI="#procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cadastral_survey"/>
+        <Class IRI="#survey"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cadastral_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#captured_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#car-based_navigation"/>
+        <Class IRI="#navigation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cartographic_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#census_work"/>
+        <Class IRI="#work"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#characteristic"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#checking_scenario"/>
+        <Class IRI="#scenario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_as_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_as_sensor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_observation"/>
+        <Class IRI="#observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_participation"/>
+        <Class IRI="#participation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_science_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizen_science_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizens_as_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizens_as_sensor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizens_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizens_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#citizens_sensor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#city"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#city_structure"/>
+        <Class IRI="#structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classication_processs"/>
+        <Class IRI="#process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classication_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classification_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classifier"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#classifying_information"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cloud_computing"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#clustering"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#clustering_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#co-occurrence_and_data_mining_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collaboration_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collaborative_cloud_computing"/>
+        <Class IRI="#cloud_computing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collaborative_human-computer_analytical_activity"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collaborative_mapping"/>
+        <Class IRI="#mapping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collaborative_mapping_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collective_intelligence"/>
+        <Class IRI="#intelligence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#collective_tagging_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#commercial_and_vgi_dataset"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#commercial_vgi_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#community-based_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#community_mapping"/>
+        <Class IRI="#mapping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#computational_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#computational_social_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#computationally_supported_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#computer_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#consistency"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#content"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#context"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contextual_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contextual_social_media_data_collection"/>
+        <Class IRI="#data_collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contributed_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contributing_scenario"/>
+        <Class IRI="#scenario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contribution"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contributor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#contributors_heterogeneity"/>
+        <Class IRI="#heterogeneity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#control"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#conventional_small_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#convolutional_neural_network"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#coordinate"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#corine_nomenclature_for_land_use"/>
+        <Class IRI="#use"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cover"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#coverage_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crises_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crisis_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowd-sensing_activity"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowd-sensing_based_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowd-sourced_web_data"/>
+        <Class IRI="#crowdsourced_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowd_sentiment_measurement"/>
+        <Class IRI="#measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsensed_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsoucerd_geographic_information"/>
+        <Class IRI="#crowdsourced_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsoucerd_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_geographic_information"/>
+        <Class IRI="#crowdsourced_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_geographic_information_phenomena"/>
+        <Class IRI="#phenomena"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourced_paradigm"/>
+        <Class IRI="#paradigm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_cadastral_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_data"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_geographic_information"/>
+        <Class IRI="#crowdsourced_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#crowdsourcing_tools_and_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cultural_innovation"/>
+        <Class IRI="#innovation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#current_location"/>
+        <Class IRI="#location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#danger_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data-intensive_computational_social_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_collection"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_collection_and_sharing"/>
+        <Class IRI="#sharing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_mining_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_processing"/>
+        <Class IRI="#processing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_representativenes"/>
+        <Class IRI="#representativenes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_sharing"/>
+        <Class IRI="#sharing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_source"/>
+        <Class IRI="#source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_structure"/>
+        <Class IRI="#structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#data_validation"/>
+        <Class IRI="#validation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#database"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#database_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dataset"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dbscan_clustering_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#decision-making_policy"/>
+        <Class IRI="#policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#decision_support_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#deep_learning"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#deep_learning_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#density_based_clustering_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#density_based_scan_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#device"/>
+        <Class IRI="#instrumentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digital_elevation_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digital_footprint"/>
+        <Class IRI="#footprint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digital_orthophoto"/>
+        <Class IRI="#orthophoto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digital_spatial_data"/>
+        <Class IRI="#geospatial_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#digitise_object"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#disaster_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#disease_vector_species"/>
+        <Class IRI="#species"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#distributed__less_coordinated_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#distribution"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#diversity_and_heterogeneity"/>
+        <Class IRI="#heterogeneity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#document_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dynamic_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dynamic_source"/>
+        <Class IRI="#source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dynamic_traffic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#economy"/>
+        <Class IRI="#discipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#editor"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#efficient_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#elementary_task"/>
+        <Class IRI="#task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#emergency_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#empowers_the_user"/>
+        <Class IRI="#user"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#enhanced_emoticon_classifier"/>
+        <Class IRI="#classifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#enrich_the_data"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#enriched_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#enriching_scenario"/>
+        <Class IRI="#scenario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#environmental_collaborative_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#environmental_impact_assessment"/>
+        <Class IRI="#assessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#environmental_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#environmental_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#evaluation_process"/>
+        <Class IRI="#process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#expert"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#expert_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#expert_validation"/>
+        <Class IRI="#validation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extract_landmark"/>
+        <Class IRI="#landmark"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extracting_precise_information"/>
+        <Class IRI="#extraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extraction"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#extrinsic_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fast_lookup_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#feature"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#feature_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#field_measurement"/>
+        <Class IRI="#measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#field_work"/>
+        <Class IRI="#work"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fitness_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fitness_for_a_particular_use"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fitness_for_use"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#flow_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#footprint"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#forest_game_species"/>
+        <Class IRI="#species"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#formal_error"/>
+        <Class IRI="#error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fostering_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#free_world_digital_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fuel_station"/>
+        <Class IRI="#station"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gaining_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#game_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gathering_specific_and_structured_data"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-crowd_sourcing_paradigm"/>
+        <Class IRI="#paradigm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-located_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-referenced_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-referenced_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-spatial_event"/>
+        <Class IRI="#event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geo-tagged_tweet"/>
+        <Class IRI="#tweet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geocollaboration_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_context"/>
+        <Class IRI="#context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_coordinate"/>
+        <Class IRI="#coordinate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_database"/>
+        <Class IRI="#database"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_entity_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_information_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_information_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_precision"/>
+        <Class IRI="#precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographic_volunteer_work"/>
+        <Class IRI="#work"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographical_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geographical_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geography"/>
+        <Class IRI="#discipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#georeferenced_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#georeferenced_social_media_data"/>
+        <Class IRI="#geo-referenced_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#georeferenced_tweet"/>
+        <Class IRI="#tweet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#georeferenced_user-generated_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#georeferenced_user-generated_content"/>
+        <Class IRI="#user-generated_content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geosocial_network"/>
+        <Class IRI="#social_network"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geospatial_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geospatial_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geospatial_information_crowdsourcing"/>
+        <Class IRI="#crowdsourcing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geospatial_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geospatial_web_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geotagged_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geotagged_social_media"/>
+        <Class IRI="#media"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geotagged_social_media_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#geotagged_twitter_data"/>
+        <Class IRI="#geotagged_social_media_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#giscience_community"/>
+        <Class IRI="#community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#global_positioning_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#global_sensor_network"/>
+        <Class IRI="#sensor_network"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#google_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#googlemaps_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#government_agency"/>
+        <Class IRI="#agency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#governmental_crowdsourced_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gps_coordinate"/>
+        <Class IRI="#coordinate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gps_metadata"/>
+        <Class IRI="#metadata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#gps_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ground-truth_data_set"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hand-crafted_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#handheld_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#harmonized_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#harmonized_monitoring_procedure"/>
+        <Class IRI="#procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#harvesting_data"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#heart-rate_measurement"/>
+        <Class IRI="#measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#heavy-tailed_distribution"/>
+        <Class IRI="#distribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#heterogeneity"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#heterogeneous_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hierarchical_agglomerative_clustering"/>
+        <Class IRI="#clustering"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hierarchical_clustering"/>
+        <Class IRI="#clustering"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#high_contributor"/>
+        <Class IRI="#contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#high_level_task"/>
+        <Class IRI="#task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#high_resolution_satellite_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#high_terminological_heterogeneity"/>
+        <Class IRI="#heterogeneity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hot-spot_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human-centered_geospatial_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human-machine_interaction"/>
+        <Class IRI="#interaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human_experience"/>
+        <Class IRI="#experience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human_geography"/>
+        <Class IRI="#geography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#human_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#humanenvironment_interaction"/>
+        <Class IRI="#interaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#humanitarian-aid_organization"/>
+        <Class IRI="#organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#humidity_sensor"/>
+        <Class IRI="#sensing_device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#humidity_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hybrid_geography"/>
+        <Class IRI="#geography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hydrological_observation"/>
+        <Class IRI="#observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#hydrological_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#image"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#image_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#impact_on_other_contributor"/>
+        <Class IRI="#contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#indoor_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#informal_language"/>
+        <Class IRI="#language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#information_extraction"/>
+        <Class IRI="#extraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#information_use"/>
+        <Class IRI="#use"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#infrastructure"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#innovation"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#innovative_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#inspire_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#instagram_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#instagram_extractor_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#instant_messaging_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#instrumental_precision"/>
+        <Class IRI="#precision"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#integrative_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#interactive_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#interactive_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#interface"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#internal_linear_structure"/>
+        <Class IRI="#structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#internet-based_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intersection_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intrinsic_and_extrinsic_characteristic"/>
+        <Class IRI="#characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intrinsic_and_extrinsic_geographic_property"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#intrinsic_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#invasive_and_disease_vector_species"/>
+        <Class IRI="#species"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#investigation"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#k-means_algorithm"/>
+        <Class IRI="#algorithm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#knowledge_organization_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_administration"/>
+        <Class IRI="#administration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_administration_and_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_administrative_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_cover"/>
+        <Class IRI="#cover"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_management_policy"/>
+        <Class IRI="#policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#land_use"/>
+        <Class IRI="#discipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#landmark"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#large-scale_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#large_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#large_data_collection"/>
+        <Class IRI="#data_collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#learning_process"/>
+        <Class IRI="#process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lexicon-based_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#linked_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#linked_data_paradigm"/>
+        <Class IRI="#paradigm"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_authority"/>
+        <Class IRI="#authority"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_context"/>
+        <Class IRI="#context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_geospatial_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#local_spatial_distribution"/>
+        <Class IRI="#distribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location-based_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location-based_social_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location_based_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#location_sensing_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#locations_and_route"/>
+        <Class IRI="#route"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#logical_consistency"/>
+        <Class IRI="#consistency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#machine"/>
+        <Class IRI="#instrumentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#machine_learning"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#making"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#management"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#manual_visual_investigation"/>
+        <Class IRI="#investigation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#map"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#map-based_social_networking_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#map_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mapping"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mapping_activity"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mapping_agency"/>
+        <Class IRI="#agency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mapping_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mashup_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mass_movement_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#massive_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mathematical_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#meaningful_query"/>
+        <Class IRI="#query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#measurement_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#meta-level_query"/>
+        <Class IRI="#query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#meteorological_measurement"/>
+        <Class IRI="#measurement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#microblogging_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#microblogging_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mining"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mining_process"/>
+        <Class IRI="#process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile_crowd_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile_crowdsourcing"/>
+        <Class IRI="#crowdsourcing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobile_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mobility"/>
+        <Class IRI="#discipline"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#model-driven_decision_making"/>
+        <Class IRI="#making"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#monitoring"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#monitoring_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#morphological_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mosquito_control_agency"/>
+        <Class IRI="#agency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#multi-proxy_validation_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#multimedia_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#multimedia_content_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#multimedia_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#multiple_map_display"/>
+        <Class IRI="#display"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#named-entity_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#named_entity_extraction"/>
+        <Class IRI="#extraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#named_entity_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#national_mapping_agency"/>
+        <Class IRI="#agency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_city"/>
+        <Class IRI="#city"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_disaster_management"/>
+        <Class IRI="#management"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_geographic_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_language"/>
+        <Class IRI="#language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_language_processing"/>
+        <Class IRI="#processing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#natural_phenomena"/>
+        <Class IRI="#phenomena"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#navigation"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#navigation_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nested_reinforcement_learning"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#new_source"/>
+        <Class IRI="#source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nighttime_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#noise_level_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#non-expert_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#non-governmental_organization"/>
+        <Class IRI="#organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#non-professional_contributor"/>
+        <Class IRI="#contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#not_expert"/>
+        <Class IRI="#expert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#novice_practice"/>
+        <Class IRI="#practice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#nsdi_standard"/>
+        <Class IRI="#standard"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#object-based_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#object_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#observation"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#observer_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#of_vgi_and_crowdsourcing_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#official_digital_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#official_mapping_agency"/>
+        <Class IRI="#agency"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#official_procedure"/>
+        <Class IRI="#procedure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#offline_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ogc_standard"/>
+        <Class IRI="#standard"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#online_collaborative_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#online_database"/>
+        <Class IRI="#database"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#online_dynamic_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#online_orthophoto"/>
+        <Class IRI="#orthophoto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open-source_software"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open_resource"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open_source_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open_standard"/>
+        <Class IRI="#standard"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#open_street_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#opinion_mining"/>
+        <Class IRI="#mining"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#orthophoto"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_api"/>
+        <Class IRI="#api"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_data"/>
+        <Class IRI="#geographic_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_editor"/>
+        <Class IRI="#editor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_footprint"/>
+        <Class IRI="#footprint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#osm_place"/>
+        <Class IRI="#place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#overall_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#overlay_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#parking_place"/>
+        <Class IRI="#place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#parking_sensor"/>
+        <Class IRI="#sensing_device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#parking_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#participation"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#participation_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#passive_and_active_surveillance"/>
+        <Class IRI="#surveillance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pattern"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pedestrian_navigation"/>
+        <Class IRI="#navigation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#peer_production"/>
+        <Class IRI="#production"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#perceive_and_evaluate_environment"/>
+        <Class IRI="#environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#perspective_cadastral_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#photos_location"/>
+        <Class IRI="#location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#physical_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#place"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#place_entity"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planning"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planning_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#planning_intelligence"/>
+        <Class IRI="#intelligence"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#platform"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#point-to-point_navigation"/>
+        <Class IRI="#navigation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#polarity_classifier"/>
+        <Class IRI="#classifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#policy_making"/>
+        <Class IRI="#making"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#poorly_structured_dataset"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#position_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#position_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#positional_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#postgresql-postgis_database"/>
+        <Class IRI="#database"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#precision"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#predictive_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#problems_in_public_economy"/>
+        <Class IRI="#economy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#procedure"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#processing"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#producers_profile"/>
+        <Class IRI="#profile"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#production"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#profile"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_administration"/>
+        <Class IRI="#administration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_authority"/>
+        <Class IRI="#authority"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_event"/>
+        <Class IRI="#event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_observation"/>
+        <Class IRI="#observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_participation"/>
+        <Class IRI="#participation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_space_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#public_surveillance_and_control_program"/>
+        <Class IRI="#program"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#qualitative_spatial_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#qualitative_spatial_relation"/>
+        <Class IRI="#spatial_relation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#quality"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#quality_assessment"/>
+        <Class IRI="#assessment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#quality_assessment_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#quality_assurance_editor"/>
+        <Class IRI="#editor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#quality_control"/>
+        <Class IRI="#control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#query_language"/>
+        <Class IRI="#language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rained_volunteer"/>
+        <Class IRI="#volunteer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#raster_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#raw_sensor_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#real-world_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#real_time_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#recognition"/>
+        <Class IRI="#process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reference_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reference_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#regional_spatial_data_infrastructure"/>
+        <Class IRI="#infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#relevant_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reliable_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#remote_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#remote_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#remote_sensing_and_automation"/>
+        <Class IRI="#automation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#remote_volunteer"/>
+        <Class IRI="#volunteer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#representativenes"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#research_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#resulting_dataset"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rewarding_response_for_the_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rich_sensing"/>
+        <Class IRI="#sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#road_network_data"/>
+        <Class IRI="#geographic_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#route"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#route_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#routing_and_navigation_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#routing_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#satellite_image"/>
+        <Class IRI="#image"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#satellite_navigation_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sdi_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#self-produced_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#self-produced_content"/>
+        <Class IRI="#user-generated_content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_characteristic"/>
+        <Class IRI="#characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_heterogeneity"/>
+        <Class IRI="#heterogeneity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_mobility_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_property"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_query"/>
+        <Class IRI="#query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_resource"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semantic_web_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semi-hybrid_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semi-structured_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensed_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensing"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensing_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensing_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensor"/>
+        <Class IRI="#instrumentation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sensor_network"/>
+        <Class IRI="#network"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentiment_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentiment_analysis_technique"/>
+        <Class IRI="#technique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentiment_polarity_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentimental_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sentiwordnet_classifier"/>
+        <Class IRI="#classifier"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sequential_learning_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sfpark_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sharing"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#simulation_software"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#skilled_expert"/>
+        <Class IRI="#expert"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#small_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_city"/>
+        <Class IRI="#city"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_city_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_economy"/>
+        <Class IRI="#economy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_mobility"/>
+        <Class IRI="#mobility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smart_urban_mobility"/>
+        <Class IRI="#mobility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smarter_city"/>
+        <Class IRI="#city"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smgi_analytics"/>
+        <Class IRI="#analytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_approach"/>
+        <Class IRI="#approach"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media"/>
+        <Class IRI="#media"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_application_programming_interface"/>
+        <Class IRI="#interface"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_data"/>
+        <Class IRI="#social_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_data_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_interaction"/>
+        <Class IRI="#interaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_media_location_data"/>
+        <Class IRI="#social_media_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_network"/>
+        <Class IRI="#socio-technical_system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_networking_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_practice"/>
+        <Class IRI="#practice"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_science"/>
+        <Class IRI="#science"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#social_sensor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#socio-technical_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#software_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#source"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#source_dataset"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_and_temporal_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_and_temporal_context"/>
+        <Class IRI="#context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_and_temporal_heterogeneity"/>
+        <Class IRI="#heterogeneity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_data_collection"/>
+        <Class IRI="#data_collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_data_infrastructure"/>
+        <Class IRI="#infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_data_mining"/>
+        <Class IRI="#mining"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_data_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_database"/>
+        <Class IRI="#database"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_distribution"/>
+        <Class IRI="#distribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_distribution_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_event"/>
+        <Class IRI="#event"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_experience"/>
+        <Class IRI="#experience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_information_infrastructure"/>
+        <Class IRI="#infrastructure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_information_quality"/>
+        <Class IRI="#quality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_knowledge"/>
+        <Class IRI="#knowledge"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_metadata"/>
+        <Class IRI="#metadata"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatial_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatio-temporal_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatio-temporal_clustering"/>
+        <Class IRI="#clustering"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatio-temporal_dataset"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#spatio-temporal_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#standard-compliant_interface"/>
+        <Class IRI="#interface"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#starlight_visual_information_system_software"/>
+        <Class IRI="#software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#station"/>
+        <Class IRI="#Geographic_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#subjectivity_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#suitable_landmark"/>
+        <Class IRI="#landmark"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#supervised_machine_learning"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#support_vector_machine"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#surveillance"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#surveillance_and_control"/>
+        <Class IRI="#control"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#surveillance_and_control_program"/>
+        <Class IRI="#program"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#symbolic_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#synthetic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tagging_application"/>
+        <Class IRI="#application"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tagging_system"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#taxonomic_error"/>
+        <Class IRI="#error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#taxonomic_validation"/>
+        <Class IRI="#validation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#technological_and_cultural_innovation"/>
+        <Class IRI="#innovation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_and_spatial_characteristic"/>
+        <Class IRI="#characteristic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_display"/>
+        <Class IRI="#display"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_distribution"/>
+        <Class IRI="#distribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#temporal_pattern"/>
+        <Class IRI="#pattern"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#terrain_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#text_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#text_mining"/>
+        <Class IRI="#mining"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#textual_feature"/>
+        <Class IRI="#feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#thematic_accuracy"/>
+        <Class IRI="#accuracy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#three_d_city_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#time_context"/>
+        <Class IRI="#context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#time_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#timetable_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#topological_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#topological_and-or_semantic_property"/>
+        <Class abbreviatedIRI="wn:attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#topological_relation"/>
+        <Class IRI="#spatial_relation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toponym_recognition"/>
+        <Class IRI="#recognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#toponyms_footprint"/>
+        <Class IRI="#footprint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#traditional_geospatial_data"/>
+        <Class IRI="#geospatial_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#traffic_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#training_data_set"/>
+        <Class IRI="#dataset"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#travel_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#triangulated_irregular_network"/>
+        <Class IRI="#network"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#tweet"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_api"/>
+        <Class IRI="#api"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_application_program_interface"/>
+        <Class IRI="#interface"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_data"/>
+        <Class IRI="#social_media_data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_message"/>
+        <Class IRI="#message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_profile"/>
+        <Class IRI="#profile"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_stream_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#twitter_streaming_api"/>
+        <Class IRI="#api"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#typing_error"/>
+        <Class IRI="#error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ubiquitous_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#uneven_participation"/>
+        <Class IRI="#participation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unfamiliar_environment"/>
+        <Class IRI="#environment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unified_query"/>
+        <Class IRI="#query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unique_coordinate"/>
+        <Class IRI="#coordinate"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unstructured_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unstructured_social_media_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unsupervised_learning"/>
+        <Class IRI="#machine_learning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#unsupervised_machine_learning_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#up-to-date_land_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#urban_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#urban_and_regional_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#urban_area"/>
+        <Class IRI="#area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#urban_planning"/>
+        <Class IRI="#planning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#urban_walking_community"/>
+        <Class IRI="#community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-behavioral_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-constructed_filter"/>
+        <Class IRI="#filter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-generated_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-generated_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-generated_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user-generated_map"/>
+        <Class IRI="#user-generated_content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_behavior_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_behavioral_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_generated_geographic_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_generated_geographical_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_generated_geographical_content"/>
+        <Class IRI="#user-generated_content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_generated_spatial_content"/>
+        <Class IRI="#content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_generated_spatial_content"/>
+        <Class IRI="#user-generated_content"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_interests_investigation"/>
+        <Class IRI="#investigation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_movement_analysis"/>
+        <Class IRI="#analysis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#user_profile"/>
+        <Class IRI="#profile"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#users_contribution"/>
+        <Class IRI="#contribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#validation"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#validation_method"/>
+        <Class IRI="#method"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vector_data_model"/>
+        <Class IRI="#model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vernacular_geography"/>
+        <Class IRI="#geography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vgi_data"/>
+        <Class IRI="#data"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vgi_project"/>
+        <Class IRI="#project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#virtual_logical_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#virtual_machine"/>
+        <Class IRI="#machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#visual_analytics"/>
+        <Class IRI="#analytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#visual_object"/>
+        <Class IRI="#Information_Representation_Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#voluntary_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#voluntary_science_monitoring"/>
+        <Class IRI="#monitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteer"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteer_sensor"/>
+        <Class IRI="#sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteer_sensor"/>
+        <Class abbreviatedIRI="wn:person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteered_geographic_information"/>
+        <Class IRI="#geographic_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteered_geographic_information"/>
+        <Class IRI="#volunteered_information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#volunteered_information"/>
+        <Class IRI="#information"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wearable_device"/>
+        <Class IRI="#device"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#web_feature_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#web_map"/>
+        <Class IRI="#map"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#web_mapping_tool"/>
+        <Class IRI="#tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#web_source"/>
+        <Class IRI="#source"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#wiki_service"/>
+        <Class IRI="#service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#work"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#xen_cloud_platform"/>
+        <Class IRI="#platform"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#xml_message"/>
+        <Class IRI="#message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="wn:procedure"/>
+        <Class abbreviatedIRI="wn:activity"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#instrumentation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">in the wordnet sense: an artifact (or system of artifacts) that is instrumental in accomplishing some end</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
