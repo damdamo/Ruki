@@ -74,4 +74,8 @@ XML hierarchy:
   * < sentences > ... < /sentences >
 * < /informations >
 
-Normally, you just need to modify 'output' and 'options'. 
+Normally, you just need to modify 'output' and 'options'.
+
+## OWL in python3
+
+For this part we use [Owlready2](https://pypi.python.org/pypi/Owlready2).
