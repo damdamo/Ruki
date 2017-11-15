@@ -195,7 +195,7 @@ def extract_abstracts(config_file):
             print('Abstract number: {}'.format(i))
             name_file = '{}{}{}'.format(
                 config['output']['folder'], doc_id, file_extension)
-                
+
             if config['options']['xml']:
                 abstract = '<informations>\n{}\n</informations>'.format(
                     abstract)
@@ -224,7 +224,7 @@ if __name__ == '__main__':
     # http://vgibox.eu/repository/index.php?curid=919
 
     # load file configuration
-    config_file = 'config/config.yml'
+    config_file = 'config/config_extract.yml'
     extract_abstracts(config_file)
 
     """
