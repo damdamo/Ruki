@@ -1,0 +1,8 @@
+#Config ontologies file with all parameters
+
+# Parameters to have id list
+# continue is just to silence the warning
+
+# ATTENTION: Variable path NEED ABSOLUTE PATH !
+ontologies:
+  path: '/home/damien/Workspace/master_project/data/ontologies'
