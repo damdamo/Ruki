@@ -78,4 +78,11 @@ Normally, you just need to modify 'output' and 'options'.
 
 ## OWL in python3
 
-For this part we use [Owlready2](https://pypi.python.org/pypi/Owlready2).
+For this part we use [Owlready2](https://pypi.python.org/pypi/Owlready2) / [Nltk](http://www.nltk.org/)  
+When nltk is downloaded launch ntlk with python3
+```bash
+import nltk
+nltk.download()
+```
+It's open a window where we can choose different module for installation.
+You have to go in "Corpora" and install "stopwords".
