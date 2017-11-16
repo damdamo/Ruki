@@ -6,3 +6,5 @@
 # ATTENTION: Variable path NEED ABSOLUTE PATH !
 ontologies:
   path: '/home/damien/Workspace/master_project/data/ontologies'
+
+abstract_folder: 'Results/Extracts/Multiple/'
