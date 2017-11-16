@@ -12,48 +12,39 @@ def load_config(file):
     return config
 
 
-def load_ontologies(ontology_path):  # ontology_name
-    # Take the ontologies path and load all ontologies in directory
-    list_ontologies = os.listdir(ontology_path)
+def return_concept_name(ontology):
+    """ Take an ontology
+    Return a list with all concept name of this ontology
+    ontology is created by the function load ontology """
+
+    list_concept = []
+    # We collect all
+    for concept in ontology.classes():
+        print(concept.name)
+        list_concept.append(concept.name)
+    return list_concept
+
+
+def load_ontology(ontology_path, ontology_name):  # ontology_name
+    """ Take the ontology path and ontology name and return the ontolgy
+    CARE the ontolgy path must be ABSOLUTE ! """
+    # list_ontologies = os.listdir(ontology_path)
     onto_path.append(ontology_path)
+    ontology = get_ontology(ontology_name).load()
+    return ontology
 
-    i = 0
-
-    for ontology in list_ontologies:
-        if i < 1:
-            onto = get_ontology(ontology).load()
-            i = i + 1
-            # onto.load()
-        else:
-            onto_add = get_ontology(ontology).load()
-            #print(onto_add)
-            print(onto.imported_ontologies.append(onto_add))
-            # onto = get_ontology(ontology)
-            print(onto)
-
-    onto.load()
-    print(onto)
-
-    b = 0
-
-    for item in onto.classes():
-        print(item)
-        b = b + 1
-
-    print(b)
-
-
-
-def collect_concept_name():
-    pass
 
 
 def onto_main(config_file):
     """Main function"""
 
     config = load_config(config_file)
-    onto_path = config['ontologies']['path']
-    load_ontologies(onto_path)
+    ontology_path = config['ontologies']['path']
+
+    for ontology_name in os.listdir(ontology_path):
+        ontology = load_ontology(ontology_path, ontology_name)
+        list_concept = return_concept_name(ontology)
+        # print(list_concept)
 
 
 if __name__ == '__main__':
@@ -61,7 +52,6 @@ if __name__ == '__main__':
     # load file configuration
     config_file = 'config/config_ontologies.yml'
     onto_main(config_file)
-
 
     """
     onto_path.append('/home/damien/Workspace/master_project/data/ontologies')
