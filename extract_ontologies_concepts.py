@@ -16,6 +16,15 @@ def load_config(file):
     return config
 
 
+def write_concepts(file_name, concepts):
+    """ Take a string and write it into a file """
+    # If we have multiple file we write on it
+    with open(file_name, 'w') as output_file:
+        for concept in concepts:
+            output = '{}\n'.format(concept)
+            output_file.write("{}".format(output))
+
+
 def load_ontology(ontology_path, ontology_name):  # ontology_name
     """ Take the ontology path and ontology name and return the ontolgy
     CARE the ontolgy path must be ABSOLUTE ! """
@@ -25,7 +34,7 @@ def load_ontology(ontology_path, ontology_name):  # ontology_name
     return ontology
 
 
-def return_concept_name(ontology):
+def get_concept_name(ontology):
     """ Take an ontology
     Return a list with all concept name of this ontology
     ontology is created by the function load ontology """
@@ -34,24 +43,37 @@ def return_concept_name(ontology):
     list_concept = []
 
     for concept in ontology.classes():
-        # We replace underscore by a space
-        concept_name_clean = clean_concept_name(concept.name)
+
+        # Return a string with the concept name normalized
+        concept_name_clean = clean_concept(concept)
         # We add our concept into the list
         list_concept.append(concept_name_clean)
 
     return list_concept
 
 
-def clean_concept_name(concept_name):
-    """clean_concept_name can clean and normalized concept of the list_concept
+def clean_concept(concept):
+    """clean_concept can clean and normalized concept of the list_concept
     In this function we:
     - Replace underscore by a space
     - Replace all uppercase by lowercase """
 
+    concept_name = concept.name
     concept_name_normalized = concept_name.replace('_', ' ')
     concept_name_normalized = concept_name_normalized.lower()
 
+    # This part has goal to suppress the repitition inside the concept
+    # name, but some element are not unique after this operation
+    """concept_name_normalized = concept_name_normalized.split()
+    class_parent = str(concept.is_a)
+    for word in concept_name_normalized:
+        if word in class_parent:
+            concept_name_normalized.remove(word)
+
+    concept_name_normalized = ' '.join(concept_name_normalized)"""
+
     return concept_name_normalized
+
 
 def clean_abstract(abstract):
     """clean_abstract can clean and normalized abstract
@@ -62,13 +84,15 @@ def clean_abstract(abstract):
     We return a table of string"""
     abstract_clean = abstract.lower()
     # We clean all stopwords with list of nltk
-    abstract_clean = ' '.join([word for word in abstract_clean.split() if word not in stopwords.words('english')])
+    abstract_clean = ' '.join([word for word in abstract_clean.split(
+    ) if word not in stopwords.words('english')])
 
     # The fast way to clean all the punctuation
-    abstract_clean = abstract_clean.translate(str.maketrans(string.punctuation,' '*(len(string.punctuation))))
+    abstract_clean = abstract_clean.translate(str.maketrans(
+        string.punctuation, ' ' * (len(string.punctuation))))
     abstract_clean = abstract_clean.split()
 
-    #TODO: Regarder le nom des concepts pour enlever la répétition
+    # TODO: Regarder le nom des concepts pour enlever la répétition
 
     return abstract_clean
 
@@ -95,7 +119,8 @@ def find_concept_abstract(concept_dic, abstract_folder):
                 abstract = output_file.read()
                 abstract_clean = clean_abstract(abstract)
                 for concept in concept_dic[ontology]:
-                    dic_concept_abstract[ontology][abstract_file][concept] = abstract_clean.count(concept)
+                    dic_concept_abstract[ontology][abstract_file][concept] = abstract_clean.count(
+                        concept)
                     i = i + 1
 
     print(dic_concept_abstract['onto1_correct'])
@@ -114,7 +139,8 @@ def extract_onto_concepts(config_file):
 
     for ontology_name in os.listdir(ontology_path):
         ontology = load_ontology(ontology_path, ontology_name)
-        list_concept = return_concept_name(ontology)
+        list_concept = get_concept_name(ontology)
+        # write_concepts('concepts.txt', list_concept)
         concept_dic[ontology.name] = list_concept
 
     find_concept_abstract(concept_dic, abstract_folder)
@@ -125,21 +151,3 @@ if __name__ == '__main__':
     # load file configuration
     config_file = 'config/config_ontologies.yml'
     extract_onto_concepts(config_file)
-    """
-    sentence = 'We spend a substantial part of our time with traveling, in crowded cities usually taking public transportation. It is important, making travel planning easier, to have accurate information about vehicle arrival times at the stops. Most of the public transport operators make their timetables freely available either on the web or in some special format, like GTFS (General Transit Feed Specification). However, they contain static information only, not reflecting the actual traffic conditions. Mobile participatory sensing can help extend the basic service with real-time updates letting the crowd collect the required data. With this respect we believe that such participatory sensing based application must offer a day zero service following incremental service extension. In this paper, we discuss how to realize real-time refinements to static GTFS data based on mobile participatory sensing. We show how this service can be implemented by an XMPP (Extensible Messaging and Pr)'
-
-    cl = clean_abstract(sentence)
-
-    print(cl.count('show'))
-
-"""
-    """
-    onto_path.append('/home/damien/Workspace/master_project/data/ontologies')
-    # onto = get_ontology('kr-owlxml.owl')
-    onto = get_ontology('onto1_correct.owl')
-    onto.load()
-
-    for item in onto.classes():
-        print(item)
-
-    """
