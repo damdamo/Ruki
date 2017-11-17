@@ -68,8 +68,6 @@ def clean_abstract(abstract):
     abstract_clean = abstract_clean.translate(str.maketrans(string.punctuation,' '*(len(string.punctuation))))
     abstract_clean = abstract_clean.split()
 
-    print(abstract_clean)
-
     #TODO: Regarder le nom des concepts pour enlever la répétition
 
     return abstract_clean
@@ -94,9 +92,9 @@ def find_concept_abstract(concept_dic, abstract_folder):
             dic_concept_abstract[ontology][abstract_file] = {}
             file_name = '{}{}'.format(abstract_folder, abstract_file)
             with open(file_name, 'r') as output_file:
+                abstract = output_file.read()
+                abstract_clean = clean_abstract(abstract)
                 for concept in concept_dic[ontology]:
-                    abstract = output_file.read()
-                    abstract_clean = clean_abstract(abstract)
                     dic_concept_abstract[ontology][abstract_file][concept] = abstract_clean.count(concept)
                     i = i + 1
 
@@ -126,14 +124,15 @@ if __name__ == '__main__':
 
     # load file configuration
     config_file = 'config/config_ontologies.yml'
-    # extract_onto_concepts(config_file)
-
+    extract_onto_concepts(config_file)
+    """
     sentence = 'We spend a substantial part of our time with traveling, in crowded cities usually taking public transportation. It is important, making travel planning easier, to have accurate information about vehicle arrival times at the stops. Most of the public transport operators make their timetables freely available either on the web or in some special format, like GTFS (General Transit Feed Specification). However, they contain static information only, not reflecting the actual traffic conditions. Mobile participatory sensing can help extend the basic service with real-time updates letting the crowd collect the required data. With this respect we believe that such participatory sensing based application must offer a day zero service following incremental service extension. In this paper, we discuss how to realize real-time refinements to static GTFS data based on mobile participatory sensing. We show how this service can be implemented by an XMPP (Extensible Messaging and Pr)'
 
     cl = clean_abstract(sentence)
 
     print(cl.count('show'))
 
+"""
     """
     onto_path.append('/home/damien/Workspace/master_project/data/ontologies')
     # onto = get_ontology('kr-owlxml.owl')
