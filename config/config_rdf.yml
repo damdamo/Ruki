@@ -1,0 +1,4 @@
+#Config ontologies file with all parameters
+
+
+rdf_file: 'data/rdf/rdf_data.n3'

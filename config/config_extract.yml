@@ -33,6 +33,6 @@ output:
 
 options:
   multiple_file: true
-  xml: false
-  keywords: false
-  title: false
+  xml: true
+  keywords: true
+  title: true
