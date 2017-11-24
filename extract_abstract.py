@@ -38,13 +38,39 @@ def query(url, request):
         last_continue = result['continue']
 
 
-def write_content_into_file(file_name, abstract, options):
+def add_tag_into_file(file_name, tag):
+    with open(file_name, 'a') as output_file:
+        output = '{}'.format(tag)
+        output_file.write("{}".format(output))
+
+
+def write_content_into_file(file_name, content, options):
     """ Take a string and write it into a file """
     # If we have multiple file we write on it
+
+    abstract = ''
+
+    if options['xml']:
+        if options['title']:
+            abstract = '<title>{}</title>\n'.format(content['title'])
+        if options['keywords']:
+            for keyword in content['keywords'].split(','):
+                abstract = '{}<keyword>{}</keyword>'.format(abstract, keyword)
+            abstract = '{}\n'.format(abstract)
+        abstract = '{}<abstract>\n{}\n</abstract>'.format(
+            abstract, content['abstract'])
+
+    else:
+        if options['title']:
+            abstract = '{}\n'.format(content['title'])
+        if options['keywords']:
+            abstract = '{}{}\n'.format(abstract, content['keywords'])
+        abstract = '{}{}'.format(abstract, content['abstract'])
+
     if options['multiple_file']:
         with open(file_name, 'w') as output_file:
             if abstract != '':
-                output = '{}\n'.format(abstract)
+                output = '<informations>\n{}\n</informations>'.format(abstract)
                 output_file.write("{}".format(output))
     # if we have a single file we just append the content
     else:
@@ -79,7 +105,7 @@ def clean_abstract(abstract):
     clean_abstract = re.sub(regex_link, '', abstract)
     clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
     clean_abstract = clean_abstract.replace('&', 'and')
-
+    # clean_abstract = clean_abstract.replace('\\n','\n')
     return clean_abstract
 
 
@@ -94,6 +120,7 @@ def get_keywords(content):
         # We keep only keywords
         keywords = keywords.replace('Keywords=', '')
         keywords = keywords.replace('\n', '')
+        keywords = keywords.replace('&', '')
         # For split we use a coma + a space
         table_keywords = keywords.split(', ')
         # We suppress the coma of the last word because we have a format like:
@@ -107,64 +134,46 @@ def get_keywords(content):
     return []
 
 
-def get_abstract_from_content(content, options):
+def get_abstract_from_content(content):
     """ Get abstract from a content of a specific page """
     # We clear all line break (need for regex)
     content_mod = content.replace('\n', ' ')
 
     # Option to keep keywords
-    if options['keywords']:
-        table_keywords = get_keywords(content)
-        regex_get_abstract = re.compile('{(.)*}( )?')
-        abstract = re.sub(regex_get_abstract, '', content_mod)
 
-        if options['xml']:
-            abstract = '<sentences>\n{}</sentences>'.format(abstract)
-            keywords_xml = ''
-            for keyword in table_keywords:
-                keywords_xml = '{}<keyword>{}</keyword>'.format(
-                    keywords_xml, keyword)
-            abstract = '{}\n{}'.format(keywords_xml, abstract)
+    table_keywords = get_keywords(content)
+    regex_get_abstract = re.compile('{(.)*}( )?')
+    abstract = re.sub(regex_get_abstract, '', content_mod)
+
+    keywords = ''
+    # First is just to don't put a coma before the first word
+    first = True
+    for keyword in table_keywords:
+        if first:
+            keywords = keyword
+            first = False
         else:
-            keywords = ''
-            # First is just to don't put a coma before the first word
-            first = True
-            for keyword in table_keywords:
-                if first:
-                    keywords = keyword
-                    first = False
-                else:
-                    keywords = '{},{}'.format(keywords, keyword)
+            keywords = '{},{}'.format(keywords, keyword)
 
-            abstract = '{}\n{}'.format(keywords, abstract)
+    dic_content = {}
+    dic_content['abstract'] = clean_abstract(abstract)
+    dic_content['keywords'] = keywords
 
-    else:
-        regex_get_abstract = re.compile('{(.)*}')
-        abstract = re.sub(regex_get_abstract, '', content_mod)
-        if options['xml']:
-            abstract = '<sentences>\n{}</sentences>'.format(abstract)
-
-    return clean_abstract(abstract)
+    # return clean_abstract(abstract)
+    return dic_content
 
 
-def get_all_abstract(url, list_all_id, parameters_extract_content, options):
+def get_all_abstract(url, list_all_id, parameters_extract_content):
     """ Collect all abstract """
+    dic_content = {}
     for gen_id in list_all_id:
         for my_id in gen_id:
             parameters_extract_content['pageids'] = my_id
             for element in query(url, parameters_extract_content):
                 content = element['pages'][my_id]['revisions'][0]['*']
-                if options['title']:
-                    if options['xml']:
-                        content = '<title>{}</title>\n{}'.format(
-                            element['pages'][my_id]['title'], get_abstract_from_content(content, options))
-                        yield my_id, content
-                    else:
-                        content = '{}\n{}'.format(
-                            element['pages'][my_id]['title'], get_abstract_from_content(content, options))
-                        yield my_id, content
-                else:
-                    yield my_id, get_abstract_from_content(content, options)
+                dic_content[my_id] = get_abstract_from_content(content)
+                dic_content[my_id]['title'] = element['pages'][my_id]['title']
+                yield my_id, dic_content
 
 
 def extract_abstracts(config_file):
@@ -191,30 +200,27 @@ def extract_abstracts(config_file):
         file_extension = '.txt'
 
     if config['options']['multiple_file']:
-        for doc_id, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
+        for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
             print('Abstract number: {}'.format(i))
             name_file = '{}{}{}'.format(
                 config['output']['folder'], doc_id, file_extension)
-
-            if config['options']['xml']:
-                abstract = '<informations>\n{}\n</informations>'.format(
-                    abstract)
-            write_content_into_file(name_file, abstract, config['options'])
+            write_content_into_file(
+                name_file, dic_content[doc_id], config['options'])
             i = i + 1
+
     else:
         name_file = '{}{}'.format(config['output']['file'], file_extension)
         if config['options']['xml']:
-            write_content_into_file(
-                name_file, '<informations>', config['options'])
+            add_tag_into_file(name_file, '<informations>\n')
 
-        for _, abstract in get_all_abstract(url, list_all_id, parameters_extract_content, config['options']):
+        for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
             print('Abstract: {}'.format(i))
-            write_content_into_file(name_file, abstract, config['options'])
+            write_content_into_file(
+                name_file, dic_content[doc_id], config['options'])
             i = i + 1
 
         if config['options']['xml']:
-            write_content_into_file(
-                name_file, '</informations>', config['options'])
+            add_tag_into_file(name_file, '\n</informations>')
 
 
 if __name__ == '__main__':
@@ -226,9 +232,3 @@ if __name__ == '__main__':
     # load file configuration
     config_file = 'config/config_extract.yml'
     extract_abstracts(config_file)
-
-    """
-    <keywords> <key></key> </keywords>
-    <title></title>
-    <sentences></sentences>
-    """
