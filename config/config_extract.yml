@@ -32,7 +32,8 @@ output:
 # title: Add title in addition to abstracts
 
 options:
-  multiple_file: true
-  xml: true
-  keywords: true
-  title: true
+  multiple_file: False
+  xml: True
+  id: False
+  keywords: True
+  title: True

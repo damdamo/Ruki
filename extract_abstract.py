@@ -48,28 +48,28 @@ def add_tag_into_file(file_name, tag):
         output_file.write("{}".format(output))
 
 
-def write_content_into_file(file_name, content, options):
+def write_content_into_file(file_name, content, doc_id, options):
     """ Take a content and write it into a file
     file_name is the output file
     content is a dictionnary which contains all informations
     printable like abstract, title, keywords and id"""
-    # If we have multiple file we write on it
-
     abstract = ''
-
     if options['xml']:
+        if options['id']:
+            abstract = '<id>{}</id>\n'.format(doc_id)
         if options['title']:
-            abstract = '<title>{}</title>\n'.format(content['title'])
+            abstract = '{}<title>{}</title>\n'.format(abstract, content['title'])
         if options['keywords']:
             for keyword in content['keywords'].split(','):
                 abstract = '{}<keyword>{}</keyword>'.format(abstract, keyword)
             abstract = '{}\n'.format(abstract)
         abstract = '{}<abstract>\n{}\n</abstract>'.format(
             abstract, content['abstract'])
-
     else:
+        if options['id']:
+            abstract = '{}\n'.format(doc_id)
         if options['title']:
-            abstract = '{}\n'.format(content['title'])
+            abstract = '{}{}\n'.format(abstract, content['title'])
         if options['keywords']:
             abstract = '{}{}\n'.format(abstract, content['keywords'])
         abstract = '{}{}'.format(abstract, content['abstract'])
@@ -139,7 +139,7 @@ def get_keywords(content):
         # We suppress line break and &
         keywords = keywords.replace('\n', '')
         list_char_to_clean = '&'
-        clean_abstract = clean_abstract.translate(str.maketrans(
+        keywords = keywords.translate(str.maketrans(
             list_char_to_clean, ' ' * (len(list_char_to_clean))))
         # For split we use a coma + a space
         table_keywords = keywords.split(', ')
@@ -225,7 +225,7 @@ def extract_abstracts(config_file):
             name_file = '{}{}{}'.format(
                 config['output']['folder'], doc_id, file_extension)
             write_content_into_file(
-                name_file, dic_content[doc_id], config['options'])
+                name_file, dic_content[doc_id], doc_id, config['options'])
             i = i + 1
 
     else:
@@ -236,7 +236,7 @@ def extract_abstracts(config_file):
         for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
             print('Abstract: {}'.format(i))
             write_content_into_file(
-                name_file, dic_content[doc_id], config['options'])
+                name_file, dic_content[doc_id], doc_id, config['options'])
             i = i + 1
 
         if config['options']['xml']:
