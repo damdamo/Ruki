@@ -63,12 +63,14 @@ options:
 
 You have some options to complete the collect (with true or false):  
 * multiple_file: You can decide to have one abstract per file or just one file with all abstracts
+* id: Can print id of the document on the website 
 * keywords: Moreover abstracts, you can add keywords that are avaible in the same page of abstract to have more informations
 * title: Same as keywords for title
 * xml: You can add tags for parsing easier your file. If you want to handle your file(s) differently because the weight of a keyword is not the same that a word.
 
 XML hierarchy:  
 * < informations >  
+  * < id > ... < /id >
   * < title > ... < /title >  
   * < keyword >keyword_1< /keyword >...<keyword>keyword_n< /keyword >
   * < sentences > ... < /sentences >
