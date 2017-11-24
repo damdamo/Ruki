@@ -4,6 +4,7 @@ import requests
 import json
 import yaml
 import re
+import string
 
 
 def load_config(file):
@@ -39,13 +40,19 @@ def query(url, request):
 
 
 def add_tag_into_file(file_name, tag):
+    """A simple function to add a tag in a file
+    file_name is the output file
+    tag is a simple string"""
     with open(file_name, 'a') as output_file:
         output = '{}'.format(tag)
         output_file.write("{}".format(output))
 
 
 def write_content_into_file(file_name, content, options):
-    """ Take a string and write it into a file """
+    """ Take a content and write it into a file
+    file_name is the output file
+    content is a dictionnary which contains all informations
+    printable like abstract, title, keywords and id"""
     # If we have multiple file we write on it
 
     abstract = ''
@@ -88,7 +95,10 @@ def get_page_id(dic):
 
 
 def get_all_page_id(url, parameters_id):
-    """ Get all page id from all articles """
+    """ Get all page id from all articles
+    url contains a simple url where we can find all articles
+    parameters_id specify what we want for query (see config file)
+    output is a dic with all informations of a page"""
     list_id = []
     # We obtain all id page
     for element in query(url, parameters_id):
@@ -98,19 +108,26 @@ def get_all_page_id(url, parameters_id):
 def clean_abstract(abstract):
     """ Allow to remove useless component in the abstract
     like link. Regex can clean link and square roots
-    We replace '&' by 'and' because it's not valide for xml"""
+    We replace '&' by 'and' because it's not valide for xml
+    Output is just string that contain clean abstract"""
     regex_link = re.compile(
         'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
-    regex_square_bracket = re.compile('[\[\]]')
+    # regex_square_bracket = re.compile('[\[\]]')
     clean_abstract = re.sub(regex_link, '', abstract)
-    clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
-    clean_abstract = clean_abstract.replace('&', 'and')
-    # clean_abstract = clean_abstract.replace('\\n','\n')
+    # clean_abstract = re.sub(regex_square_bracket, '', clean_abstract)
+    # clean_abstract = clean_abstract.replace('&', 'and')
+    list_char_to_clean = '&[]'
+    clean_abstract = clean_abstract.translate(str.maketrans(
+        list_char_to_clean, ' ' * (len(list_char_to_clean))))
+
     return clean_abstract
 
 
 def get_keywords(content):
-    """ Collect all keywords from content with parsing"""
+    """ Collect all keywords from content with parsing
+    Content is just the content of a web page wiki and we use a
+    regex to keep only keywords.
+    Output is a table with all keywords"""
     regex_get_keywords = re.compile('Keywords=(.)*\n')
     keywords = regex_get_keywords.search(content)
 
@@ -119,8 +136,11 @@ def get_keywords(content):
         keywords = keywords.group(0)
         # We keep only keywords
         keywords = keywords.replace('Keywords=', '')
+        # We suppress line break and &
         keywords = keywords.replace('\n', '')
-        keywords = keywords.replace('&', '')
+        list_char_to_clean = '&'
+        clean_abstract = clean_abstract.translate(str.maketrans(
+            list_char_to_clean, ' ' * (len(list_char_to_clean))))
         # For split we use a coma + a space
         table_keywords = keywords.split(', ')
         # We suppress the coma of the last word because we have a format like:
