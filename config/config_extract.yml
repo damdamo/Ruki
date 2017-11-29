@@ -25,6 +25,8 @@ output:
   folder: 'Results/Extracts/Multiple/'
 
 # Options can modify format, number of file, number of parameters
+# writing: Decide if we write the content into file(s)
+# If this parameter is FALSE we DON'T CARE about other parameters
 # multiple_file: decide if there is one file for all abstracts or
 # one file per abstract
 # xml: Add xml tags to describe content
@@ -32,8 +34,9 @@ output:
 # title: Add title in addition to abstracts
 
 options:
-  multiple_file: False
+  writing: True
+  multiple_file: True
   xml: True
-  id: False
+  id: True
   keywords: True
   title: True

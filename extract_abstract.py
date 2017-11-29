@@ -7,7 +7,7 @@ import re
 import string
 
 
-def load_config(file):
+def load_config(config_file):
     """ Load the config file """
     with open(config_file, 'r') as config_stream:
         config = yaml.safe_load(config_stream)
@@ -53,18 +53,33 @@ def write_content_into_file(file_name, content, doc_id, options):
     file_name is the output file
     content is a dictionnary which contains all informations
     printable like abstract, title, keywords and id"""
+
+    # If we have multiple file we write (erase the precedent content)
+    # If we have all in one file we append the content
+    if options['multiple_file']:
+        choice = 'w'
+    else:
+        choice = 'a'
+
     abstract = ''
+
     if options['xml']:
         if options['id']:
             abstract = '<id>{}</id>\n'.format(doc_id)
         if options['title']:
-            abstract = '{}<title>{}</title>\n'.format(abstract, content['title'])
+            abstract = '{}<title>{}</title>\n'.format(
+                abstract, content['title'])
         if options['keywords']:
             for keyword in content['keywords'].split(','):
                 abstract = '{}<keyword>{}</keyword>'.format(abstract, keyword)
             abstract = '{}\n'.format(abstract)
         abstract = '{}<abstract>\n{}\n</abstract>'.format(
             abstract, content['abstract'])
+
+        with open(file_name, choice) as output_file:
+            if abstract != '':
+                output = '<article>\n{}\n</article>\n'.format(abstract)
+                output_file.write("{}".format(output))
     else:
         if options['id']:
             abstract = '{}\n'.format(doc_id)
@@ -74,14 +89,7 @@ def write_content_into_file(file_name, content, doc_id, options):
             abstract = '{}{}\n'.format(abstract, content['keywords'])
         abstract = '{}{}'.format(abstract, content['abstract'])
 
-    if options['multiple_file']:
-        with open(file_name, 'w') as output_file:
-            if abstract != '':
-                output = '<informations>\n{}\n</informations>'.format(abstract)
-                output_file.write("{}".format(output))
-    # if we have a single file we just append the content
-    else:
-        with open(file_name, 'a') as output_file:
+        with open(file_name, choice) as output_file:
             if abstract != '':
                 output = '{}\n'.format(abstract)
                 output_file.write("{}".format(output))
@@ -179,12 +187,15 @@ def get_abstract_from_content(content):
     dic_content['abstract'] = clean_abstract(abstract)
     dic_content['keywords'] = keywords
 
-    # return clean_abstract(abstract)
     return dic_content
 
 
 def get_all_abstract(url, list_all_id, parameters_extract_content):
-    """ Collect all abstract """
+    """ Collect all abstract
+    url: url of the web page
+    list_all_id: a list with id of all article
+    parameters_extract_content: parameters for the query, avaible in file config
+    return the content of all of the web page """
     dic_content = {}
     for gen_id in list_all_id:
         for my_id in gen_id:
@@ -198,7 +209,7 @@ def get_all_abstract(url, list_all_id, parameters_extract_content):
 
 def extract_abstracts(config_file):
     """ Extract all abstract of all Publication in the website
-    and put it in a single file or multiple files. It depends
+    and can put it in a single file or multiple files. It depends
     options in the file config """
 
     config = load_config(config_file)
@@ -211,35 +222,41 @@ def extract_abstracts(config_file):
     list_all_id = get_all_page_id(url, parameters_id)
     parameters_extract_content = config['parameters_extract_content']
 
-    # An indicator to know where we are in the process
     i = 0
 
-    if config['options']['xml']:
-        file_extension = '.xml'
-    else:
-        file_extension = '.txt'
-
-    if config['options']['multiple_file']:
-        for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
-            print('Abstract number: {}'.format(i))
-            name_file = '{}{}{}'.format(
-                config['output']['folder'], doc_id, file_extension)
-            write_content_into_file(
-                name_file, dic_content[doc_id], doc_id, config['options'])
-            i = i + 1
-
-    else:
-        name_file = '{}{}'.format(config['output']['file'], file_extension)
+    # Initialization paramters for writing
+    if config['options']['writing']:
         if config['options']['xml']:
-            add_tag_into_file(name_file, '<informations>\n')
+            file_extension = '.xml'
+        else:
+            file_extension = '.txt'
+        if not config['options']['multiple_file']:
+            name_file = '{}{}'.format(config['output']['file'], file_extension)
+            # If we have one file in xml format, we need to have a unique tag at the beginning
+            # and the end of the document. We put the first tag
+            if config['options']['xml']:
+                add_tag_into_file(name_file, '<informations>\n')
 
-        for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
-            print('Abstract: {}'.format(i))
-            write_content_into_file(
-                name_file, dic_content[doc_id], doc_id, config['options'])
-            i = i + 1
+    for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
+        print('Abstract number: {}'.format(i))
+        i = i + 1
 
-        if config['options']['xml']:
+        if config['options']['writing']:
+            if config['options']['multiple_file']:
+                name_file = '{}{}{}'.format(
+                    config['output']['folder'], doc_id, file_extension)
+                write_content_into_file(
+                    name_file, dic_content[doc_id], doc_id, config['options'])
+
+            else:
+                write_content_into_file(
+                    name_file, dic_content[doc_id], doc_id, config['options'])
+
+        yield doc_id, dic_content
+
+    if config['options']['writing']:
+        # We put the last tag if we have a unique file for writing
+        if not config['options']['multiple_file']:
             add_tag_into_file(name_file, '\n</informations>')
 
 
@@ -251,4 +268,6 @@ if __name__ == '__main__':
 
     # load file configuration
     config_file = 'config/config_extract.yml'
-    extract_abstracts(config_file)
+
+    for doc_id, dic_content in extract_abstracts(config_file):
+        print('Document extraction id: {}'.format(doc_id))
