@@ -1,18 +1,9 @@
 #! /usr/bin/env python3
 
 import requests
-import json
-import yaml
 import re
 import string
-
-
-def load_config(config_file):
-    """ Load the config file """
-    with open(config_file, 'r') as config_stream:
-        config = yaml.safe_load(config_stream)
-    return config
-
+import generic_functions as gf
 
 def query(url, request):
     """ Allow to make a query and collect informations about page
@@ -212,7 +203,7 @@ def extract_abstracts(config_file):
     and can put it in a single file or multiple files. It depends
     options in the file config """
 
-    config = load_config(config_file)
+    config = gf.load_config(config_file)
 
     # We extract id from articles
     parameters_id = config['parameters_id']

@@ -1,20 +1,9 @@
 #! /usr/bin/env python3
 
 from owlready2 import *
-import os
-import yaml
 from nltk.corpus import stopwords
 import string
-import time
-import timeit
-
-
-def load_config(file):
-    """ Load the config file """
-    with open(config_file, 'r') as config_stream:
-        config = yaml.safe_load(config_stream)
-    return config
-
+import generic_functions as gf
 
 def write_concepts(file_name, concepts):
     """ Take a string and write it into a file """
@@ -129,7 +118,7 @@ def find_concept_abstract(concept_dic, abstract_folder):
 def extract_onto_concepts(config_file):
     """Main function"""
 
-    config = load_config(config_file)
+    config = gf.load_config(config_file)
     ontology_path = config['ontologies']['path']
     abstract_folder = config['abstract_folder']
 
