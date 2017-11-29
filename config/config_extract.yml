@@ -34,7 +34,7 @@ output:
 # title: Add title in addition to abstracts
 
 options:
-  writing: True
+  writing: False
   multiple_file: True
   xml: True
   id: True

@@ -1,4 +1,6 @@
-#Config ontologies file with all parameters
+# Config ontologies file with all parameters
 
+# content_directory: directory contains all abtrasct with diffrents informations
+# like id / article title / keywords
 
-rdf_file: 'data/rdf/rdf_data.n3'
+rdf_file: 'data/rdf/rdf_data.rdf'
