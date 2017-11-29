@@ -1,62 +1,55 @@
 #! /usr/bin/env python3
 
-import json
-import yaml
-import rdflib
-import os
+from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
+from rdflib.namespace import DC, FOAF
 import extract_abstract as ex_ab
-
-def load_config(config_file):
-    """ Load the config file """
-    with open(config_file, 'r') as config_stream:
-        config = yaml.safe_load(config_stream)
-    return config
+import generic_functions as gf
 
 
-def create_rdf_graph(directory):
+def write_rdf(file_name, rdf):
+    """A simple function to write rdf in a file"""
+    with open(file_name, 'w') as output_file:
+        output = '{}'.format(rdf)
+        output_file.write("{}".format(output))
+
+
+def create_rdf_graph(config):
     """Take a directory with all files in an xml format
     and convert it in a n3 format"""
 
-    rdf_graph = rdflib.Graph()
+    rdf_graph = Graph()
 
-    for file_name in os.listdir(directory):
-        path_name = '{}{}'.format(directory, file_name)
-        #rdf_graph.parse
-        print(path_name)
-        rdf_graph.parse(path_name, format="xml")
+    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    my_namespace = Namespace('http://cui.unige.ch/')
 
-    #s = rdf_graph.serialize(format='n3')
-    #print(s.decode("utf-8") )
-
-
-    for subj, pred, obj in rdf_graph:
-       if (subj, pred, obj) not in rdf_graph:
-           raise Exception("It better be!")
-       else:
-           print('{} {} {}'.format(subj,pred,obj))
-
-if __name__ == '__main__':
-    """
-    g = rdflib.Graph()
-    result = g.parse("http://www.w3.org/People/Berners-Lee/card")
-
-    print("graph has %s statements." % len(g))
-    # prints graph has 79 statements.
-
-    for subj, pred, obj in g:
-       if (subj, pred, obj) not in g:
-           raise Exception("It better be!")
-       #else:
-    #       print('{} {} {}'.format(subj,pred,obj))
-
-    s = g.serialize(format='n3')
-
-    print(type(s))
-    print(s.decode("utf-8") )"""
-
-    #config = load_config('config/config_rdf.yml')
-    #create_rdf_graph(config['content_directory'])
+    rdf_graph.bind("vgiid", vgiid)
+    rdf_graph.bind("foaf", FOAF)
+    rdf_graph.bind("dc", DC)
 
     config_abstract = 'config/config_extract.yml'
+
+    for doc_id, dic_content in ex_ab.extract_abstracts(config_abstract):
+        title = dic_content[doc_id]['title']
+        description = dic_content[doc_id]['abstract']
+        rdf_graph.add((vgiid[doc_id], RDF.type, my_namespace.article))
+        rdf_graph.add((vgiid[doc_id], DC['title'], Literal(title)))
+        rdf_graph.add((vgiid[doc_id], DC['description'], Literal(description)))
+
+        for keyword in dic_content[doc_id]['keywords'].split():
+            print(keyword)
+            rdf_graph.add((vgiid[doc_id], DC['keywords'], Literal(keyword)))
+
+    rdf_normalized = rdf_graph.serialize(format='n3')
+    rdf_normalized = rdf_normalized.decode("utf-8")
+
+    write_rdf(config['rdf_file'], rdf_normalized)
+
+
+if __name__ == '__main__':
+
+    config = gf.load_config('config/config_rdf.yml')
+    create_rdf_graph(config)
+
+    """config_abstract = 'config/config_extract.yml'
     for lol1, lol2 in ex_ab.extract_abstracts(config_abstract):
-        print('{}\n{}'.format(lol1,lol2))
+        print('{}\n{}'.format(lol1,lol2))"""
