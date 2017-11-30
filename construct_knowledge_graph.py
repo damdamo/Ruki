@@ -69,12 +69,26 @@ def query_example():
     for row in qres:
         print(row)
 
+def merge_graph(rdf_file1, rdf_file2):
+    """Merge graph can merge two rdf files
+    rdf_file1: Just the path of rdf_file1
+    rdf_file2: Same for rdf_file2
+    Output the merge of two rdf"""
+
+    rdf_graph.parse(rdf_file1, format='n3')
+    rdf_graph.parse(rdf_file2, format='n3')
+
+    # For printing
+    # rdf_normalized = rdf_graph.serialize(format='n3')
+    # rdf_normalized = rdf_normalized.decode('utf-8')
+
+    return rdf_graph
 
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_rdf.yml')
     # create_rdf_graph(config)
-    query_example()
+    merge_graph()
 
     """config_abstract = 'config/config_extract.yml'
     for lol1, lol2 in ex_ab.extract_abstracts(config_abstract):
