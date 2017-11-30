@@ -5,6 +5,7 @@ import re
 import string
 import generic_functions as gf
 
+
 def query(url, request):
     """ Allow to make a query and collect informations about page
     In our case we use it to have id from publications"""
@@ -64,7 +65,7 @@ def write_content_into_file(file_name, content, doc_id, options):
             for keyword in content['keywords']:
                 abstract = '{}<keyword>{}</keyword>'.format(abstract, keyword)
             abstract = '{}\n'.format(abstract)
-            
+
         abstract = '{}<abstract>\n{}\n</abstract>'.format(
             abstract, content['abstract'])
 
@@ -166,17 +167,6 @@ def get_abstract_from_content(content):
     table_keywords = get_keywords(content)
     regex_get_abstract = re.compile('{(.)*}( )?')
     abstract = re.sub(regex_get_abstract, '', content_mod)
-
-    """keywords = ''
-    # First is just to don't put a coma before the first word
-    first = True
-    print(table_keywords)
-    for keyword in table_keywords:
-        if first:
-            keywords = keyword
-            first = False
-        else:
-            keywords = '{},{}'.format(keywords, keyword)"""
 
     dic_content = {}
     dic_content['abstract'] = clean_abstract(abstract)
