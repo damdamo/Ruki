@@ -3,7 +3,10 @@
 from owlready2 import *
 from nltk.corpus import stopwords
 import string
+import re
 import generic_functions as gf
+from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
+
 
 def write_concepts(file_name, concepts):
     """ Take a string and write it into a file """
@@ -96,23 +99,56 @@ def find_concept_abstract(concept_dic, abstract_folder):
 
     dic_concept_abstract = {}
     list_abstract_file = os.listdir(abstract_folder)
-
-    i = 0
+    # Regex rule to clean extension
+    clean_extension = re.compile('[.](.)*')
 
     for ontology in concept_dic:
         dic_concept_abstract[ontology] = {}
         for abstract_file in list_abstract_file:
-            dic_concept_abstract[ontology][abstract_file] = {}
+            # We clean the extension to add id number as key
+            abstract_id = re.sub(clean_extension, '', abstract_file)
+            dic_concept_abstract[ontology][abstract_id] = {}
             file_name = '{}{}'.format(abstract_folder, abstract_file)
             with open(file_name, 'r') as output_file:
                 abstract = output_file.read()
                 abstract_clean = clean_abstract(abstract)
                 for concept in concept_dic[ontology]:
-                    dic_concept_abstract[ontology][abstract_file][concept] = abstract_clean.count(
+                    dic_concept_abstract[ontology][abstract_id][concept] = abstract_clean.count(
                         concept)
-                    i = i + 1
 
-    print(dic_concept_abstract['onto1_correct'])
+    return dic_concept_abstract
+
+    # print(dic_concept_abstract['onto1_correct'])
+
+def rdf_translate(dic_concept_abstract):
+    """rdf translate take the dic_concept_abstract and translate it
+    into rdf format with rdflib
+    For the merge with main file, we just need to have the same URI for each
+    document"""
+
+    rdf_graph = Graph()
+
+    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    cui = Namespace('http://cui.unige.ch/')
+
+    rdf_graph.bind("vgiid", vgiid)
+    rdf_graph.bind("cui", cui)
+
+    for ontology in dic_concept_abstract:
+        print(ontology)
+        rdf_graph.add((cui[ontology], RDF.type, cui.ontology))
+        for abstract_id in dic_concept_abstract[ontology]:
+            rdf_graph.add((vgiid[abstract_id], RDF.type, cui.article))
+            for concept in dic_concept_abstract[ontology][abstract_id]:
+                concept_with_underscore = concept.replace(' ', '_')
+                rdf_graph.add((cui[concept_with_underscore], RDF.type, cui.concept))
+                rdf_graph.add((cui[concept_with_underscore], cui.has_ontology, cui[ontology]))
+                if dic_concept_abstract[ontology][abstract_id][concept] > 0:
+                    rdf_graph.add((vgiid[abstract_id], cui.has_concept, cui[concept_with_underscore]))
+
+    rdf_normalized = rdf_graph.serialize(format='n3')
+    rdf_normalized = rdf_normalized.decode('utf-8')
+    print(rdf_normalized)
 
 
 def extract_onto_concepts(config_file):
@@ -132,7 +168,8 @@ def extract_onto_concepts(config_file):
         # write_concepts('concepts.txt', list_concept)
         concept_dic[ontology.name] = list_concept
 
-    find_concept_abstract(concept_dic, abstract_folder)
+    dic_concept_abstract = find_concept_abstract(concept_dic, abstract_folder)
+    rdf_translate(dic_concept_abstract)
 
 
 if __name__ == '__main__':
