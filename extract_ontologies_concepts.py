@@ -5,7 +5,9 @@ from nltk.corpus import stopwords
 import string
 import re
 import generic_functions as gf
+
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
+from rdflib.namespace import SKOS, RDFS
 
 
 def write_concepts(file_name, concepts):
@@ -133,22 +135,29 @@ def rdf_translate(dic_concept_abstract):
 
     rdf_graph.bind("vgiid", vgiid)
     rdf_graph.bind("cui", cui)
+    rdf_graph.bind("skos", SKOS)
+    rdf_graph.bind("rdfs", RDFS)
 
     for ontology in dic_concept_abstract:
         print(ontology)
-        rdf_graph.add((cui[ontology], RDF.type, cui.ontology))
+        rdf_graph.add((cui[ontology], RDF.type, cui.knowledge_extractor_result))
+        rdf_graph.add((cui[ontology], RDFS.subClassOf, SKOS.ConceptScheme))
         for abstract_id in dic_concept_abstract[ontology]:
             rdf_graph.add((vgiid[abstract_id], RDF.type, cui.article))
             for concept in dic_concept_abstract[ontology][abstract_id]:
                 concept_with_underscore = concept.replace(' ', '_')
-                rdf_graph.add((cui[concept_with_underscore], RDF.type, cui.concept))
-                rdf_graph.add((cui[concept_with_underscore], cui.has_ontology, cui[ontology]))
+                rdf_graph.add((cui[concept_with_underscore], RDFS.subClassOf, SKOS.Concept))
+                rdf_graph.add((cui[concept_with_underscore], SKOS.inSchema, cui[ontology]))
+                rdf_graph.add((cui[concept_with_underscore], SKOS.prefLabel, Literal(concept)))
                 if dic_concept_abstract[ontology][abstract_id][concept] > 0:
-                    rdf_graph.add((vgiid[abstract_id], cui.has_concept, cui[concept_with_underscore]))
+                    index_name = 'index_{}_{}'.format(abstract_id, concept_with_underscore)
+                    rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
+                    rdf_graph.add((cui[index_name], cui.has_concept_name, Literal(concept)))
+                    rdf_graph.add((cui[index_name], cui.has_article, vgiid[abstract_id]))
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
-    print(rdf_normalized)
+    gf.write_rdf('lol.rdf', rdf_normalized)
 
 
 def extract_onto_concepts(config_file):
