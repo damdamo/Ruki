@@ -43,7 +43,8 @@ def create_rdf_graph(config):
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
 
-    # write_rdf(config['rdf_file'], rdf_normalized)
+    if config['rdf']['write_rdf']:
+        write_rdf(config['rdf']['file_name'], rdf_normalized)
 
 def query_example():
     """Just to keep an example query, not for using"""
@@ -87,8 +88,7 @@ def merge_graph(rdf_file1, rdf_file2):
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_rdf.yml')
-    # create_rdf_graph(config)
-    merge_graph()
+    create_rdf_graph(config)
 
     """config_abstract = 'config/config_extract.yml'
     for lol1, lol2 in ex_ab.extract_abstracts(config_abstract):

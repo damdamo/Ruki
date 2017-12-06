@@ -122,7 +122,7 @@ def find_concept_abstract(concept_dic, abstract_folder):
 
     # print(dic_concept_abstract['onto1_correct'])
 
-def rdf_translate(dic_concept_abstract):
+def rdf_translate(dic_concept_abstract, file_name):
     """rdf translate take the dic_concept_abstract and translate it
     into rdf format with rdflib
     For the merge with main file, we just need to have the same URI for each
@@ -138,10 +138,11 @@ def rdf_translate(dic_concept_abstract):
     rdf_graph.bind("skos", SKOS)
     rdf_graph.bind("rdfs", RDFS)
 
+    # Construction of rdf
     for ontology in dic_concept_abstract:
-        print(ontology)
         rdf_graph.add((cui[ontology], RDF.type, cui.knowledge_extractor_result))
         rdf_graph.add((cui[ontology], RDFS.subClassOf, SKOS.ConceptScheme))
+        rdf_graph.add((cui[ontology], SKOS.prefLabel, Literal(ontology)))
         for abstract_id in dic_concept_abstract[ontology]:
             rdf_graph.add((vgiid[abstract_id], RDF.type, cui.article))
             for concept in dic_concept_abstract[ontology][abstract_id]:
@@ -150,18 +151,24 @@ def rdf_translate(dic_concept_abstract):
                 rdf_graph.add((cui[concept_with_underscore], SKOS.inSchema, cui[ontology]))
                 rdf_graph.add((cui[concept_with_underscore], SKOS.prefLabel, Literal(concept)))
                 if dic_concept_abstract[ontology][abstract_id][concept] > 0:
+                    number = dic_concept_abstract[ontology][abstract_id][concept]
                     index_name = 'index_{}_{}'.format(abstract_id, concept_with_underscore)
                     rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
                     rdf_graph.add((cui[index_name], cui.has_concept_name, Literal(concept)))
                     rdf_graph.add((cui[index_name], cui.has_article, vgiid[abstract_id]))
+                    rdf_graph.add((cui[index_name], cui.has_number, Literal(number)))
 
+    # We normalize in n3 to write it
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
-    gf.write_rdf('lol.rdf', rdf_normalized)
+    gf.write_rdf(file_name, rdf_normalized)
 
 
 def extract_onto_concepts(config_file):
-    """Main function"""
+    """Main function
+    Return the dictionnary that we obtain with
+    find_concept_abstract. It can write this dictionnary
+    in a rdf format"""
 
     config = gf.load_config(config_file)
     ontology_path = config['ontologies']['path']
@@ -178,8 +185,11 @@ def extract_onto_concepts(config_file):
         concept_dic[ontology.name] = list_concept
 
     dic_concept_abstract = find_concept_abstract(concept_dic, abstract_folder)
-    rdf_translate(dic_concept_abstract)
 
+    if config['rdf']['write_rdf']:
+        rdf_translate(dic_concept_abstract, config['rdf']['file_name'])
+
+    return dic_concept_abstract
 
 if __name__ == '__main__':
 

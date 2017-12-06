@@ -1,0 +1,56 @@
+# Examples of query for sparql:
+
+# List all articles
+PREFIX cui: <http://cui.unige.ch/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX vgiid: <http://vgibox.eu/repository/index.php?curid=>
+PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+  # List all articles
+    SELECT DISTINCT ?a
+    WHERE {
+      ?a a cui:article .
+    }
+
+   # Return ontology which has in his schema the prefLabel "sensing"
+    SELECT DISTINCT ?a ?b
+    WHERE {
+      ?a rdfs:subClassOf skos:ConceptScheme .
+      ?b skos:inSchema ?a.
+      ?b skos:prefLabel "sensing".
+      ?b rdfs:subClassOf skos:Concept.
+    }
+
+    # Return all concept with his name of all ontology
+    SELECT DISTINCT ?a ?b ?c
+    WHERE {
+        ?b skos:inSchema ?a.
+        ?b skos:prefLabel ?c.
+    }
+
+    # Return all link between an article and a name if a concept appear
+    # in the article
+    SELECT DISTINCT ?a ?b
+    WHERE {
+    		?a cui:has_concept_name ?b
+    }
+
+     # Number of each concept inside an article
+     SELECT DISTINCT ?a ?b
+     WHERE {
+          ?a rdf:type cui:art_concept_link.
+          ?a cui:has_number ?b.
+      }
+
+      # Same as the last query but with a filter where the number of occurence
+      # is at least 4
+      SELECT DISTINCT ?a ?b
+      WHERE {
+        ?a rdf:type cui:art_concept_link.
+        ?a cui:has_number ?b.
+        FILTER(?b > 3).
+      }
