@@ -136,8 +136,5 @@ to create a graph where we can rewrite it in a good format. (RDF/n3)
 
 We use mainly: [RDFLib](https://github.com/RDFLib/rdflib)
 
-
-
-
-
-yED
+This is an image for the structure of the knowledge graph:
+![Structure of Knowledge graph](documents/rdf_scheme_general.png)
