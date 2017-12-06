@@ -135,3 +135,9 @@ We used the first part with extraction of abstracts (and other informations)
 to create a graph where we can rewrite it in a good format. (RDF/n3)
 
 We use mainly: [RDFLib](https://github.com/RDFLib/rdflib)
+
+
+
+
+
+yED
