@@ -3,4 +3,6 @@
 # content_directory: directory contains all abtrasct with diffrents informations
 # like id / article title / keywords
 
-rdf_file: 'data/rdf/rdf_data.rdf'
+rdf:
+  write_rdf: true
+  file_name: 'Results/Rdf/rdf_knowledge_graph.rdf'
