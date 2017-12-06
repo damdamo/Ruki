@@ -112,11 +112,34 @@ If you want to know how yield works:
 [Yield tuto](https://www.python-course.eu/python3_generators.php)
 
 
+## Knowledge graph (construct_knowledge_graph)
+
+In this part we want to construct our Knowledge graph in rdf.
+We used the first part with extraction of abstracts (and other informations)
+to create a graph where we can rewrite it in a good format. (RDF/n3)
+
+We use mainly: [RDFLib](https://github.com/RDFLib/rdflib)
+
+This is our rdf graph to vizualise the structure:
+![Structure of Knowledge graph](documents/rdf_scheme_general.png)
+
+We can see two mainly parts but for this part only one will be interresting.
+At the beginning what we have is a lot article with some informations like
+title, keywords or abstract.
+We want to express our structure with rdf and we obtain the part 1 that we've described
+in our schema.
+
+For this part we use the dictionnary that we've obtained with the extraction of abstracts.
+We don't use directly output file but we reconstruct the rdf file with the dictionnary which
+contains all informations. When it's right, we use RDFLib to translate our informations
+into rdf format.
+
+
 ## OWL in python3 (extract_onto_concepts)
 
 For this part we want to collect all concept in ontologies to compare
 with all informations that we had previously. The goal is simple, if the name of
-a concept is a same in the abstract of an article, we keep (and count) it.
+a concept is a same in informations (title, keywords, abstract) about an article, we keep (and count) it.
 
 For this part we use [Owlready2](https://pypi.python.org/pypi/Owlready2) / [Nltk](http://www.nltk.org/)  
 When nltk is downloaded launch ntlk with python3
@@ -127,14 +150,17 @@ nltk.download()
 It's open a window where we can choose different module for installation.
 You have to go in "Corpora" and install "stopwords".
 
+Owlready allow us to extract concept of an owl file.
 
-## Knowledge graph (construct_knowledge_graph)
+The second part of our latest graph represent the structure of an ontology with all concepts
+that it contains.
 
-In this part we want to construct our Knowledge graph in rdf.
-We used the first part with extraction of abstracts (and other informations)
-to create a graph where we can rewrite it in a good format. (RDF/n3)
+The final link between Ontology and article is made by a link which is "index_sem1".
+We link the term and the article where it appears. Moreover we add an information about
+the number of occurence.
 
-We use mainly: [RDFLib](https://github.com/RDFLib/rdflib)
-
-This is an image for the structure of the knowledge graph:
-![Structure of Knowledge graph](documents/rdf_scheme_general.png)
+This part return us a specific dictionnary with this format:  
+dic = {'onto1':{'abstract1':{'concept1': nb_occurence},...},...}
+For every ontology we have all abstract with all concepts and their numbers.
+We can decide in the config file to write into a file the rdf format of the result.
+But we can just have this dictionnary to process on it.
