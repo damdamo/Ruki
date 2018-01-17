@@ -28,7 +28,7 @@ def create_rdf_graph(config):
     rdf_graph.bind("dc", DC)
     rdf_graph.bind("cui", cui)
 
-    config_abstract = 'config/config_extract.yml'
+    config_abstract = 'config/config_extract_abstract.yml'
 
     for doc_id, dic_content in ex_ab.extract_abstracts(config_abstract):
         title = dic_content[doc_id]['title']
@@ -87,7 +87,7 @@ def merge_graph(rdf_file1, rdf_file2):
 
 if __name__ == '__main__':
 
-    config = gf.load_config('config/config_rdf.yml')
+    config = gf.load_config('config/config_construct_knowledge_graph.yml')
     create_rdf_graph(config)
 
     """config_abstract = 'config/config_extract.yml'

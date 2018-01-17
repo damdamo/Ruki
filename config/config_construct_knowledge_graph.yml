@@ -1,0 +1,8 @@
+# Config ontologies file with all parameters
+
+# content_directory: directory contains all abtrasct with diffrents informations
+# like id / article title / keywords
+
+rdf:
+  write_rdf: False
+  file_name: 'Results/Rdf/rdf_knowledge_graph.rdf'

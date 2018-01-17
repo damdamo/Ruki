@@ -154,7 +154,7 @@ def rdf_translate(dic_concept_abstract, file_name):
                     number = dic_concept_abstract[ontology][abstract_id][concept]
                     index_name = 'index_{}_{}'.format(abstract_id, concept_with_underscore)
                     rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
-                    rdf_graph.add((cui[index_name], cui.has_concept_name, Literal(concept)))
+                    rdf_graph.add((cui[index_name], cui.has_concept, cui[concept_with_underscore]))
                     rdf_graph.add((cui[index_name], cui.has_article, vgiid[abstract_id]))
                     rdf_graph.add((cui[index_name], cui.has_number, Literal(number)))
 
@@ -194,5 +194,5 @@ def extract_onto_concepts(config_file):
 if __name__ == '__main__':
 
     # load file configuration
-    config_file = 'config/config_ontologies.yml'
+    config_file = 'config/config_ontologies_concepts.yml'
     extract_onto_concepts(config_file)

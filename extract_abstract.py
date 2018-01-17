@@ -253,7 +253,7 @@ if __name__ == '__main__':
     # http://vgibox.eu/repository/index.php?curid=919
 
     # load file configuration
-    config_file = 'config/config_extract.yml'
+    config_file = 'config/config_extract_abstract.yml'
 
     for doc_id, dic_content in extract_abstracts(config_file):
         print('Document extraction id: {}'.format(doc_id))
