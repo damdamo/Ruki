@@ -2,7 +2,8 @@
 
 import rdflib
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
-from rdflib.namespace import DC, FOAF
+from rdflib.namespace import SKOS, RDFS
+from random import randint
 import extract_abstract as ex_ab
 import generic_functions as gf
 import re
@@ -18,35 +19,17 @@ def extract_options(line):
     informations. We have special tag for this like
     method_name, informations..."""
 
-    method_name = extract_tag('method_name', line)
-    method_informations = extract_tag('method_informations', line)
+    # dic_options contains all options
+    dic_options = {}
 
-    dic = {}
+    for option in line.split('||'):
+        if len(option) > 0:
+            option_split = option.split('|')
+            if '\n' in option_split[1]:
+                option_split[1] = option_split[1].replace('\n', '')
+            dic_options[option_split[0]] = option_split[1]
 
-    print(method_name)
-    print(method_informations)
-
-
-    # method_name = line[pos_method_name[0], pos_method_name[1]]
-    # method_informations = line[pos_method_informations[0], pos_method_informations[1]]
-
-    #regex_get_abstract = re.compile('{(.)*}( )?')
-    #abstract = re.sub(regex_get_abstract, '', content_mod)
-
-def extract_tag(tag_name, line):
-    """Allow to extract a tag for extract_options
-    """
-
-    # Method to keep our tags with regex
-    pattern_name = re.compile(tag_name + "( )?=( )?{(.)*}")
-    content = re.search(pattern_name, line)
-    final_tag = ''
-
-    if content is not None:
-        pos = content.span()
-        final_tag = line[pos[0]:pos[1]]
-
-    return final_tag
+    return dic_options
 
 
 def parse_file(file_name):
@@ -58,6 +41,7 @@ def parse_file(file_name):
 
     # Contains all informations that we parse
     dic_informations = {}
+    options = []
 
     # We give an id for every cluster
     cluster_count = 0
@@ -65,8 +49,8 @@ def parse_file(file_name):
 
     with open(file_name, 'r') as file_reading:
         for line in file_reading:
-            if first_line and line[0:1]=='\\':
-                extract_options(line)
+            if first_line and line[0:2]=='||':
+                options = extract_options(line)
                 first_line = False
             else:
                 dic_informations[cluster_count] = []
@@ -74,13 +58,51 @@ def parse_file(file_name):
                     dic_informations[cluster_count].append(element)
                 cluster_count = cluster_count + 1
 
-    return dic_informations
+    return dic_informations, options
 
-def construct_knowledge_graph():
-    pass
+def create_rdf_graph(file_name):
+
+    dic_informations, options = parse_file(file_name)
+
+    rdf_graph = Graph()
+
+    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    cui = Namespace('http://cui.unige.ch/')
+
+    rdf_graph.bind("vgiid", vgiid)
+    rdf_graph.bind("cui", cui)
+    rdf_graph.bind("skos", SKOS)
+    rdf_graph.bind("rdfs", RDFS)
+
+    if 'method_name' in options:
+        # We give a name for the kernel
+        # We add rng to avoid same name
+        # for different method
+        nb_alea = randint(1000,9999)
+        name = '{}_{}'.format(options['method_name'], nb_alea)
+        rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
+        rdf_graph.add((cui[name], SKOS.prefLabel, Literal(options['method_name'])))
+    else:
+        # If we don't have a method name, we just generate a big
+        # number for the name
+        nb_alea = randint(10000,99999)
+        name = '{}'.format(nb_alea)
+        rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
+
+    # If we have informations we add it
+    if 'method_informations' in options:
+        rdf_graph.add((cui[name], SKOS.note, Literal(options['method_informations'])))
+
+    rdf_graph.add((cui[name], RDFS.subClassOf, SKOS.ConceptScheme))
+
+    for i in range(0,len(dic_informations)-1):
+
+        print(dic_informations[i])
+
+
 
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_add_method_knowledge_graph.yml')
     file_name = config['informations_to_add']
-    parse_file(file_name)
+    create_rdf_graph(file_name)
