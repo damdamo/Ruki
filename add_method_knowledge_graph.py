@@ -79,7 +79,7 @@ def create_rdf_graph(file_name):
         # We add rng to avoid same name
         # for different method
         nb_alea = randint(1000,9999)
-        name = '{}_{}'.format(options['method_name'], nb_alea)
+        name = '{}_{}'.format(options['method_name'][0:6].replace(' ','_'), nb_alea)
         rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
         rdf_graph.add((cui[name], SKOS.prefLabel, Literal(options['method_name'])))
     else:
@@ -98,6 +98,10 @@ def create_rdf_graph(file_name):
     for i in range(0,len(dic_informations)-1):
 
         print(dic_informations[i])
+
+    rdf_normalized = rdf_graph.serialize(format='n3')
+    rdf_normalized = rdf_normalized.decode('utf-8')
+    print(rdf_normalized)
 
 
 
