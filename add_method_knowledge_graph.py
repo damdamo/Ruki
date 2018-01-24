@@ -96,8 +96,16 @@ def create_rdf_graph(file_name):
     rdf_graph.add((cui[name], RDFS.subClassOf, SKOS.ConceptScheme))
 
     for i in range(0,len(dic_informations)-1):
-
-        print(dic_informations[i])
+        concept_name = 'concept_{}_{}'.format(i, name)
+        rdf_graph.add((cui[concept_name], RDFS.subClassOf, SKOS.Concept))
+        rdf_graph.add((cui[concept_name], SKOS.inSchema, cui[name]))
+        # rdf_graph.add((cui[concept_name], SKOS.prefLabel, Literal(concept)))
+        for article in dic_informations[i]:
+            print(article)
+            index_name = 'index_{}_{}'.format(i, article)
+            rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
+            rdf_graph.add((cui[index_name], cui.has_concept, cui[concept_name]))
+            rdf_graph.add((cui[index_name], cui.has_article, vgiid[article]))
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
