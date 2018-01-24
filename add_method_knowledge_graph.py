@@ -8,11 +8,6 @@ import extract_abstract as ex_ab
 import generic_functions as gf
 import re
 
-def write_rdf(file_name, rdf):
-    """A simple function to write rdf in a file"""
-    with open(file_name, 'w') as output_file:
-        output = '{}'.format(rdf)
-        output_file.write("{}".format(output))
 
 def extract_options(line):
     """Take a line and extract options to add
@@ -25,9 +20,10 @@ def extract_options(line):
     for option in line.split('||'):
         if len(option) > 0:
             option_split = option.split('|')
-            if '\n' in option_split[1]:
-                option_split[1] = option_split[1].replace('\n', '')
-            dic_options[option_split[0]] = option_split[1]
+            if len(option_split) > 1:
+                if '\n' in option_split[1]:
+                    option_split[1] = option_split[1].replace('\n', '')
+                dic_options[option_split[0]] = option_split[1]
 
     return dic_options
 
@@ -60,7 +56,12 @@ def parse_file(file_name):
 
     return dic_informations, options
 
-def create_rdf_graph(file_name):
+
+def create_rdf_graph(config):
+
+    config = gf.load_config('config/config_add_method_knowledge_graph.yml')
+    file_name = config['informations_to_add']
+    output_file = config['output_file']
 
     dic_informations, options = parse_file(file_name)
 
@@ -101,7 +102,7 @@ def create_rdf_graph(file_name):
         rdf_graph.add((cui[concept_name], SKOS.inSchema, cui[name]))
         # rdf_graph.add((cui[concept_name], SKOS.prefLabel, Literal(concept)))
         for article in dic_informations[i]:
-            print(article)
+            print('article ' + article)
             index_name = 'index_{}_{}'.format(i, article)
             rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
             rdf_graph.add((cui[index_name], cui.has_concept, cui[concept_name]))
@@ -109,12 +110,14 @@ def create_rdf_graph(file_name):
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
+
     print(rdf_normalized)
 
+    gf.write_rdf(output_file, rdf_normalized)
 
+    return rdf_normalized
 
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_add_method_knowledge_graph.yml')
-    file_name = config['informations_to_add']
-    create_rdf_graph(file_name)
+    create_rdf_graph(config)
