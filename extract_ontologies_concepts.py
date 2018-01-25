@@ -38,10 +38,15 @@ def get_concept_name(ontology):
 
     for concept in ontology.classes():
 
-        # Return a string with the concept name normalized
-        concept_name_clean = clean_concept(concept)
-        # We add our concept into the list
-        list_concept.append(concept_name_clean)
+        if len(concept.label) == 0:
+            # Return a string with the concept name normalized
+            concept_name_clean = clean_concept(concept)
+            # We add our concept into the list
+            list_concept.append(concept_name_clean)
+        else:
+            list_concept.append(concept.label[0])
+
+    print(list_concept)
 
     return list_concept
 
