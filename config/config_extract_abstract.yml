@@ -23,6 +23,7 @@ parameters_extract_content:
 output:
   file: 'Results/Extracts/Single/abstracts'
   folder: 'Results/Extracts/Multiple/'
+  csv: 'Results/Extracts/Single/abstracts2.csv'
 
 # Options can modify format, number of file, number of parameters
 # writing: Decide if we write the content into file(s)
@@ -32,11 +33,13 @@ output:
 # xml: Add xml tags to describe content
 # keywords: Add keywords in addition to abstracts
 # title: Add title in addition to abstracts
+# csv: Decide if we want a csv output
 
 options:
-  writing: True
+  writing: False
   multiple_file: True
   xml: True
   id: True
   keywords: True
   title: True
+  csv: True

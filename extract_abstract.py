@@ -4,6 +4,7 @@ import requests
 import re
 import string
 import generic_functions as gf
+import csv
 
 
 def query(url, request):
@@ -225,7 +226,6 @@ def extract_abstracts(config_file):
 
     for doc_id, dic_content in get_all_abstract(url, list_all_id, parameters_extract_content):
         print('Abstract number: {}'.format(i))
-        i = i + 1
 
         if config['options']['writing']:
             if config['options']['multiple_file']:
@@ -237,6 +237,22 @@ def extract_abstracts(config_file):
             else:
                 write_content_into_file(
                     name_file, dic_content[doc_id], doc_id, config['options'])
+
+        if config['options']['csv']:
+            """with open(config['output']['csv'], 'a') as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=('abstract', 'keywords', 'title'), restval='')
+                if i == 0:
+                    writer.writeheader()
+                writer.writerow(dic_content[doc_id])"""
+            with open(config['output']['csv'], 'a', newline='') as csvfile:
+                title = dic_content[doc_id]['title']
+                keywords = dic_content[doc_id]['keywords']
+                abstract = dic_content[doc_id]['abstract']
+                regroup_all = '{} {} {}'.format(title, keywords, abstract)
+                writer = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
+                writer.writerow(['vgibox'] + [doc_id] + [regroup_all])
+
+        i = i + 1
 
         yield doc_id, dic_content
 
