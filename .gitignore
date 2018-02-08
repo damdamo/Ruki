@@ -2,3 +2,7 @@
 *.txt
 *.xml
 __pycache__
+*.graphml
+*.owl
+*.rdf
+*.csv
