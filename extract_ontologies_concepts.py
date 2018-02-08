@@ -46,7 +46,7 @@ def get_concept_name(ontology):
         else:
             list_concept.append(concept.label[0])
 
-    print(list_concept)
+    # print(list_concept)
 
     return list_concept
 
