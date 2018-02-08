@@ -63,6 +63,7 @@ options:
   xml: false
   keywords: false
   title: false
+  csv: false
 
 ```
 
@@ -74,6 +75,7 @@ the rest has any importance.
 * keywords: Moreover abstracts, you can add keywords that are avaible in the same page of abstract to have more informations
 * title: Same as keywords for title
 * xml: You can add tags for parsing easier your file. If you want to handle your file(s) differently because the weight of a keyword is not the same that a word.
+* csv: You can have an other output in a csv format. The columns where the first is just the same name 'vgi', the second 'id' of the article and the third a compilation of title, keywords and abstract.
 
 XML hierarchy:
 
@@ -164,3 +166,20 @@ dic = {'onto1':{'abstract1':{'concept1': nb_occurence},...},...}
 For every ontology we have all abstract with all concepts and their numbers.
 We can decide in the config file to write into a file the rdf format of the result.
 But we can just have this dictionnary to process on it.
+
+## Add an other method (add_method_knowledge_graph)
+
+Now i suppose that we have our knowledge graph and you want add your own analysis. For example you're trying to use a different method like clustering and you want to add it in the knowledge graph.
+The goal here is just to create an rdf graph with your results. You need to create a file with this specific format:
+
+```bash
+||method_name|my_method_name||method_informations|my_method_informations
+file_id1, file_id2, file_id3
+file_id4
+file_id5, file_id6
+```
+
+#### Where:
+* The first line is optional (must be the first line), but you can add specific informations like the name of your method or informations about your method. You can have just one, don't need to have the two to work. The syntax must be respected with **||** and **|**. **||** is needed to separate tags and **|** give us the good information for every tags.
+* Every line except this optional line is a group of article id. If many id article are in the same line, it means that documents are in the same group.
+So for the last example, we have 3 id documents together in the second line, 1 for the third line and 2 for the last line.
