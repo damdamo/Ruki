@@ -1,3 +1,4 @@
 # Config add method knowledge Graph
 
-informations_to_add: test.txt
+informations_to_add: clusters_alone_2.txt
+output_file: Results/Rdf/add_method.rdf
