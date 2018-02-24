@@ -18,22 +18,22 @@ def create_rdf_graph(config):
     """Take a directory with all files in an xml format
     and convert it in a n3 format"""
 
-    rdf_graph = Graph()
-
-    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
-    cui = Namespace('http://cui.unige.ch/')
+    """rdf_graph = Graph()
 
     rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("foaf", FOAF)
     rdf_graph.bind("dc", DC)
-    rdf_graph.bind("cui", cui)
+    rdf_graph.bind("cui", cui)"""
+
+    rdf_graph = gf.basic_knowledge_graph()
+    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    schema = Namespace('http://schema.org/')
 
     config_abstract = 'config/config_extract_abstract.yml'
 
     for doc_id, dic_content in ex_ab.extract_abstracts(config_abstract):
         title = dic_content[doc_id]['title']
         description = dic_content[doc_id]['abstract']
-        rdf_graph.add((vgiid[doc_id], RDF.type, cui.article))
+        rdf_graph.add((vgiid[doc_id], RDF.type, schema.Article))
         rdf_graph.add((vgiid[doc_id], DC['title'], Literal(title)))
         rdf_graph.add((vgiid[doc_id], DC['description'], Literal(description)))
 
@@ -54,7 +54,6 @@ def query_example():
     cui = Namespace('http://cui.unige.ch/')
 
     rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("foaf", FOAF)
     rdf_graph.bind("dc", DC)
     rdf_graph.bind("cui", cui)
     rdf_graph.add((vgiid['919'], RDF.type , cui.article))
