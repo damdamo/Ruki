@@ -28,7 +28,7 @@ def load_ontology(ontology_path, ontology_name):  # ontology_name
     return ontology
 
 
-def get_concept_name(ontology):
+def get_concept_uri(ontology):
     """ Take an ontology
     Return a list with all concept name of this ontology
     ontology is created by the function load ontology """
@@ -37,41 +37,23 @@ def get_concept_name(ontology):
     list_concept = []
 
     for concept in ontology.classes():
-
-        if len(concept.label) == 0:
-            # Return a string with the concept name normalized
-            concept_name_clean = clean_concept(concept)
-            # We add our concept into the list
-            list_concept.append(concept_name_clean)
-        else:
-            list_concept.append(concept.label[0])
-
-    # print(list_concept)
+        list_concept.append(concept)
 
     return list_concept
 
 
-def clean_concept(concept):
-    """clean_concept can clean and normalized concept of the list_concept
-    In this function we:
-    - Replace underscore by a space
-    - Replace all uppercase by lowercase """
+def get_concept_name(concept_uri):
+    """get_concept_name take the concept_uri and extract the name"""
 
-    concept_name = concept.name
-    concept_name_normalized = concept_name.replace('_', ' ')
-    concept_name_normalized = concept_name_normalized.lower()
 
-    # This part has goal to suppress the repitition inside the concept
-    # name, but some element are not unique after this operation
-    """concept_name_normalized = concept_name_normalized.split()
-    class_parent = str(concept.is_a)
-    for word in concept_name_normalized:
-        if word in class_parent:
-            concept_name_normalized.remove(word)
+    if len(concept_uri.label) == 0:
+        concept_name = concept_uri.name
+        concept_name = concept_name.replace('_', ' ')
+        concept_name = concept_name.lower()
+    else:
+        concept_name = concept_uri.label[0]
 
-    concept_name_normalized = ' '.join(concept_name_normalized)"""
-
-    return concept_name_normalized
+    return concept_name
 
 
 def clean_abstract(abstract):
@@ -90,8 +72,6 @@ def clean_abstract(abstract):
     abstract_clean = abstract_clean.translate(str.maketrans(
         string.punctuation, ' ' * (len(string.punctuation))))
     abstract_clean = abstract_clean.split()
-
-    # TODO: Regarder le nom des concepts pour enlever la répétition
 
     return abstract_clean
 
@@ -120,12 +100,13 @@ def find_concept_abstract(concept_dic, abstract_folder):
                 abstract = output_file.read()
                 abstract_clean = clean_abstract(abstract)
                 for concept in concept_dic[ontology]:
+                    concept_clean = get_concept_name(concept)
                     dic_concept_abstract[ontology][abstract_id][concept] = abstract_clean.count(
-                        concept)
-
-    return dic_concept_abstract
+                        concept_clean)
 
     # print(dic_concept_abstract['onto1_correct'])
+
+    return dic_concept_abstract
 
 def rdf_translate(dic_concept_abstract, file_name):
     """rdf translate take the dic_concept_abstract and translate it
@@ -133,15 +114,16 @@ def rdf_translate(dic_concept_abstract, file_name):
     For the merge with main file, we just need to have the same URI for each
     document"""
 
-    rdf_graph = Graph()
+    rdf_graph = gf.basic_knowledge_graph()
 
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    schema = Namespace('http://schema.org/')
     cui = Namespace('http://cui.unige.ch/')
 
-    rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("cui", cui)
+    """rdf_graph.bind("vgiid", vgiid)
+
     rdf_graph.bind("skos", SKOS)
-    rdf_graph.bind("rdfs", RDFS)
+    rdf_graph.bind("rdfs", RDFS)"""
 
     # Construction of rdf
     for ontology in dic_concept_abstract:
@@ -149,19 +131,26 @@ def rdf_translate(dic_concept_abstract, file_name):
         rdf_graph.add((cui[ontology], RDFS.subClassOf, SKOS.ConceptScheme))
         rdf_graph.add((cui[ontology], SKOS.prefLabel, Literal(ontology)))
         for abstract_id in dic_concept_abstract[ontology]:
-            rdf_graph.add((vgiid[abstract_id], RDF.type, cui.article))
-            for concept in dic_concept_abstract[ontology][abstract_id]:
-                concept_with_underscore = concept.replace(' ', '_')
-                rdf_graph.add((cui[concept_with_underscore], RDFS.subClassOf, SKOS.Concept))
-                rdf_graph.add((cui[concept_with_underscore], SKOS.inSchema, cui[ontology]))
-                rdf_graph.add((cui[concept_with_underscore], SKOS.prefLabel, Literal(concept)))
-                if dic_concept_abstract[ontology][abstract_id][concept] > 0:
-                    number = dic_concept_abstract[ontology][abstract_id][concept]
-                    index_name = 'index_{}_{}'.format(abstract_id, concept_with_underscore)
-                    rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
-                    rdf_graph.add((cui[index_name], cui.has_concept, cui[concept_with_underscore]))
-                    rdf_graph.add((cui[index_name], cui.has_article, vgiid[abstract_id]))
-                    rdf_graph.add((cui[index_name], cui.has_number, Literal(number)))
+            rdf_graph.add((vgiid[abstract_id], RDF.type, schema.Article))
+            for concept_uri in dic_concept_abstract[ontology][abstract_id]:
+                concept_uri_term = URIRef(concept_uri.iri)
+                super_concept_uri = (concept_uri.is_a)[0].iri
+                super_concept_uri_term = URIRef(super_concept_uri)
+                rdf_graph.add((concept_uri_term, RDFS.subClassOf, super_concept_uri_term))
+                rdf_graph.add((concept_uri_term, RDFS.subClassOf, SKOS.Concept))
+                rdf_graph.add((concept_uri_term, SKOS.inSchema, cui[ontology]))
+                rdf_graph.add((concept_uri_term, SKOS.prefLabel, Literal(get_concept_name(concept_uri))))
+                if dic_concept_abstract[ontology][abstract_id][concept_uri] > 0:
+                    number = dic_concept_abstract[ontology][abstract_id][concept_uri]
+                    index_name = 'index_{}_{}'.format(abstract_id, concept_uri.name)
+                    blank_node = BNode(index_name)
+                    rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
+                    rdf_graph.add((blank_node, cui.has_article, vgiid[abstract_id]))
+                    rdf_graph.add((blank_node, cui.has_number, Literal(number)))
+                    if len(concept_uri.label) == 0:
+                        rdf_graph.add((blank_node, cui.has_concept, cui[concept_uri.name]))
+                    else:
+                        rdf_graph.add((blank_node, cui.has_concept, cui[concept_uri.label[0]]))
 
     # We normalize in n3 to write it
     rdf_normalized = rdf_graph.serialize(format='n3')
@@ -185,9 +174,11 @@ def extract_onto_concepts(config_file):
 
     for ontology_name in os.listdir(ontology_path):
         ontology = load_ontology(ontology_path, ontology_name)
-        list_concept = get_concept_name(ontology)
+        list_concept_uri = get_concept_uri(ontology)
+        # list_concept_name = get_list_concept_name(list_concept_uri)
+
         # write_concepts('concepts.txt', list_concept)
-        concept_dic[ontology.name] = list_concept
+        concept_dic[ontology.name] = list_concept_uri
 
     dic_concept_abstract = find_concept_abstract(concept_dic, abstract_folder)
 
