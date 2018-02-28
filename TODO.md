@@ -22,7 +22,7 @@ une hierarchie de cluster
 
 ### Noeuds blanc pour les cluster
 **GOOD**: Bon pour config_construct_knowledge_graph.py  
-**NOT GOOD** : Mettre des noeuds blanc pour les cluster (Manque pour add_method_knowledge_graph)
+**GOOD** : Mettre des noeuds blanc pour les cluster (Manque pour add_method_knowledge_graph)
 
 ### Erreur / Bug en vrac à corriger
 **NOT GOOD** : Erreur code extract_ontologies_concepts.py, on a un retour avec une uri avec espace (voir ligne 409 rdf_onto_extraction.rdf)
