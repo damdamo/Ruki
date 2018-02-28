@@ -20,7 +20,7 @@ une hierarchie de cluster
 
 **NOT GOOD** : Faire l'interface graphique du site web en prototype
 
-### Noeuds blanc pour les cluster
+### Noeuds blanc pour les cluster (OK)
 **GOOD**: Bon pour config_construct_knowledge_graph.py  
 **GOOD** : Mettre des noeuds blanc pour les cluster (Manque pour add_method_knowledge_graph)
 
