@@ -12,8 +12,8 @@ cui.has_article etc...
 ### Hierarchie des classes des ontologies (OK)
 **GOOD** : Prendre en compte la hiérarchie des classes de l'ontologie, le rajouter dans le schema rdf avec des subClassOf  
 
-### Améliorer le format pour add methode
-**NOT GOOD** : Changer le format du fichier d'entrée pour ajouter une methode pour pouvoir avoir
+### Améliorer le format pour add methode (OK)
+**GOOD** : Changer le format du fichier d'entrée pour ajouter une methode pour pouvoir avoir
 une hierarchie de cluster  
 
 ### Interface de visualisation
@@ -21,7 +21,8 @@ une hierarchie de cluster
 **NOT GOOD** : Faire l'interface graphique du site web en prototype
 
 ### Noeuds blanc pour les cluster
-**NOT GOOD** : Mettre des noeuds blanc pour les cluster
+**GOOD**: Bon pour config_construct_knowledge_graph.py  
+**NOT GOOD** : Mettre des noeuds blanc pour les cluster (Manque pour add_method_knowledge_graph)
 
 ### Erreur / Bug en vrac à corriger
 **NOT GOOD** : Erreur code extract_ontologies_concepts.py, on a un retour avec une uri avec espace (voir ligne 409 rdf_onto_extraction.rdf)
