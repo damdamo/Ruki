@@ -65,15 +65,11 @@ def create_rdf_graph(config):
 
     dic_informations, options = parse_file(file_name)
 
-    rdf_graph = Graph()
+    rdf_graph = gf.basic_knowledge_graph()
 
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
     cui = Namespace('http://cui.unige.ch/')
 
-    rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("cui", cui)
-    rdf_graph.bind("skos", SKOS)
-    rdf_graph.bind("rdfs", RDFS)
 
     if 'method_name' in options:
         # We give a name for the kernel
@@ -111,7 +107,7 @@ def create_rdf_graph(config):
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
 
-    print(rdf_normalized)
+    # print(rdf_normalized)
 
     gf.write_rdf(output_file, rdf_normalized)
 

@@ -2,7 +2,7 @@
 
 import rdflib
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
-from rdflib.namespace import DC, FOAF
+from rdflib.namespace import DC
 import extract_abstract as ex_ab
 import generic_functions as gf
 
@@ -17,12 +17,6 @@ def write_rdf(file_name, rdf):
 def create_rdf_graph(config):
     """Take a directory with all files in an xml format
     and convert it in a n3 format"""
-
-    """rdf_graph = Graph()
-
-    rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("dc", DC)
-    rdf_graph.bind("cui", cui)"""
 
     rdf_graph = gf.basic_knowledge_graph()
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
@@ -46,28 +40,6 @@ def create_rdf_graph(config):
     if config['rdf']['write_rdf']:
         write_rdf(config['rdf']['file_name'], rdf_normalized)
 
-def query_example():
-    """Just to keep an example query, not for using"""
-    rdf_graph = Graph()
-
-    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
-    cui = Namespace('http://cui.unige.ch/')
-
-    rdf_graph.bind("vgiid", vgiid)
-    rdf_graph.bind("dc", DC)
-    rdf_graph.bind("cui", cui)
-    rdf_graph.add((vgiid['919'], RDF.type , cui.article))
-
-    qres = rdf_graph.query(
-    """
-    PREFIX cui:<http://cui.unige.ch/>
-    SELECT DISTINCT ?a
-       WHERE {
-          ?a a cui:article .
-       }""")
-
-    for row in qres:
-        print(row)
 
 def merge_graph(rdf_file1, rdf_file2):
     """Merge graph can merge two rdf files

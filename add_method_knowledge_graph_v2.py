@@ -40,21 +40,22 @@ def parse_file_to_dic(file_name):
         sys.exit('Format file isn\'t supported.\nFormat are: .json / .yml')
     return dic_file
 
-def dic_to_rdf(dic, parent, rdf_graph):
+def dic_to_rdf(dic, parent, rdf_graph, name):
     """dic_to_rdf is a recursive function. The goal is
-    to explore the dic to add information in our rdf graph"""
+    to explore the dic to add information in our rdf graph
+    name is a unique string name for method"""
 
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
     cui = Namespace('http://cui.unige.ch/')
 
     for key in dic.keys():
         if type(dic[key]) is dict:
-            dic_to_rdf(dic[key], key, rdf_graph)
+            dic_to_rdf(dic[key], key, rdf_graph, name)
             #print('Parent: ' + parent)
             #print('Fils:' + key)
             rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
             rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
-            rdf_graph.add((cui[key], SKOS.inSchema, cui['TEST']))
+            rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
 
         elif type(dic[key]) is list:
             for val in dic[key]:
@@ -69,7 +70,7 @@ def dic_to_rdf(dic, parent, rdf_graph):
                 rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
                 rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
 
-                rdf_graph.add((cui[key], SKOS.inSchema, cui['TEST']))
+                rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
 
                 # Informations links between a concept and an article
                 rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
@@ -82,6 +83,7 @@ def dic_to_rdf(dic, parent, rdf_graph):
 
 
 def create_rdf_graph(config):
+    """Take the config in a dictionnary and use it to create an rdf graph"""
 
     file_name = config['informations_to_add']
     output_file = config['output_file']
@@ -98,7 +100,7 @@ def create_rdf_graph(config):
         # We add rng to avoid same name
         # for different method
         nb_alea = randint(1000,9999)
-        name = '{}_{}'.format(dic_file['method_name'][0:6].replace(' ','_'), nb_alea)
+        name = '{}_{}'.format(dic_file['method_name'][0:15].replace(' ','_'), nb_alea)
         rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
         rdf_graph.add((cui[name], SKOS.prefLabel, Literal(dic_file['method_name'])))
     else:
@@ -114,15 +116,15 @@ def create_rdf_graph(config):
 
     rdf_graph.add((cui[name], RDFS.subClassOf, SKOS.ConceptScheme))
 
-    dic_to_rdf(dic_file['root'], 'Root', rdf_graph)
+    dic_to_rdf(dic_file['root'], 'Root', rdf_graph, name)
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
-    print(rdf_normalized)
+    # print(rdf_normalized)
 
     gf.write_rdf(output_file, rdf_normalized)
 
-    # return rdf_normalized
+    return rdf_normalized
 
 if __name__ == '__main__':
 
