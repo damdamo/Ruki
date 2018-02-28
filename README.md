@@ -68,14 +68,14 @@ options:
 ```
 
 You have some options to complete the collect (with true or false):  
-* writing: You decide if you want to have an output. If this parameter is false
+* **writing**: You decide if you want to have an output. If this parameter is false
 the rest has any importance.
-* multiple_file: You can decide to have one abstract per file or just one file with all abstracts
-* id: Can print id of the document on the website
-* keywords: Moreover abstracts, you can add keywords that are avaible in the same page of abstract to have more informations
-* title: Same as keywords for title
-* xml: You can add tags for parsing easier your file. If you want to handle your file(s) differently because the weight of a keyword is not the same that a word.
-* csv: You can have an other output in a csv format. The columns where the first is just the same name 'vgi', the second 'id' of the article and the third a compilation of title, keywords and abstract.
+* **multiple_file**: You can decide to have one abstract per file or just one file with all abstracts
+* **id**: Can print id of the document on the website
+* **keywords**: Moreover abstracts, you can add keywords that are avaible in the same page of abstract to have more informations
+* **title**: Same as keywords for title
+* **xml**: You can add tags for parsing easier your file. If you want to handle your file(s) differently because the weight of a keyword is not the same that a word.
+* **csv**: You can have an other output in a csv format. The columns where the first is just the same name 'vgi', the second 'id' of the article and the third a compilation of title, keywords and abstract.
 
 XML hierarchy:
 
@@ -172,6 +172,7 @@ But we can just have this dictionnary to process on it.
 Now i suppose that we have our knowledge graph and you want add your own analysis. For example you're trying to use a different method like clustering and you want to add it in the knowledge graph.
 The goal here is just to create an rdf graph with your results. You need to create a file with this specific format:
 
+#### Old version
 ```bash
 ||method_name|my_method_name||method_informations|my_method_informations
 file_id1, file_id2, file_id3
@@ -179,7 +180,96 @@ file_id4
 file_id5, file_id6
 ```
 
+#### Recent version
+
+The previous version lacked consistency and didn't allow to make all i wanted. For example the categorisation is too simple with one level. Now we can have many categorisation with sub categorisation. For simplicity i choosed two formats which are **json** and **yml**.
+
+Here two examples in each language of what your file should be: (Two examples are equivalent)
+
+JSON:
+
+```json
+{
+  "method_name": "k-means animals",
+  "method_informations": "Our method use the k-means to have a partition of our article",
+  "root": {
+    "animals": {
+      "vertebrate": {
+        "mammal": {
+          "cat": [492, 540, 602],
+          "dog": [50, 67, 80]
+        },
+        "crocodile": [90],
+        "bird": [155]
+      },
+      "invertebrate": {
+        "insects": [899, 389, 765, 458]
+      }
+    }
+  }
+}
+```
+YAML:
+
+```yml
+method_name: "k-means animals"
+method_informations: "Our method use the k-means to have a partition of our article"
+root:
+  animals:
+    vertebrate:
+      mammal:
+        cat: [492, 540, 602]
+        dog: [50, 67, 80]
+      crocodile: [90]
+      bird: [155]
+  invertebrate:
+    insects: [899, 389, 765, 458]
+```
+
 #### Where:
-* The first line is optional (must be the first line), but you can add specific informations like the name of your method or informations about your method. You can have just one, don't need to have the two to work. The syntax must be respected with **||** and **|**. **||** is needed to separate tags and **|** give us the good information for every tags.
-* Every line except this optional line is a group of article id. If many id article are in the same line, it means that documents are in the same group.
-So for the last example, we have 3 id documents together in the second line, 1 for the third line and 2 for the last line.
+* **method_name** (optional): Give a name to your method
+* **method_informations** (optional): Explain what you have done
+* **root**: The main part which contain all of your data structure. The name "root" must be the first, after that you have the name of your categories at the left and the name or id of your article at the right.
+When you construct your categorisation, you noticed that you have only two possibilities. After a categorise you have new categories or a list of your id. Even if you have only one article put it into a list.
+
+So:
+
+```yml
+# Doesn't work
+mammal: [347, 549]
+  cat: [492, 540, 602]
+  dog: [50, 67, 80]
+
+# Work
+mammal: [347, 549]
+
+# Work
+mammal:
+  cat: [492, 540, 602]
+  dog: [50, 67, 80]
+
+# Doesn't Work
+  crocodile: 90
+
+# Work
+  crocodile: [90]
+```
+
+### Usage
+
+Modify the config file **config_add_method_knowledge_graph** :
+
+```yml
+# Config add method knowledge Graph
+
+informations_to_add: documents/yml_example_to_add_method.yml
+output_file: Results/Rdf/add_method_v2.rdf
+```
+
+* **informations_to_add**: Your json or yml file with all of your informations
+* **output_file**: Just your output file
+
+Now just call and see your result into the output file:  
+``
+python3 add_method_knowledge_graph_v2.py
+``
