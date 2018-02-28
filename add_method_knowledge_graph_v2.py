@@ -9,6 +9,7 @@ import generic_functions as gf
 import re
 import os.path
 import sys
+import json
 
 
 def extract_json_to_dic(file_name):
