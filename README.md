@@ -273,3 +273,10 @@ Now just call and see your result into the output file:
 ``
 python3 add_method_knowledge_graph_v2.py
 ``
+
+##Module web
+
+``
+sudo apt-get install python python-pip
+sudo pip install flask
+``

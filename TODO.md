@@ -9,20 +9,23 @@ cui.art_concept_link (Qu'est ce qu'on en fait avec toutes les propriétés)
 cui.has_concept
 cui.has_article etc...
 
-### Hierarchie des classes des ontologies (OK)
-**GOOD** : Prendre en compte la hiérarchie des classes de l'ontologie, le rajouter dans le schema rdf avec des subClassOf  
-
-### Améliorer le format pour add methode (OK)
-**GOOD** : Changer le format du fichier d'entrée pour ajouter une methode pour pouvoir avoir
-une hierarchie de cluster  
-
-### Interface de visualisation
-
-**NOT GOOD** : Faire l'interface graphique du site web en prototype
-
-### Noeuds blanc pour les cluster (OK)
-**GOOD**: Bon pour config_construct_knowledge_graph.py  
-**GOOD** : Mettre des noeuds blanc pour les cluster (Manque pour add_method_knowledge_graph)
-
 ### Erreur / Bug en vrac à corriger
 **NOT GOOD** : Erreur code extract_ontologies_concepts.py, on a un retour avec une uri avec espace (voir ligne 409 rdf_onto_extraction.rdf)
+
+### Export data base
+**NOT GOOD** : Pouvoir exporter les données de rdf4j sous forme d'un json/yaml avec deux options !
+* Option 1: On récupère juste les articles avec leurs infos
+* (À VOIR) Option 2: On récupère tout !
+
+### Import sa méthode dans le graphe de connaissance
+**NOT GOOD**: Pouvoir mettre un fichier json/yaml qui sera intégré à la base de connaissance
+
+### Créer le bon format json pour l'interface graphique "world"
+**NOT GOOD**: Le format du code d3js pour réaliser l'interface graphique prend un json d'un certain format qu'il faut réaliser. Il faut créer un fichier json par méthode qui sera utilisé pour afficher l'ensemble du "world".
+
+### Modifier le script d3js pour ajouter les options voulues
+**NOT GOOD**: Ajout des feuilles cliquables qui donnent accès aux données qui nous intéressent !
+De plus il faut donner la possibilité à l'utilisateur de changer de vue à ce moment !
+
+### Aggrémenter le site
+**NOT GOOD**: Ajouter des pages pour séparer les différentes tâches (import/export, world, ...)
