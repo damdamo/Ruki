@@ -23,7 +23,7 @@ parameters_extract_content:
 output:
   file: 'Results/Extracts/Single/abstracts'
   folder: 'Results/Extracts/Multiple/'
-  csv: 'Results/Extracts/Single/abstracts2.csv'
+  csv: 'Results/Extracts/Single/abstracts.csv'
 
 # Options can modify format, number of file, number of parameters
 # writing: Decide if we write the content into file(s)

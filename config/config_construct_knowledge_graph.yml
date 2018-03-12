@@ -4,5 +4,5 @@
 # like id / article title / keywords
 
 rdf:
-  write_rdf: False
+  write_rdf: True
   file_name: 'Results/Rdf/rdf_knowledge_graph.rdf'

@@ -9,5 +9,5 @@ abstract_folder: 'Results/Extracts/Multiple/'
 
 # Decide if we want to write the file in rdf
 rdf:
-  write_rdf: False
-  file_name: 'Results/Rdf/rdf_onto_extraction_test.rdf'
+  write_rdf: True
+  file_name: 'Results/Rdf/rdf_onto_extraction.rdf'
