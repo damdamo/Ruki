@@ -7,78 +7,103 @@ from random import randint
 import extract_abstract as ex_ab
 import generic_functions as gf
 import re
+import os.path
+import sys
+import json
 
 
-def extract_options(line):
-    """Take a line and extract options to add
-    informations. We have special tag for this like
-    method_name, informations..."""
+def extract_json_to_dic(file_name):
+    """Take a json file and return a dictionnary"""
+    json_file = open(file_name)
+    json_str = json_file.read()
+    json_dic = json.loads(json_str)
 
-    # dic_options contains all options
-    dic_options = {}
+    return json_dic
 
-    for option in line.split('||'):
-        if len(option) > 0:
-            option_split = option.split('|')
-            if len(option_split) > 1:
-                if '\n' in option_split[1]:
-                    option_split[1] = option_split[1].replace('\n', '')
-                dic_options[option_split[0]] = option_split[1]
+def extract_yml_to_dic(file_name):
+    """Take a yml file and return a dictionnary"""
+    yml_dic = gf.load_config(file_name)
+    return yml_dic
 
-    return dic_options
+def parse_file_to_dic(file_name):
+    """Parse file take a file and return a dictionnary
+    This function allow to choose the good format that we have
+    in input
+    """
+    dic_file = {}
+    extension = os.path.splitext(file_name)[1]
+    if extension == '.json':
+        dic_file = extract_json_to_dic(file_name)
+
+    elif extension == '.yml':
+        dic_file = extract_yml_to_dic(file_name)
+    else:
+        sys.exit('Format file isn\'t supported.\nFormat are: .json / .yml')
+    return dic_file
+
+def dic_to_rdf(dic, parent, rdf_graph, name):
+    """dic_to_rdf is a recursive function. The goal is
+    to explore the dic to add information in our rdf graph
+    name is a unique string name for method"""
+
+    vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
+    cui = Namespace('http://cui.unige.ch/')
+
+    for key in dic.keys():
+        if type(dic[key]) is dict:
+            dic_to_rdf(dic[key], key, rdf_graph, name)
+            #print('Parent: ' + parent)
+            #print('Fils:' + key)
+            rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
+            rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
+            rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
+
+        elif type(dic[key]) is list:
+            for val in dic[key]:
+                #print('Parent ' + parent)
+                #print('Fils: ' + key)
+                #print('Valeur: ' + val)
+                index_name = '{}_{}_{}'.format(val, key, randint(1000,9999))
+                blank_node = BNode(index_name)
+
+                # Informations about a concept with article
+                rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
+                rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
+                rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
+
+                rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
+
+                # Informations links between a concept and an article
+                rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
+                rdf_graph.add((blank_node, cui.has_article, vgiid[val]))
+                rdf_graph.add((blank_node, cui.has_concept, cui[key]))
 
 
-def parse_file(file_name):
-    """This method can parse the file with all data
-    that you obtain with your method
-    The format of input file must be a text file
-    where each line is a set of article id
-    All article id on a same line is in the same cluster"""
-
-    # Contains all informations that we parse
-    dic_informations = {}
-    options = []
-
-    # We give an id for every cluster
-    cluster_count = 0
-    first_line = True
-
-    with open(file_name, 'r') as file_reading:
-        for line in file_reading:
-            if first_line and line[0:2]=='||':
-                options = extract_options(line)
-                first_line = False
-            else:
-                dic_informations[cluster_count] = []
-                for element in line.split():
-                    dic_informations[cluster_count].append(element)
-                cluster_count = cluster_count + 1
-
-    return dic_informations, options
+        else:
+            sys.exit('Your file contain a value which is not a dictionnary or a list')
 
 
 def create_rdf_graph(config):
+    """Take the config in a dictionnary and use it to create an rdf graph"""
 
-    config = gf.load_config('config/config_add_method_knowledge_graph.yml')
     file_name = config['informations_to_add']
     output_file = config['output_file']
 
-    dic_informations, options = parse_file(file_name)
+    dic_file = parse_file_to_dic(file_name)
 
     rdf_graph = gf.basic_knowledge_graph()
 
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
     cui = Namespace('http://cui.unige.ch/')
 
-
-    if 'method_name' in options:
+    if 'method_name' in dic_file:
         # We give a name for the kernel
         # We add rng to avoid same name
         # for different method
         nb_alea = randint(1000,9999)
-        name = '{}_{}'.format(options['method_name'][0:6].replace(' ','_'), nb_alea)
+        name = '{}_{}'.format(dic_file['method_name'][0:15].replace(' ','_'), nb_alea)
         rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
-        rdf_graph.add((cui[name], SKOS.prefLabel, Literal(options['method_name'])))
+        rdf_graph.add((cui[name], SKOS.prefLabel, Literal(dic_file['method_name'])))
     else:
         # If we don't have a method name, we just generate a big
         # number for the name
@@ -87,26 +112,15 @@ def create_rdf_graph(config):
         rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
 
     # If we have informations we add it
-    if 'method_informations' in options:
-        rdf_graph.add((cui[name], SKOS.note, Literal(options['method_informations'])))
+    if 'method_informations' in dic_file:
+        rdf_graph.add((cui[name], SKOS.note, Literal(dic_file['method_informations'])))
 
     rdf_graph.add((cui[name], RDFS.subClassOf, SKOS.ConceptScheme))
 
-    for i in range(0,len(dic_informations)-1):
-        concept_name = 'concept_{}_{}'.format(i, name)
-        rdf_graph.add((cui[concept_name], RDFS.subClassOf, SKOS.Concept))
-        rdf_graph.add((cui[concept_name], SKOS.inSchema, cui[name]))
-        # rdf_graph.add((cui[concept_name], SKOS.prefLabel, Literal(concept)))
-        for article in dic_informations[i]:
-            print('article ' + article)
-            index_name = 'index_{}_{}'.format(i, article)
-            rdf_graph.add((cui[index_name], RDF.type, cui.art_concept_link))
-            rdf_graph.add((cui[index_name], cui.has_concept, cui[concept_name]))
-            rdf_graph.add((cui[index_name], cui.has_article, vgiid[article]))
+    dic_to_rdf(dic_file['root'], 'Root', rdf_graph, name)
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
-
     # print(rdf_normalized)
 
     gf.write_rdf(output_file, rdf_normalized)
