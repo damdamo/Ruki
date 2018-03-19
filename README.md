@@ -195,10 +195,11 @@ JSON:
   "root": {
     "animals": {
       "vertebrate": {
-        "mammal": {
-          "cat": [492, 540, 602],
-          "dog": [50, 67, 80]
-        },
+        "mammal": [
+          {"cat": [492, 540, 602]},
+          {"dog": [50, 67, 80]},
+          123, 88
+        ],
         "crocodile": [90],
         "bird": [155]
       },
@@ -208,6 +209,7 @@ JSON:
     }
   }
 }
+
 ```
 YAML:
 
@@ -218,10 +220,12 @@ root:
   animals:
     vertebrate:
       mammal:
-        cat: [492, 540, 602]
-        dog: [50, 67, 80]
+        - cat: [492, 540, 602]
+        - dog: [50, 67, 80]
+        - 123
+        - 88
       crocodile: [90]
-      bird: [155]
+      bird: [155, 48]
   invertebrate:
     insects: [899, 389, 765, 458]
 ```
@@ -229,12 +233,19 @@ root:
 #### Where:
 * **method_name** (optional): Give a name to your method
 * **method_informations** (optional): Explain what you have done
-* **root**: The main part which contain all of your data structure. The name "root" must be the first, after that you have the name of your categories at the left and the name or id of your article at the right.
-When you construct your categorisation, you noticed that you have only two possibilities. After a categorise you have new categories or a list of your id. Even if you have only one article put it into a list.
+* **root**: The main part which contain all of your data structure.  
+You have three possibilities:
+  - You have a category which contains other categories. Example: "animals" contains two catergories, vertebrate and invertebrate
+  - You have a category which contains just a list of article id. Example: "crocodile", "insects"...
+  - You have a category which contains a mix of both. It means that you can have sub categorisation but for some article we can't be more specific. Example: "mammal" have both, new categorise with "cat" and "dog", but all mammal are not cats and dogs.
 
-So:
+
+Example for yml:
 
 ```yml
+
+# ----- Case two -----
+
 # Doesn't work
 mammal: [347, 549]
   cat: [492, 540, 602]
@@ -253,6 +264,34 @@ mammal:
 
 # Work
   crocodile: [90]
+
+# ----- Case three -----
+
+# Work
+  mammal:
+    - cat: [492, 540, 602]
+    - dog: [50, 67, 80]
+    - 123
+    - 88
+
+  # Doesn't Work
+    mammal:
+      cat: [492, 540, 602]
+      dog: [50, 67, 80]
+      123
+      88
+
+  # Doesn't work
+  mammal:
+    - cat: [492, 540, 602]
+    - dog: [50, 67, 80]
+    - 123, 90, 48
+
+  # Doesn't work
+  mammal:
+    - cat: [492, 540, 602]
+    - dog: [50, 67, 80]
+    - [123, 90, 48]
 ```
 
 ### Usage

@@ -41,42 +41,51 @@ def parse_file_to_dic(file_name):
         sys.exit('Format file isn\'t supported.\nFormat are: .json / .yml')
     return dic_file
 
-def dic_to_rdf(dic, parent, rdf_graph, name):
+def dic_to_rdf(container, parent, rdf_graph, name):
     """dic_to_rdf is a recursive function. The goal is
-    to explore the dic to add information in our rdf graph
+    to explore the container to add information in our rdf graph
     name is a unique string name for method"""
 
     vgiid = Namespace('http://vgibox.eu/repository/index.php?curid=')
     cui = Namespace('http://cui.unige.ch/')
 
-    for key in dic.keys():
-        if type(dic[key]) is dict:
-            dic_to_rdf(dic[key], key, rdf_graph, name)
+    #print(type(container))
+    #print(container)
+
+    for key in container.keys():
+        if type(container[key]) is dict:
+            dic_to_rdf(container[key], key, rdf_graph, name)
             #print('Parent: ' + parent)
             #print('Fils:' + key)
             rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
             rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
             rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
 
-        elif type(dic[key]) is list:
-            for val in dic[key]:
-                #print('Parent ' + parent)
-                #print('Fils: ' + key)
-                #print('Valeur: ' + val)
-                index_name = '{}_{}_{}'.format(val, key, randint(1000,9999))
-                blank_node = BNode(index_name)
+        elif type(container[key]) is list:
+            for val in container[key]:
+                if type(val) is dict:
+                    dic_to_rdf(val, key, rdf_graph, name)
+                else:
+                    # If we don't have an article id
+                    if type(val) is not int:
+                        sys.exit('Your file contain a value which is not an id')
+                    # print('Parent ' + parent)
+                    # print('Fils: ' + key)
+                    # print('Valeur: ' + str(val))
+                    index_name = '{}_{}_{}'.format(val, key, randint(1000,9999))
+                    blank_node = BNode(index_name)
 
-                # Informations about a concept with article
-                rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
-                rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
-                rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
+                    # Informations about a concept with article
+                    rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
+                    rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
+                    rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
 
-                rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
+                    rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
 
-                # Informations links between a concept and an article
-                rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
-                rdf_graph.add((blank_node, cui.has_article, vgiid[val]))
-                rdf_graph.add((blank_node, cui.has_concept, cui[key]))
+                    # Informations links between a concept and an article
+                    rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
+                    rdf_graph.add((blank_node, cui.has_article, vgiid[str(val)]))
+                    rdf_graph.add((blank_node, cui.has_concept, cui[key]))
 
 
         else:

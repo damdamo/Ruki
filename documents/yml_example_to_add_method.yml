@@ -10,8 +10,10 @@ root:
   animals:
     vertebrate:
       mammal:
-        cat: [492, 540, 602]
-        dog: [50, 67, 80]
+        - cat: [492, 540, 602]
+        - dog: [50, 67, 80]
+        - 123
+        - 88
       crocodile: [90]
       bird: [155]
   invertebrate:
