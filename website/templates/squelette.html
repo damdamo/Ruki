@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {% block header %}
+        <meta charset="utf-8" />
+        <title>{% block titre %}Titre par défaut{% endblock %}</title>
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+    </head>
+
+    <body>
+        {% block corps %}{% endblock %}
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+             <ul>
+             {% for m in messages %}
+                 <li>{{ m }}</li>
+             {% endfor %}
+             </ul>
+          {% endif %}
+        {% endwith %}
+
+        {% block footer %}{% endblock %}
+    </body>
+</html>
