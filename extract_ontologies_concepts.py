@@ -148,9 +148,9 @@ def rdf_translate(dic_concept_abstract, file_name):
                     rdf_graph.add((blank_node, cui.has_article, vgiid[abstract_id]))
                     rdf_graph.add((blank_node, cui.has_number, Literal(number)))
                     if len(concept_uri.label) == 0:
-                        rdf_graph.add((blank_node, cui.has_concept, cui[concept_uri.name]))
+                        rdf_graph.add((blank_node, cui.has_concept, URIRef(concept_uri.iri)))
                     else:
-                        rdf_graph.add((blank_node, cui.has_concept, cui[concept_uri.label[0]]))
+                        rdf_graph.add((blank_node, cui.has_concept,URIRef(concept_uri.iri)))
 
     # We normalize in n3 to write it
     rdf_normalized = rdf_graph.serialize(format='n3')
