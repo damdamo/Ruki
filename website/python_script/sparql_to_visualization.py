@@ -3,6 +3,8 @@
 import requests
 import generic_functions as gf
 import csv
+import json
+import time
 
 def add_prefix_sparql_request(sparql_request):
     """Add the prefix for sparql request"""
@@ -31,66 +33,102 @@ def get_sub_concepts(method_name, root_uri):
         WHERE {
           ?method skos:prefLabel "%s".
           ?concepts skos:inSchema ?method.
-          ?concepts rdfs:subClassOf %s.
+          ?concepts rdfs:subClassOf <%s>.
           ?concepts skos:prefLabel ?name.
         }
         ''' % (method_name, root_uri)
 
     query = add_prefix_sparql_request(query_base)
     answer = get_response_sparql(query)
-    return answer
 
-def find_articles(concept_uri):
+    list_articles = []
+
+    for val in answer['results']['bindings']:
+        dic = {}
+        for key in val.keys():
+            dic[key] = val[key]['value']
+        list_articles.append(dic)
+
+    return list_articles
+
+def get_articles(concept_uri):
     """Give us a list of article which is link for a specific
-    concept. We return a csv/text with answer which is a list of article """
+    concept. We return a list of dictionnary where each dic contain his informations"""
 
     query_base =  """
-        SELECT DISTINCT ?article
+        SELECT DISTINCT ?name
         WHERE {
-            ?a cui:has_concept %s.
+            ?a cui:has_concept <%s>.
             ?a cui:has_article ?article.
+            ?article dc:title ?name
         }
     """ % (concept_uri)
 
     query = add_prefix_sparql_request(query_base)
     answer = get_response_sparql(query)
-    return answer
 
-def transform_csv_text_to_dic(csv_text):
-    """Take a csv text (not file) and convert it in a dic"""
+    list_articles = []
 
-    csv_list = csv_text.split('\r\n')
-    list_var = []
+    for val in answer['results']['bindings']:
+        dic = {}
+        for key in val.keys():
+            dic[key] = val[key]['value']
+        list_articles.append(dic)
 
-    nb_var = len(csv_list[0].split(','))
-    for var in csv_list[0].split(','):
-        list_var.append(var)
+    return list_articles
+
+def explore_recursive(method_name, root_uri, root_name):
+    """Deux problèmes: Cas où on arrive sur une feuille sans article
+    Autre problème avec append sur les feuilles ou il faudrait un + (concat)"""
 
     dic = {}
+    dic['name'] = root_name
+    dic['children'] = []
+    list_articles = get_articles(root_uri)
+    for el in get_sub_concepts(method_name, root_uri):
+        if len(get_sub_concepts(method_name, el['concepts'])) != 0:
+            print(el['name'])
+            #print(len(get_sub_concepts(method_name, el['concepts'])))
+            dic['children'].append(explore_recursive(method_name, el['concepts'], el['name']))
+        else:
+            if len(get_articles(el['concepts'])) != 0:
+                dic['children'] = dic['children'] + get_articles(el['concepts'])
 
-    for element in csv_list:
-        for i in range(nb_var):
-            sub_dic = {}
+    list_articles = get_articles(root_uri)
+    if len(list_articles) != 0:
+        #print(get_articles(root_uri))
+        dic['children'] = dic['children'] + get_articles(root_uri)
 
+    return dic
 
 
 def get_response_sparql(query):
-    # headers = {'Accept': 'application/sparql-results+json'}
+    """ We get answer of the sparql query in a json format """
+    headers = {'Accept': 'application/sparql-results+json'}
     payload = {'query': '{}'.format(query), 'queryLn':'SPARQL', 'infer':'false'}
-    result = requests.get(url, params=payload)
-    #print(result)
-    #print(result.headers)
+    result = requests.get(url, params=payload, headers=headers)
     result_decode = (result.content).decode("utf-8")
+    #result_decode = result_decode.split('\r\n')
+    result_decode = json.loads(result_decode)
     return result_decode
 
 def get_informations_for_visualization(config):
     """We get an answer in a csv format depends on our query"""
     url = config['url_server']
     method_name = config['method_name']
-    root = 'owl:Thing'
+    # root = 'owl:Thing'
+    root = 'http://www.w3.org/2002/07/owl#Thing'
 
-    infos = get_sub_concepts(method_name, root)
-    print(transform_csv_text_to_dic(infos))
+    dic = {}
+    res = explore_recursive(method_name, root, 'root')
+
+    # print(res)
+
+    monjson = json.dumps(res, indent=1, ensure_ascii=False)
+
+    with open('lol.json', 'w') as lol:
+        lol.write(monjson)
+
 
 if __name__ == '__main__':
 
