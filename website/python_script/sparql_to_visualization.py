@@ -71,6 +71,7 @@ def get_articles(concept_uri):
 
     for val in answer['results']['bindings']:
         dic = {}
+        dic['size'] = 1
         for key in val.keys():
             dic[key] = val[key]['value']
         list_articles.append(dic)
@@ -81,25 +82,33 @@ def explore_recursive(method_name, root_uri, root_name):
     """Deux problèmes: Cas où on arrive sur une feuille sans article
     Autre problème avec append sur les feuilles ou il faudrait un + (concat)"""
 
-    dic = {}
-    dic['name'] = root_name
-    dic['children'] = []
-    list_articles = get_articles(root_uri)
-    for el in get_sub_concepts(method_name, root_uri):
-        if len(get_sub_concepts(method_name, el['concepts'])) != 0:
+    if len(get_sub_concepts(method_name, root_uri)) == 0:
+        print('lol')
+        return get_articles(root_uri)
+
+    else:
+        dic = {}
+        dic['name'] = root_name
+        dic['children'] = []
+        list_articles = get_articles(root_uri)
+        for el in get_sub_concepts(method_name, root_uri):
             print(el['name'])
-            #print(len(get_sub_concepts(method_name, el['concepts'])))
-            dic['children'].append(explore_recursive(method_name, el['concepts'], el['name']))
-        else:
-            if len(get_articles(el['concepts'])) != 0:
-                dic['children'] = dic['children'] + get_articles(el['concepts'])
+            if len(get_sub_concepts(method_name, el['concepts'])) != 0:
+                #print(len(get_sub_concepts(method_name, el['concepts'])))
+                dic['children'] = dic['children'] + [explore_recursive(method_name, el['concepts'], el['name'])]
+            else:
+                if len(get_articles(el['concepts'])) != 0:
+                    dic['children'] = dic['children'] + get_articles(el['concepts'])
 
-    list_articles = get_articles(root_uri)
-    if len(list_articles) != 0:
-        #print(get_articles(root_uri))
-        dic['children'] = dic['children'] + get_articles(root_uri)
 
-    return dic
+        if len(list_articles) != 0:
+            #print(get_articles(root_uri))
+            dic['children'] = dic['children'] + get_articles(root_uri)
+
+        if len(dic['children']) != 0:
+            return dic
+
+        return ''
 
 
 def get_response_sparql(query):
