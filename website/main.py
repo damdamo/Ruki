@@ -6,7 +6,9 @@ from werkzeug.utils import secure_filename
 import requests
 import os
 import python_script.add_method_knowledge_graph as add_method
+import python_script.sparql_to_visualization as visualization
 
+METHOD_FOLDER = 'static/method_schema'
 UPLOAD_FOLDER = '/home/damien/Workspace/master_project/website/temp'
 ALLOWED_EXTENSIONS = set(['json', 'yml'])
 
@@ -75,13 +77,33 @@ def upload_file():
 def ma_page_404(error):
     return "Ma jolie page 404", 404
 
-@app.route('/world')
+@app.route('/world', methods=['GET', 'POST'])
 def display_world():
-    return render_template('world.html', name_file="my_json.j", titre="Bienvenue !")
+    list_method = get_list_method_schema()
+    if request.method == 'POST':
+        method_select = request.form['method_select']
+        name_file = '{}/{}.json'.format(METHOD_FOLDER, method_select)
+        # We get index of element which is selected
+        index = ([idx for idx in range(len(list_method)) if list_method[idx] == method_select])[0]
+        # We insert element selected in first position and we pop the old position
+        list_method.insert(0, method_select)
+        list_method.pop(index+1)
+        
+        return render_template('world.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
+    else:
+        return render_template('world.html', printable=False, list_method=list_method, titre="Bienvenue !")
+
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def get_list_method_schema():
+    """Return list of method schema in static/method_schema"""
+    list_method = []
+    for method in os.listdir(METHOD_FOLDER):
+        list_method.append(method.replace('.json', ''))
+    return list_method
 
 def get_response_sparql(sparql_request):
     """ Take a string in input which represent the sparql request

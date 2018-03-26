@@ -8,6 +8,22 @@
 
 {% block corps %}
 
+
+<form method="post" action="">
+  <p>
+    <label for="method_select">Méthodes disponibles</label><br />
+    <select name="method_select" id="method_select">
+      {% for method in list_method %}
+        <option value="{{method}}">{{method}}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="Envoyer" />
+  </p>
+</form>
+
+
+{% if printable == True %}
+
 <svg width="960" height="960"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
@@ -26,7 +42,7 @@ var pack = d3.pack()
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
-d3.json("{{url_for('static', filename='my_json.json') }}", function(error, root) {
+d3.json("{{name_file}}", function(error, root) {
   if (error) throw error;
 
   root = d3.hierarchy(root)
@@ -85,5 +101,7 @@ d3.json("{{url_for('static', filename='my_json.json') }}", function(error, root)
 });
 
 </script>
+
+{% endif %}
 
 {% endblock %}

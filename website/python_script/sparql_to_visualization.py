@@ -1,10 +1,13 @@
 #! /usr/bin/env python3
 
 import requests
-import generic_functions as gf
+import python_script.generic_functions as gf
 import csv
 import json
 import time
+
+URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
+
 
 def add_prefix_sparql_request(sparql_request):
     """Add the prefix for sparql request"""
@@ -22,6 +25,22 @@ def add_prefix_sparql_request(sparql_request):
                 '''
     query = '{}{}'.format(prefixes, sparql_request)
     return query
+
+def get_list_method():
+    """We make a sparl query to get all method that we have in our knowledge graph
+    Return a list of string with all method name"""
+    query_base = """SELECT DISTINCT ?name
+                    WHERE {
+                    	?onto rdf:type cui:knowledge_extractor_result.
+                      	?onto skos:prefLabel ?name
+                    }"""
+    query = add_prefix_sparql_request(query_base)
+    answer = get_response_sparql(query)
+
+    list_method = []
+    for method in answer['results']['bindings']:
+        list_method.append(method['name']['value'])
+    return list_method
 
 def get_sub_concepts(method_name, root_uri):
     """ Construct a sparql query with the method name and root name
@@ -79,11 +98,10 @@ def get_articles(concept_uri):
     return list_articles
 
 def explore_recursive(method_name, root_uri, root_name):
-    """Deux problèmes: Cas où on arrive sur une feuille sans article
-    Autre problème avec append sur les feuilles ou il faudrait un + (concat)"""
+    """Return a dictionnary in a specific format to transform it into json
+    and give it to a function of vizualisation"""
 
     if len(get_sub_concepts(method_name, root_uri)) == 0:
-        print('lol')
         return get_articles(root_uri)
 
     else:
@@ -115,46 +133,32 @@ def get_response_sparql(query):
     """ We get answer of the sparql query in a json format """
     headers = {'Accept': 'application/sparql-results+json'}
     payload = {'query': '{}'.format(query), 'queryLn':'SPARQL', 'infer':'false'}
-    result = requests.get(url, params=payload, headers=headers)
+    result = requests.get(URL_SERVER, params=payload, headers=headers)
     result_decode = (result.content).decode("utf-8")
     #result_decode = result_decode.split('\r\n')
     result_decode = json.loads(result_decode)
     return result_decode
 
-def get_informations_for_visualization(config):
+def write_informations_for_visualization(config, method_name):
     """We get an answer in a csv format depends on our query"""
-    url = config['url_server']
-    method_name = config['method_name']
+    # method_name = config['method_name']
     # root = 'owl:Thing'
     root = 'http://www.w3.org/2002/07/owl#Thing'
 
     dic = {}
     res = explore_recursive(method_name, root, 'root')
 
-    # print(res)
+    data_json = json.dumps(res, indent=1, ensure_ascii=False)
+    name_file = 'static/{}.json'.format(method_name)
 
-    monjson = json.dumps(res, indent=1, ensure_ascii=False)
-
-    with open('lol.json', 'w') as lol:
-        lol.write(monjson)
+    with open(name_file, 'w') as nf:
+        nf.write(data_json)
 
 
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_manage_sparql.yml')
 
-    url = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
 
-    get_informations_for_visualization(config)
-
-
-"""
-    SELECT DISTINCT ?method ?concepts ?article
-    WHERE {
-      ?method skos:prefLabel "onto1_correct".
-      ?concepts skos:inSchema ?method.
-      ?concepts rdfs:subClassOf owl:Thing.
-      ?a cui:has_concept ?concepts.
-      ?a cui:has_article ?article.
-    }
-"""
+    #write_informations_for_visualization(config, 'onto1_correct')
+    get_list_method()
