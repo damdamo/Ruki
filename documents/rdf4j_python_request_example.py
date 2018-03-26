@@ -9,20 +9,26 @@ if __name__ == '__main__':
     query1 = 'ask {?s ?p ?o}'
     query2 = 'construct {?s ?p ?o} where {?s ?p ?o}'
     query4 = '''PREFIX cui: <http://cui.unige.ch/>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX vgiid: <http://vgibox.eu/repository/index.php?curid=>
-PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX schema: <http://schema.org/>
+                PREFIX dc: <http://purl.org/dc/elements/1.1/>
+                PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                PREFIX vgiid: <http://vgibox.eu/repository/index.php?curid=>
+                PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+                PREFIX schema: <http://schema.org/>
+                SELECT DISTINCT ?a
+                WHERE {
+                  ?a a schema:Article.
+                }'''
 
-SELECT DISTINCT ?a
-WHERE {
-  ?a a schema:Article.
-}'''
+    query5 = '''SELECT DISTINCT ?a
+                WHERE {
+                  ?a rdfs:subClassOf skos:ConceptScheme.
+                  ?a skos:prefLabel "onto1_correct".
+                }
+                '''
 
     payload = {'query': '{}'.format(query4), 'queryLn':'SPARQL'}
 
@@ -38,4 +44,4 @@ WHERE {
     print(result.headers)
     #print(result.url)
     my_text = (result.content).decode("utf-8")
-    print(my_text.split('\r\n'))
+print(my_text.split('\r\n'))
