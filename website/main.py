@@ -7,6 +7,7 @@ import requests
 import os
 import python_script.add_method_knowledge_graph as add_method
 import python_script.sparql_to_visualization as visualization
+import python_script.import_export_rdf4j as imp_exp
 
 METHOD_FOLDER = 'static/method_schema'
 UPLOAD_FOLDER = '/home/damien/Workspace/master_project/website/temp'
@@ -52,20 +53,11 @@ def upload_file():
             extension = os.path.splitext(filename)[1]
             full_path_rdf_name = full_path_name.replace(extension, '.rdf')
 
+            # We take the file and convert it into rdf file
             add_method.create_rdf_graph(full_path_name, full_path_rdf_name)
 
-            print("YOOOO")
-
-            """------------------------------TEST------------------------------"""
-
-            url = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien/statements'
-            files = {'data':'{}'.format(open(full_path_rdf_name, 'rb'))}
-            headers = {'Content-Type':'text/n3'}
-            result = requests.post(url, data=files, headers=headers)
-            print(result)
-
-            """----------------------------------------------------------------"""
-
+            # We take the new rdf graph and we import it in the rdf4j server
+            imp_exp.import_rdf_to_rdf4j(full_path_rdf_name)
 
             flash('Le fichier a correctement été ajouté à la base de connaissance')
             return redirect(url_for('upload_file'))
@@ -75,7 +67,7 @@ def upload_file():
 
 @app.errorhandler(404)
 def ma_page_404(error):
-    return "Ma jolie page 404", 404
+    return "This is an error 404", 404
 
 @app.route('/world', methods=['GET', 'POST'])
 def display_world():
@@ -88,7 +80,7 @@ def display_world():
         # We insert element selected in first position and we pop the old position
         list_method.insert(0, method_select)
         list_method.pop(index+1)
-        
+
         return render_template('world.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
     else:
         return render_template('world.html', printable=False, list_method=list_method, titre="Bienvenue !")
@@ -104,35 +96,6 @@ def get_list_method_schema():
     for method in os.listdir(METHOD_FOLDER):
         list_method.append(method.replace('.json', ''))
     return list_method
-
-def get_response_sparql(sparql_request):
-    """ Take a string in input which represent the sparql request
-    Return a csv with the answer of request """
-
-    url = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
-
-    query4 = '''PREFIX cui: <http://cui.unige.ch/>
-        PREFIX dc: <http://purl.org/dc/elements/1.1/>
-        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX vgiid: <http://vgibox.eu/repository/index.php?curid=>
-        PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-        PREFIX schema: <http://schema.org/>
-
-        SELECT DISTINCT ?a
-        WHERE {
-          ?a a schema:Article.
-        }'''
-
-    payload = {'query': '{}'.format(query4), 'queryLn':'SPARQL'}
-
-    result = requests.get(url, params=payload)
-
-    my_text = (result.content).decode("utf-8")
-    return my_text.split('\r\n')
 
 
 if __name__ == '__main__':
