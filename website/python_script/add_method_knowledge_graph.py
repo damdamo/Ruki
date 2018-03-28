@@ -51,35 +51,30 @@ def dic_to_rdf(dic, parent, rdf_graph, name):
     for key in dic.keys():
         if type(dic[key]) is dict:
             dic_to_rdf(dic[key], key, rdf_graph, name)
-            #print('Parent: ' + parent)
-            #print('Fils:' + key)
-            rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
-            rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
-            rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
 
         elif type(dic[key]) is list:
             for val in dic[key]:
-                #print('Parent ' + parent)
-                #print('Fils: ' + key)
-                #print('Valeur: ' + val)
-                index_name = '{}_{}_{}'.format(val, key, randint(1000,9999))
-                blank_node = BNode(index_name)
+                if type(val) is int:
+                    #print('Parent ' + parent)
+                    #print('Fils: ' + key)
+                    #print('Valeur: ' + val)
+                    index_name = '{}_{}_{}'.format(val, key, randint(1000,9999))
+                    blank_node = BNode(index_name)
 
-                # Informations about a concept with article
-                rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
-                rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
-                rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
-
-                rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
-
-                # Informations links between a concept and an article
-                rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
-                rdf_graph.add((blank_node, cui.has_article, vgiid[val]))
-                rdf_graph.add((blank_node, cui.has_concept, cui[key]))
-
-
+                    # Informations links between a concept and an article
+                    rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
+                    rdf_graph.add((blank_node, cui.has_article, vgiid[str(val)]))
+                    rdf_graph.add((blank_node, cui.has_concept, cui[key]))
+                else:
+                    dic_to_rdf(val, key, rdf_graph, name)
         else:
-            sys.exit('Your file contain a value which is not a dictionnary or a list')
+            sys.exit('Your file contain a value which is not in the good format')
+
+        # Informations about a concept with article
+        rdf_graph.add((cui[key], RDFS.subClassOf, SKOS.Concept))
+        rdf_graph.add((cui[key], RDFS.subClassOf, cui[parent]))
+        rdf_graph.add((cui[key], SKOS.inSchema, cui[name]))
+        rdf_graph.add((cui[key], SKOS.prefLabel, Literal(key)))
 
 
 def create_rdf_graph(file_name, output_file):
@@ -96,10 +91,13 @@ def create_rdf_graph(file_name, output_file):
         # We give a name for the kernel
         # We add rng to avoid same name
         # for different method
-        nb_alea = randint(1000,9999)
-        name = '{}_{}'.format(dic_file['method_name'][0:15].replace(' ','_'), nb_alea)
+        # nb_alea = randint(1000,9999)
+        # name = '{}_{}'.format(dic_file['method_name'][0:15].replace(' ','_'), nb_alea)
+        name = '{}'.format(dic_file['method_name'][0:15].replace(' ','_'))
         rdf_graph.add((cui[name], RDF.type, cui.knowledge_extractor_result))
-        rdf_graph.add((cui[name], SKOS.prefLabel, Literal(dic_file['method_name'])))
+        #rdf_graph.add((cui[name], SKOS.prefLabel, Literal(dic_file['method_name'])))
+        rdf_graph.add((cui[name], SKOS.prefLabel, Literal(name)))
+
     else:
         # If we don't have a method name, we just generate a big
         # number for the name
@@ -121,7 +119,7 @@ def create_rdf_graph(file_name, output_file):
 
     gf.write_rdf(output_file, rdf_normalized)
 
-    return rdf_normalized
+    return [rdf_normalized, name]
 
 if __name__ == '__main__':
 
