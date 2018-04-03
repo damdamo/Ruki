@@ -84,6 +84,7 @@ def get_articles(concept_uri):
     """ % (concept_uri)
 
     query = add_prefix_sparql_request(query_base)
+
     answer = get_response_sparql(query)
 
     list_articles = []
@@ -92,41 +93,36 @@ def get_articles(concept_uri):
         dic = {}
         dic['size'] = 1
         for key in val.keys():
-            dic[key] = val[key]['value']
+            dic[key] = (val[key]['value'])[0:30]
         list_articles.append(dic)
 
     return list_articles
 
 def explore_recursive(method_name, root_uri, root_name):
-    """Return a dictionnary in a specific format to transform it into json
-    and give it to a function of vizualisation"""
+
+    dic = {}
+    dic['name'] = root_name[0:20]
+    dic['children'] = []
+    print(dic['name'])
 
     if len(get_sub_concepts(method_name, root_uri)) == 0:
-        return get_articles(root_uri)
+
+        dic['children'] = get_articles(root_uri)
+        articles = get_articles(root_uri)
+        if len(articles) != 0:
+            dic['children'] = articles
+        else:
+            return ''
 
     else:
-        dic = {}
-        dic['name'] = root_name
-        dic['children'] = []
-        list_articles = get_articles(root_uri)
         for el in get_sub_concepts(method_name, root_uri):
-            print(el['name'])
-            if len(get_sub_concepts(method_name, el['concepts'])) != 0:
-                #print(len(get_sub_concepts(method_name, el['concepts'])))
-                dic['children'] = dic['children'] + [explore_recursive(method_name, el['concepts'], el['name'])]
-            else:
-                if len(get_articles(el['concepts'])) != 0:
-                    dic['children'] = dic['children'] + get_articles(el['concepts'])
+            dic['children'] = dic['children'] + [explore_recursive(method_name, el['concepts'], el['name'])]
+        dic['children'] = dic['children'] + get_articles(root_uri)
 
+        while '' in dic['children']:
+            dic['children'].remove('')
 
-        if len(list_articles) != 0:
-            #print(get_articles(root_uri))
-            dic['children'] = dic['children'] + get_articles(root_uri)
-
-        if len(dic['children']) != 0:
-            return dic
-
-        return ''
+    return dic
 
 
 def get_response_sparql(query):
@@ -139,17 +135,19 @@ def get_response_sparql(query):
     result_decode = json.loads(result_decode)
     return result_decode
 
-def write_informations_for_visualization(config, method_name):
+def write_informations_for_visualization(method_name):
     """We get an answer in a csv format depends on our query"""
     # method_name = config['method_name']
-    # root = 'owl:Thing'
-    root = 'http://www.w3.org/2002/07/owl#Thing'
+    # root = 'owl:Thing
+
+    #root = 'http://www.w3.org/2002/07/owl#Thing'
+    root = 'http://cui.unige.ch/Root'
 
     dic = {}
     res = explore_recursive(method_name, root, 'root')
 
     data_json = json.dumps(res, indent=1, ensure_ascii=False)
-    name_file = 'static/{}.json'.format(method_name)
+    name_file = 'static/method_schema/{}.json'.format(method_name)
 
     with open(name_file, 'w') as nf:
         nf.write(data_json)
@@ -159,6 +157,5 @@ if __name__ == '__main__':
 
     config = gf.load_config('config/config_manage_sparql.yml')
 
-
-    #write_informations_for_visualization(config, 'onto1_correct')
-    get_list_method()
+    write_informations_for_visualization('onto1_correct')
+    #write_informations_for_visualization('k-means_animals')
