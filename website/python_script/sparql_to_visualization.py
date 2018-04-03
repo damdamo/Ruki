@@ -140,7 +140,8 @@ def get_response_sparql(query):
     return result_decode
 
 def write_informations_for_visualization(method_name):
-    """We get an answer in a csv format depends on our query"""
+    """We put a method and create a json file to use it later by
+    our vizualisation"""
     # method_name = config['method_name']
     # root = 'owl:Thing
 
