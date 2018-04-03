@@ -99,7 +99,11 @@ def get_articles(concept_uri):
     return list_articles
 
 def explore_recursive(method_name, root_uri, root_name):
-
+    """"This function is the main part of the code. It's a recursive
+    function which is used to recreate the hierarchy of the knowledge graph
+    and put article in different categories if it exists.
+    method_name is the name of your method (same name that we give in the json file)
+    It's needed for questionning our sparql database"""
     dic = {}
     dic['name'] = root_name[0:20]
     dic['children'] = []
