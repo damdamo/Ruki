@@ -24,12 +24,14 @@
 
 {% if printable == True %}
 
-<svg width="960" height="960"></svg>
+<!--<svg width="960" height="960"></svg>-->
+<svg width="1280" height="1280"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
 var svg = d3.select("svg"),
-    margin = 20,
+    margin = 1,
+    //margin = 20,
     diameter = +svg.attr("width"),
     g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
@@ -42,6 +44,7 @@ var pack = d3.pack()
     .size([diameter - margin, diameter - margin])
     .padding(2);
 
+
 d3.json("{{name_file}}", function(error, root) {
   if (error) throw error;
 
@@ -53,6 +56,8 @@ d3.json("{{name_file}}", function(error, root) {
       nodes = pack(root).descendants(),
       view;
 
+  console.log(nodes)
+
   var circle = g.selectAll("circle")
     .data(nodes)
     .enter().append("circle")
@@ -63,6 +68,7 @@ d3.json("{{name_file}}", function(error, root) {
   var text = g.selectAll("text")
     .data(nodes)
     .enter().append("text")
+      .attr("xlink:href", "http://en.wikipedia.org/wiki/")
       .attr("class", "label")
       .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
