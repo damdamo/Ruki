@@ -5,9 +5,16 @@ import python_script.generic_functions as gf
 import csv
 import json
 import time
+from nltk.corpus import stopwords
+
 
 URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
 
+def clean_stop_words(sentence):
+    """We clean all stop words in a sentence"""
+    sentence_clean = ' '.join([word for word in sentence.split(
+    ) if word not in stopwords.words('english')])
+    return sentence_clean
 
 def add_prefix_sparql_request(sparql_request):
     """Add the prefix for sparql request"""
@@ -91,12 +98,18 @@ def get_articles(concept_uri):
 
     for val in answer['results']['bindings']:
         dic = {}
-        dic['size'] = 1
+        dic['name'] = val['name']['value'][0:20]
+        dic['children'] = []
+
         for key in val.keys():
-            dic[key] = (val[key]['value'])[0:30]
+            dic_temp = {}
+            dic_temp[key] = val[key]['value']
+            dic_temp['size'] = 1
+            dic['children'].append(dic_temp)
         list_articles.append(dic)
 
     return list_articles
+
 
 def explore_recursive(method_name, root_uri, root_name):
     """"This function is the main part of the code. It's a recursive
@@ -105,7 +118,9 @@ def explore_recursive(method_name, root_uri, root_name):
     method_name is the name of your method (same name that we give in the json file)
     It's needed for questionning our sparql database"""
     dic = {}
-    dic['name'] = root_name[0:20]
+    # We keep only pertinent information
+    name_temp = clean_stop_words(root_name.lower())
+    dic['name'] = (name_temp[0:20]).capitalize()
     dic['children'] = []
     print(dic['name'])
 
@@ -120,11 +135,18 @@ def explore_recursive(method_name, root_uri, root_name):
 
     else:
         for el in get_sub_concepts(method_name, root_uri):
-            dic['children'] = dic['children'] + [explore_recursive(method_name, el['concepts'], el['name'])]
+            list_rec = [explore_recursive(method_name, el['concepts'], el['name'])]
+            dic['children'] = dic['children'] + list_rec
         dic['children'] = dic['children'] + get_articles(root_uri)
 
         while '' in dic['children']:
             dic['children'].remove('')
+        while {} in dic['children']:
+            dic['children'].remove({})
+
+        if len(dic['children']) == 0:
+            print(root_name)
+            return {}
 
     return dic
 
