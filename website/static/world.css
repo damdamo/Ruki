@@ -24,6 +24,7 @@
 
 .label,
 .node--root,
-.node--leaf {
+.node--leaf, 
+.lol {
   pointer-events: none;
 }

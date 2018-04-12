@@ -89,7 +89,7 @@ d3.json("{{name_file}}", function(error, root) {
       .enter().append("a")
         .attr("xlink:href", "http://en.wikipedia.org/wiki/")
       .append("rect")
-      .attr("class", "rectangle")
+      .attr("class", function(d) { return d.children ? "lol ": "rectangle"})
       .attr('height', 50)
       .attr('width', 50)
       .attr('fill', 'red')
