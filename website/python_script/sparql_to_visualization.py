@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 import requests
-import python_script.generic_functions as gf
+import generic_functions as gf
 import csv
 import json
 import time
@@ -82,12 +82,14 @@ def get_articles(concept_uri):
     concept. We return a list of dictionnary where each dic contain his informations"""
 
     query_base =  """
-        SELECT DISTINCT ?name
+        SELECT DISTINCT ?title (group_concat(?keyword ; separator="; ") as ?keywords) ?abstract
         WHERE {
             ?a cui:has_concept <%s>.
             ?a cui:has_article ?article.
-            ?article dc:title ?name
-        }
+            ?article dc:title ?title.
+            ?article dc:subject ?keyword.
+            ?article dc:description ?abstract.
+        } GROUP BY ?title ?abstract
     """ % (concept_uri)
 
     query = add_prefix_sparql_request(query_base)
@@ -96,16 +98,24 @@ def get_articles(concept_uri):
 
     list_articles = []
 
-    for val in answer['results']['bindings']:
-        dic = {}
-        dic['name'] = val['name']['value'][0:20]
-        dic['children'] = []
+    if 'title' not in answer['results']['bindings'][0]:
+        return []
 
-        for key in val.keys():
-            dic_temp = {}
-            dic_temp[key] = val[key]['value']
-            dic_temp['size'] = 1
-            dic['children'].append(dic_temp)
+    for article in answer['results']['bindings']:
+        #print('{}\n\n'.format(article))
+        dic = {}
+        dic['name'] = article['title']['value'][0:20]
+        dic['children'] = []
+        info = ''
+
+        for key in article.keys():
+            info = '{}\n{}: {}'.format(info, key, article[key]['value'][0:20])
+
+        dic_temp = {}
+        dic_temp['size'] = 1
+        dic_temp['name'] = info
+        dic['children'].append(dic_temp)
+
         list_articles.append(dic)
 
     return list_articles
@@ -167,8 +177,8 @@ def write_informations_for_visualization(method_name):
     # method_name = config['method_name']
     # root = 'owl:Thing
 
-    #root = 'http://www.w3.org/2002/07/owl#Thing'
-    root = 'http://cui.unige.ch/Root'
+    root = 'http://www.w3.org/2002/07/owl#Thing'
+    #root = 'http://cui.unige.ch/Root'
 
     dic = {}
     res = explore_recursive(method_name, root, 'root')
