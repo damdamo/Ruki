@@ -89,10 +89,9 @@ d3.json("{{name_file}}", function(error, root) {
       .enter().append("a")
         .attr("xlink:href", "http://en.wikipedia.org/wiki/")
       .append("rect")
-      .attr("class", function(d) { return d.children ? "lol ": "rectangle"})
+      .attr("class", function(d) { return d.children ? "rect ": "rect--leaf"})
       .attr('height', 50)
       .attr('width', 50)
-      .attr('fill', 'red')
       //.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return "none"; })
 
@@ -125,7 +124,7 @@ d3.json("{{name_file}}", function(error, root) {
       .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
         //.style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
         .style("fill-opacity", function(d) { return d.children ? 0 : 1; })
-        .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        .on("start", function(d) { if (d.parent === focus && !d.children) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
 
   }
