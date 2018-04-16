@@ -1,11 +1,12 @@
 #! /usr/bin/env python3
 
 import requests
-import generic_functions as gf
+import python_script.generic_functions as gf
 import csv
 import json
 import time
 from nltk.corpus import stopwords
+import textwrap
 
 
 URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
@@ -82,14 +83,14 @@ def get_articles(concept_uri):
     concept. We return a list of dictionnary where each dic contain his informations"""
 
     query_base =  """
-        SELECT DISTINCT ?title (group_concat(?keyword ; separator="; ") as ?keywords) ?abstract
+        SELECT DISTINCT (str(?article) as ?url) ?title (group_concat(?keyword ; separator="; ") as ?keywords) ?abstract
         WHERE {
             ?a cui:has_concept <%s>.
             ?a cui:has_article ?article.
             ?article dc:title ?title.
             ?article dc:subject ?keyword.
             ?article dc:description ?abstract.
-        } GROUP BY ?title ?abstract
+        } GROUP BY ?article ?title ?abstract
     """ % (concept_uri)
 
     query = add_prefix_sparql_request(query_base)
@@ -102,20 +103,26 @@ def get_articles(concept_uri):
         return []
 
     for article in answer['results']['bindings']:
-        #print('{}\n\n'.format(article))
         dic = {}
         dic['name'] = article['title']['value'][0:20]
         dic['children'] = []
-        info = ''
-
-        for key in article.keys():
-            info = '{}\n{}: {}'.format(info, key, article[key]['value'][0:20])
 
         dic_temp = {}
         dic_temp['size'] = 1
-        dic_temp['name'] = info
-        dic['children'].append(dic_temp)
 
+        dic_temp['title'] = 'title: {}'.format(textwrap.fill(article['title']['value'], 30))
+
+        dic_temp['url'] = article['url']['value']
+
+        if len(article['keywords']['value']) != 0:
+            keywords = textwrap.fill('keywords: {}'.format(article['keywords']['value']), 30)[0:59]
+            dic_temp['keywords'] = keywords
+
+        if len(article['abstract']['value']) != 0:
+            abstract = textwrap.fill('abstract: {}'.format(article['abstract']['value']), 30)[0:57]
+            dic_temp['abstract'] = abstract
+
+        dic['children'].append(dic_temp)
         list_articles.append(dic)
 
     return list_articles
@@ -155,7 +162,6 @@ def explore_recursive(method_name, root_uri, root_name):
             dic['children'].remove({})
 
         if len(dic['children']) == 0:
-            print(root_name)
             return {}
 
     return dic
