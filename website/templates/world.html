@@ -70,30 +70,41 @@ d3.json("{{name_file}}", function(error, root) {
     var text = g.selectAll("text")
       .data(nodes)
       .enter().append("text")
-        .attr("class", "label")
+        //.attr("class", "label")
         .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
         .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
         .each(function(d) {
           if(d.children){
             d3.select(this)
+              .attr("class", "label")
               .text(d.data.name);
           }
           else{
             d3.select(this)
             .append("tspan")
               .text(d.data.title)
+              .attr("class", "text--leaf text--title")
               .attr('x', 0)
               .attr('dx', '.0em')
-            .append("tspan")
-              .text(d.data.keywords)
-              .attr('x', 0)
-              .attr('dx', '.0em')
-              .attr('dy', '2.0em')
-            .append("tspan")
-              .text(d.data.abstract)
-              .attr('x', 0)
-              .attr('dx', '.0em')
-              .attr('dy', '2.0em');
+
+            if(d.data.keywords != null){
+              d3.select(this)
+              .append("tspan")
+                .text(d.data.keywords)
+                .attr("class", "text--leaf text--kw")
+                .attr('x', 0)
+                .attr('dx', '.0em')
+                .attr('dy', '2.0em')
+            }
+            if(d.data.abstract != null){
+              d3.select(this)
+              .append("tspan")
+                .text(d.data.abstract)
+                .attr("class", "text--leaf text--abstract")
+                .attr('x', 0)
+                .attr('dx', '.0em')
+                .attr('dy', '2.0em');
+            }
           }
         });
 
