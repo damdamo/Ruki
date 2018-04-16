@@ -88,8 +88,8 @@ def get_articles(concept_uri):
             ?a cui:has_concept <%s>.
             ?a cui:has_article ?article.
             ?article dc:title ?title.
-            ?article dc:subject ?keyword.
-            ?article dc:description ?abstract.
+            OPTIONAL{?article dc:subject ?keyword}
+            OPTIONAL{?article dc:description ?abstract}
         } GROUP BY ?article ?title ?abstract
     """ % (concept_uri)
 
@@ -110,16 +110,16 @@ def get_articles(concept_uri):
         dic_temp = {}
         dic_temp['size'] = 1
 
-        dic_temp['title'] = 'title: {}'.format(textwrap.fill(article['title']['value'], 30))
+        dic_temp['title'] = 'Title: {}'.format(article['title']['value'][0:30])
 
         dic_temp['url'] = article['url']['value']
 
         if len(article['keywords']['value']) != 0:
-            keywords = textwrap.fill('keywords: {}'.format(article['keywords']['value']), 30)[0:59]
+            keywords = 'Keywords: {}'.format(article['keywords']['value'][0:60])
             dic_temp['keywords'] = keywords
 
         if len(article['abstract']['value']) != 0:
-            abstract = textwrap.fill('abstract: {}'.format(article['abstract']['value']), 30)[0:57]
+            abstract = 'Abstract: {}'.format(article['abstract']['value'][0:90])
             dic_temp['abstract'] = abstract
 
         dic['children'].append(dic_temp)
