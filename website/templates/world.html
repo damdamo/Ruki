@@ -66,15 +66,29 @@ d3.json("{{name_file}}", function(error, root) {
       .style("fill", function(d) { return d.children ? color(d.depth) : null; })
       .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
 
-  /*var text = g.selectAll("text")
-    .data(nodes)
-    .enter().append("text")
-      .attr("xlink:href", "http://en.wikipedia.org/wiki/")
-      .attr("class", "label")
-      .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
-      .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-      .text(function(d) { return d.data.name; });*/
+    /*var text = g.selectAll("text")
+      .data(nodes)
+      .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+        .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+        .text(function(d) {return d.children ? d.data.name : d.data.title; });*/
 
+    /*var text = g.selectAll("text")
+      .data(nodes)
+      .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+        .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+        .append("tspan")
+          .text(function(d) {return d.children ? d.data.name : d.data.title; })
+          .attr('x', 0)
+          .attr('dx', '.0em')
+        .append("tspan")
+          .text(function(d) {return d.children ? d.data.name : d.data.abstract; })
+          .attr('x', 0)
+          .attr('dx', '.0em')
+          .attr('dy', '1.9em');*/
 
     var text = g.selectAll("text")
       .data(nodes)
@@ -82,7 +96,29 @@ d3.json("{{name_file}}", function(error, root) {
         .attr("class", "label")
         .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
         .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-        .text(function(d) { return d.data.name; });
+        .each(function(d) {
+          if(d.children){
+            d3.select(this)
+              .text(d.data.name);
+          }
+          else{
+            d3.select(this)
+            .append("tspan")
+              .text(d.data.title)
+              .attr('x', 0)
+              .attr('dx', '.0em')
+            .append("tspan")
+              .text(d.data.keywords)
+              .attr('x', 0)
+              .attr('dx', '.0em')
+              .attr('dy', '2.0em')
+            .append("tspan")
+              .text(d.data.abstract)
+              .attr('x', 0)
+              .attr('dx', '.0em')
+              .attr('dy', '2.0em');
+          }
+        });
 
     var rectangle = g.selectAll("rect")
       .data(nodes)
@@ -93,7 +129,7 @@ d3.json("{{name_file}}", function(error, root) {
       .attr('height', 50)
       .attr('width', 50)
       //.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
-      .style("display", function(d) { return "none"; })
+      .style("display", function(d) { return "none"; });
 
 
   var node = g.selectAll("circle,text,rect");
