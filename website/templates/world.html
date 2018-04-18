@@ -56,9 +56,6 @@ d3.json("{{name_file}}", function(error, root) {
       nodes = pack(root).descendants(),
       view;
 
-  console.log(nodes)
-
-
   var circle = g.selectAll("circle")
     .data(nodes)
     .enter().append("circle")
@@ -105,22 +102,27 @@ d3.json("{{name_file}}", function(error, root) {
                 .attr('dx', '.0em')
                 .attr('dy', '2.0em');
             }
+            d3.select(this)
+            .append("tspan")
+              .text("Click on the rectangle for more informations")
+              .attr("class", "text--leaf")
+              .attr('x', 0)
+              .attr('dx', '.0em')
+              .attr('dy', '2.0em')
           }
         });
 
     var rectangle = g.selectAll("rect")
       .data(nodes)
       .enter().append("a")
-        .attr("xlink:href", "http://en.wikipedia.org/wiki/")
+        .attr("xlink:href", function(d) { return d.data.url })
       .append("rect")
-      .attr("class", function(d) { return d.children ? "rect ": "rect--leaf"})
-      .attr('height', 50)
-      .attr('width', 50)
+      .attr("class", function(d) { return d.children ? "rect": "rect--leaf" })
       //.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return "none"; });
 
 
-  var node = g.selectAll("circle,text,rect");
+  var node = g.selectAll("circle,text");
 
   svg
       .style("background", color(-1))
@@ -157,6 +159,17 @@ d3.json("{{name_file}}", function(error, root) {
     var k = diameter / v[2]; view = v;
     node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
     circle.attr("r", function(d) { return d.r * k; });
+
+    height = 50; width = 100; y_decalage = 200;
+    rectangle.attr('height', function(d) { return height })
+    rectangle.attr('width', function(d) { return width })
+    rectangle.attr("transform", function(d) {
+        var x_rect = (d.x - v[0]) * k;
+        var y_rect = (d.y - v[1]) * k;
+        var new_x_rect = x_rect - width/2;
+        var new_y_rect = y_rect - height/2 + y_decalage;
+       return "translate(" + new_x_rect + "," + new_y_rect + ")";
+     });
   }
 });
 

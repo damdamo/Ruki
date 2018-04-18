@@ -37,9 +37,7 @@
 }
 
 .rect--leaf {
-  fill: blue;
-  margin: 10px;
-  padding: 10px;
+  fill: #87CEFA;
 }
 
 .label,
