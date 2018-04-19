@@ -21,12 +21,15 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 @app.route('/')
 def racine():
-    return "Le chemin de 'racine' est : " + request.path
+    render_template('accueil.html')
+
+@app.route('/test')
+def test_page():
+    return render_template('test.html')
 
 @app.route('/accueil')
-def answer_sparql():
-    answer_table = get_response_sparql()
-    return render_template('accueil.html', titre="Bienvenue !", results=answer_table)
+def accueil():
+    return render_template('accueil.html')
 
 @app.route('/import', methods=['GET', 'POST'])
 def upload_file():
