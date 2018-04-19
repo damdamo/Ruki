@@ -24,156 +24,163 @@
 
 {% if printable == True %}
 
-<!--<svg width="960" height="960"></svg>-->
-<svg width="1280" height="1280"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
+<div class="row">
+  <div class="col-lg-12">
 
-var svg = d3.select("svg"),
-    margin = 1,
-    //margin = 20,
-    diameter = +svg.attr("width"),
-    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    <!--<svg width="960" height="960"></svg>-->
+    <svg width="1280" height="1280"></svg>
+    <svg></svg>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
 
-var color = d3.scaleLinear()
-    .domain([-1, 5])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-    .interpolate(d3.interpolateHcl);
+    var svg = d3.select("svg"),
+        margin = 1,
+        //margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-var pack = d3.pack()
-    .size([diameter - margin, diameter - margin])
-    .padding(2);
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
 
-
-d3.json("{{name_file}}", function(error, root) {
-  if (error) throw error;
-
-  root = d3.hierarchy(root)
-      .sum(function(d) { return d.size; })
-      .sort(function(a, b) { return b.value - a.value; });
-
-  var focus = root,
-      nodes = pack(root).descendants(),
-      view;
-
-  var circle = g.selectAll("circle")
-    .data(nodes)
-    .enter().append("circle")
-      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
-      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
 
 
-    var text = g.selectAll("text")
-      .data(nodes)
-      .enter().append("text")
-        //.attr("class", "label")
-        .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
-        .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-        .each(function(d) {
-          if(d.children){
-            d3.select(this)
-              .attr("class", "label")
-              .text(d.data.name);
-          }
-          else{
-            d3.select(this)
-            .append("tspan")
-              .text(d.data.title)
-              .attr("class", "text--leaf text--title")
-              .attr('x', 0)
-              .attr('dx', '.0em')
+    d3.json("{{name_file}}", function(error, root) {
+      if (error) throw error;
 
-            if(d.data.keywords != null){
-              d3.select(this)
-              .append("tspan")
-                .text(d.data.keywords)
-                .attr("class", "text--leaf text--kw")
-                .attr('x', 0)
-                .attr('dx', '.0em')
-                .attr('dy', '2.0em')
-            }
-            if(d.data.abstract != null){
-              d3.select(this)
-              .append("tspan")
-                .text(d.data.abstract)
-                .attr("class", "text--leaf text--abstract")
-                .attr('x', 0)
-                .attr('dx', '.0em')
-                .attr('dy', '2.0em');
-            }
-            d3.select(this)
-            .append("tspan")
-              .text("Click on the rectangle for more informations")
-              .attr("class", "text--leaf")
-              .attr('x', 0)
-              .attr('dx', '.0em')
-              .attr('dy', '2.0em')
-          }
-        });
+      root = d3.hierarchy(root)
+          .sum(function(d) { return d.size; })
+          .sort(function(a, b) { return b.value - a.value; });
 
-    var rectangle = g.selectAll("rect")
-      .data(nodes)
-      .enter().append("a")
-        .attr("xlink:href", function(d) { return d.data.url })
-      .append("rect")
-      .attr("class", function(d) { return d.children ? "rect": "rect--leaf" })
-      //.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
-      .style("display", function(d) { return "none"; });
+      var focus = root,
+          nodes = pack(root).descendants(),
+          view;
+
+      var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+          .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+          .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+          .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
 
 
-  var node = g.selectAll("circle,text");
+        var text = g.selectAll("text")
+          .data(nodes)
+          .enter().append("text")
+            //.attr("class", "label")
+            .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+            .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+            .each(function(d) {
+              if(d.children){
+                d3.select(this)
+                  .attr("class", "label")
+                  .text(d.data.name);
+              }
+              else{
+                d3.select(this)
+                .append("tspan")
+                  .text(d.data.title)
+                  .attr("class", "text--leaf text--title")
+                  .attr('x', 0)
+                  .attr('dx', '.0em')
 
-  svg
-      .style("background", color(-1))
-      .on("click", function() { zoom(root); });
+                if(d.data.keywords != null){
+                  d3.select(this)
+                  .append("tspan")
+                    .text(d.data.keywords)
+                    .attr("class", "text--leaf text--kw")
+                    .attr('x', 0)
+                    .attr('dx', '.0em')
+                    .attr('dy', '2.0em')
+                }
+                if(d.data.abstract != null){
+                  d3.select(this)
+                  .append("tspan")
+                    .text(d.data.abstract)
+                    .attr("class", "text--leaf text--abstract")
+                    .attr('x', 0)
+                    .attr('dx', '.0em')
+                    .attr('dy', '2.0em');
+                }
+                d3.select(this)
+                .append("tspan")
+                  .text("Click on the rectangle for more informations")
+                  .attr("class", "text--leaf")
+                  .attr('x', 0)
+                  .attr('dx', '.0em')
+                  .attr('dy', '2.0em')
+              }
+            });
 
-  zoomTo([root.x, root.y, root.r * 2 + margin]);
+        var rectangle = g.selectAll("rect")
+          .data(nodes)
+          .enter().append("a")
+            .attr("xlink:href", function(d) { return d.data.url })
+          .append("rect")
+          .attr("class", function(d) { return d.children ? "rect": "rect--leaf" })
+          //.style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+          .style("display", function(d) { return "none"; });
 
-  function zoom(d) {
-    var focus0 = focus; focus = d;
 
-    var transition = d3.transition()
-        .duration(d3.event.altKey ? 7500 : 750)
-        .tween("zoom", function(d) {
-          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
-          return function(t) { zoomTo(i(t)); };
-        });
+      var node = g.selectAll("circle,text");
 
-    transition.selectAll("text")
-      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
-        .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+      svg
+          .style("background", color(-1))
+          .on("click", function() { zoom(root); });
 
-    transition.selectAll("rect")
-      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-        //.style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
-        .style("fill-opacity", function(d) { return d.children ? 0 : 1; })
-        .on("start", function(d) { if (d.parent === focus && !d.children) this.style.display = "inline"; })
-        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+      zoomTo([root.x, root.y, root.r * 2 + margin]);
 
-  }
+      function zoom(d) {
+        var focus0 = focus; focus = d;
 
-  function zoomTo(v) {
-    var k = diameter / v[2]; view = v;
-    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
-    circle.attr("r", function(d) { return d.r * k; });
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function(d) {
+              var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+              return function(t) { zoomTo(i(t)); };
+            });
 
-    height = 50; width = 100; y_decalage = 200;
-    rectangle.attr('height', function(d) { return height })
-    rectangle.attr('width', function(d) { return width })
-    rectangle.attr("transform", function(d) {
-        var x_rect = (d.x - v[0]) * k;
-        var y_rect = (d.y - v[1]) * k;
-        var new_x_rect = x_rect - width/2;
-        var new_y_rect = y_rect - height/2 + y_decalage;
-       return "translate(" + new_x_rect + "," + new_y_rect + ")";
-     });
-  }
-});
+        transition.selectAll("text")
+          .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+            .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+            .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+            .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
 
-</script>
+        transition.selectAll("rect")
+          .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+            //.style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+            .style("fill-opacity", function(d) { return d.children ? 0 : 1; })
+            .on("start", function(d) { if (d.parent === focus && !d.children) this.style.display = "inline"; })
+            .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+
+      }
+
+      function zoomTo(v) {
+        var k = diameter / v[2]; view = v;
+        node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+        circle.attr("r", function(d) { return d.r * k; });
+
+        height = 50; width = 100; y_decalage = 200;
+        rectangle.attr('height', function(d) { return height })
+        rectangle.attr('width', function(d) { return width })
+        rectangle.attr("transform", function(d) {
+            var x_rect = (d.x - v[0]) * k;
+            var y_rect = (d.y - v[1]) * k;
+            var new_x_rect = x_rect - width/2;
+            var new_y_rect = y_rect - height/2 + y_decalage;
+           return "translate(" + new_x_rect + "," + new_y_rect + ")";
+         });
+      }
+    });
+
+    </script>
+
+  </div>
+</div>
 
 {% endif %}
 
