@@ -101,8 +101,18 @@ def find_concept_abstract(concept_dic, abstract_folder):
                 abstract_clean = clean_abstract(abstract)
                 for concept in concept_dic[ontology]:
                     concept_clean = get_concept_name(concept)
+
                     dic_concept_abstract[ontology][abstract_id][concept] = abstract_clean.count(
                         concept_clean)
+
+                    # We want a concept appear the deepest as possible, and not at the last levels
+                    if dic_concept_abstract[ontology][abstract_id][concept] > 0:
+                        concept_sup_temp = concept.is_a[0]
+                        while concept_sup_temp.name != 'Thing':
+                            print(concept_sup_temp)
+                            dic_concept_abstract[ontology][abstract_id][concept_sup_temp] = 0
+                            concept_sup_temp = concept_sup_temp.is_a[0]
+
 
     # print(dic_concept_abstract['onto1_correct'])
 
