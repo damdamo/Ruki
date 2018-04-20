@@ -10,6 +10,7 @@ import textwrap
 
 
 URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
+NB_MAX_ARTICLE = 10
 
 def clean_stop_words(sentence):
     """We clean all stop words in a sentence"""
@@ -103,7 +104,7 @@ def get_articles(concept_uri):
         return []
 
     for article in answer['results']['bindings']:
-        dic = {}
+        """dic = {}
         dic['name'] = article['title']['value'][0:20]
         dic['children'] = []
 
@@ -123,9 +124,33 @@ def get_articles(concept_uri):
             dic_temp['abstract'] = abstract
 
         dic['children'].append(dic_temp)
+        list_articles.append(dic)"""
+
+        dic = {}
+        dic['name'] = article['title']['value'][0:20]
+        dic['size'] = 1
+        # dic['title'] = 'Title: {}'.format(article['title']['value'][0:30])
+        dic['title'] = '{}'.format(article['title']['value'])
+
+        dic['url'] = article['url']['value']
+
+        if len(article['keywords']['value']) != 0:
+            # keywords = 'Keywords: {}'.format(article['keywords']['value'][0:60])
+            keywords = '{}'.format(article['keywords']['value'][0:100])
+            dic['keywords'] = keywords
+
+        if len(article['abstract']['value']) != 0:
+            # abstract = 'Abstract: {}'.format(article['abstract']['value'][0:90])
+            abstract = '{}'.format(article['abstract']['value'][0:150])
+
+            dic['abstract'] = abstract
+
         list_articles.append(dic)
 
-    return list_articles
+    if len(list_articles) > NB_MAX_ARTICLE:
+        return []
+    else:
+        return list_articles
 
 
 def explore_recursive(method_name, root_uri, root_name):
