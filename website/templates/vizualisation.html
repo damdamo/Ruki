@@ -115,19 +115,28 @@
         tbl.style.width = '100%';
         tbl.setAttribute('border', '1');
 
-        var tr_th = document.createElement('tr');
-        for (var i in el_to_display) {
-          var th = document.createElement('th');
-          th.appendChild(document.createTextNode(capitalizeFirstLetter(el_to_display[i])));
-          tr_th.appendChild(th);
-        }
 
-        tbl.appendChild(tr_th);
 
+
+
+        var first_time = true;
         var tbdy = document.createElement('tbody');
         for (el in node.children) {
           var child = node.children[el];
           if(!child.children) {
+
+            //When we create the first time we add label for columns
+            if(first_time == true){
+              var tr_th = document.createElement('tr');
+              for (var i in el_to_display) {
+                var th = document.createElement('th');
+                th.appendChild(document.createTextNode(capitalizeFirstLetter(el_to_display[i])));
+                tr_th.appendChild(th);
+              }
+              tbl.appendChild(tr_th);
+              first_time = false;
+            }
+
               var tr = document.createElement('tr');
               for (var i in el_to_display) {
                 if (typeof child.data[el_to_display[i]] == 'undefined'){
