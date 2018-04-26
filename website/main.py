@@ -1,7 +1,7 @@
 #/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from flask import Flask, request, render_template, redirect, url_for, flash
+from flask import Flask, request, render_template, redirect, url_for, flash, send_from_directory
 from werkzeug.utils import secure_filename
 import requests
 import os
@@ -31,12 +31,22 @@ def test_page():
 def accueil():
     return render_template('accueil.html')
 
+@app.route('/export', methods=['GET', 'POST'])
+def export():
+    if request.method == 'POST':
+        filename = visualization.get_all_articles()
+        print(filename)
+        return send_from_directory(UPLOAD_FOLDER,
+                               filename, as_attachment=True)
+    else:
+        return render_template('export.html')
+
 @app.route('/import', methods=['GET', 'POST'])
 def upload_file():
     """Route if someone wants to add his method in the knowledge graph"""
     if request.method == 'POST':
         # check if the post request has the file part
-        print(request.files)
+        # print(request.files)
         if 'file' not in request.files:
             flash('Aucun fichier trouvé')
             return redirect(request.url)
@@ -83,6 +93,22 @@ def display_world():
         return render_template('world.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
     else:
         return render_template('world.html', printable=False, list_method=list_method, titre="Bienvenue !")
+
+@app.route('/vizualisation', methods=['GET', 'POST'])
+def vizualisation():
+    list_method = get_list_method_schema()
+    if request.method == 'POST':
+        method_select = request.form['method_select']
+        name_file = '{}/{}.json'.format(METHOD_FOLDER, method_select)
+        # We get index of element which is selected
+        index = ([idx for idx in range(len(list_method)) if list_method[idx] == method_select])[0]
+        # We insert element selected in first position and we pop the old position
+        list_method.insert(0, method_select)
+        list_method.pop(index+1)
+        print(name_file)
+        return render_template('vizualisation.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
+    else:
+        return render_template('vizualisation.html', printable=False, list_method=list_method, titre="Bienvenue !")
 
 
 @app.errorhandler(404)
