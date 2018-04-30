@@ -1,11 +1,109 @@
 {% extends "squelette.html" %}
 
-{% block titre %}Importer/Exporter{% endblock %}
+{% block titre %}Import{% endblock %}
 
 {% block corps %}
-<form action="" method="post" enctype="multipart/form-data">
-  <input type="file" name="file" /><input type="submit" value="Envoyer" />
-</form>
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Import your data</h3>
+    <p>Here you can import your own data and visualize it after
+      <a href="visualization">(here)</a>
+      <br/>
+    </p>
+  </div>
+  <div class="col-lg-12">
+    <form action="" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" /><br/><input type="submit" value="Envoyer" />
+    </form>
+  </div>
+  <div class="col-lg-12">
+    <h3>How to import your own results ? </h3>
+    <p>
+      Firstable, you need to export data if you want to use it.
+      For this, go
+      <a href="export">here</a>
+      to export it.
+    </p>
+    <p>
+      Now you can use your own methods on this data. If you want to import
+      it in the knowledge base, you have two formats:
+      <br/>
+      CARE: When you import your file, a process is starting to create the visualization
+      for your own results.
+      <br/>
+      So it may take a few minutes, Wait until you get the message: "The file has been successfully added to the database"
+    </p>
+  </div>
+
+  <div class="col-lg-4">
+    <h4>JSON:</h4>
+    <pre>
+      <code>
+        {
+          "method_name": "Your method name",
+          "method_informations": "Informations about your method",
+          "objects" :
+          {
+          	"id_1" :
+          	{
+          		"type" : "cluster",
+          		"name" : "nameOfCluster"
+          	},
+          	"id_2" :
+          	{
+          		"type" : "article",
+          		"name" : "nameOfArticle"
+          	}
+          },
+          "relations" :
+          {
+          	"relation1_id" :
+          	{
+          		"type" : "subTypeOf",
+          		"domain" : "cluster_id1",
+          		"range" : "cluster_id2"
+          	},
+          	"relation2_id" :
+          	{
+          		"type" : "belongTo",
+          		"domain" : "article_id",
+          		"range" : "cluster_id"
+          	}
+          }
+        }
+      </code>
+    </pre>
+  </div>
+  <div class="col-lg-4">
+
+    <h4>YML:</h4>
+    <pre>
+      <code>
+        method_name: "Your method name"
+        method_informations: "Informations about your method"
+        objects :
+          id_1 :
+            type : "cluster"
+            name : "nameOfCluster"
+          id_2 :
+            type : "article"
+            name : "nameOfArticle"
+
+        relations :
+          relation1_id :
+            type : "subTypeOf"
+            domain : "cluster_id1"
+            range : "cluster_id2"
+          relation2_id :
+            type : "belongTo"
+            domain : "article_id"
+            range : "cluster_id"
+      </code>
+    </pre>
+  </div>
+</div>
+
+
 {% endblock %}
 
 

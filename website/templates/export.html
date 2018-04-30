@@ -3,12 +3,42 @@
 {% block titre %}Exporter{% endblock %}
 
 {% block corps %}
-<form action="" method="post">
-  <button type="submit" name='file_request'/>Download</button>
-</form>
+<div class="row">
+  <div class="col-lg-12">
+    <h3>Export data</h3>
+    <p>
+      Here you can export data based on articles on:
+      <a href="http://vgibox.eu/repository/index.php/Main_Page">vgibox.eu</a>
+    </p>
+  </div>
+  <div class="col-lg-12">
+    <form action="" method="post">
+      <button type="submit" name='file_request'/>Download</button>
+    </form>
+  </div>
+  <div class="col-lg-6">
+    <p>The file you can download contain a json file in this format:</p>
+    <pre>
+      <code>
+        {
+         "unique_id": {
+          "keywords": "A list of keywords from the article",
+          "title": "Title of the article",
+          "abstract": "Abstract of the article",
+          "id": "ID of the article"
+         },
+         ...
+       }
+      </code>
+    </pre>
+    <p>You can use all of this informations to try to create your own categorization
+      based on this data. Think to look at import page if you want to import it and visualize it.
+    </p>
+  </div>
+</div>
 {% endblock %}
 
 
 {% block footer %}
-<footer>Copyright blabla</footer>
+<footer></footer>
 {% endblock %}

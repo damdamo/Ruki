@@ -23,8 +23,8 @@
           </div>
           <ul class="nav navbar-nav">
             <li><a href="accueil">Home</a></li>
-            <li><a href="world">World</a></li>
-            <li><a href="vizualisation">Vizualisation</a></li>
+            <!--<li><a href="world">World</a></li>-->
+            <li><a href="visualization">Vizualisation</a></li>
             <li><a href="export">Export</a></li>
             <li><a href="import">Import</a></li>
           </ul>
@@ -33,20 +33,22 @@
 
       {% endblock %}
 
-      {% block corps %}{% endblock %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           <ul>
+           {% for m in messages %}
+               <li>{{ m }}</li>
+           {% endfor %}
+           </ul>
+        {% endif %}
+      {% endwith %}
 
-          {% with messages = get_flashed_messages() %}
-            {% if messages %}
-               <ul>
-               {% for m in messages %}
-                   <li>{{ m }}</li>
-               {% endfor %}
-               </ul>
-            {% endif %}
-          {% endwith %}
+      <div class="corps">
+        {% block corps %}{% endblock %}
+      </div>
 
         {% block footer %}
-          <footer>Copyright @</footer>
+          <footer></footer>
         {% endblock %}
     </body>
 </html>

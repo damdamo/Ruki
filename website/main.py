@@ -54,7 +54,7 @@ def upload_file():
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
-            flash('Aucun fichier sélectionné')
+            flash('No file selected')
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
@@ -72,7 +72,7 @@ def upload_file():
             # We get a new json file for the vizualisation
             visualization.write_informations_for_visualization(method_name)
 
-            flash('Le fichier a correctement été ajouté à la base de connaissance')
+            flash('The file has been successfully added to the database')
             return redirect(url_for('upload_file'))
     else:
         return render_template('import.html')
@@ -94,7 +94,7 @@ def display_world():
     else:
         return render_template('world.html', printable=False, list_method=list_method, titre="Bienvenue !")
 
-@app.route('/vizualisation', methods=['GET', 'POST'])
+@app.route('/visualization', methods=['GET', 'POST'])
 def vizualisation():
     list_method = get_list_method_schema()
     if request.method == 'POST':
@@ -106,9 +106,9 @@ def vizualisation():
         list_method.insert(0, method_select)
         list_method.pop(index+1)
         print(name_file)
-        return render_template('vizualisation.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
+        return render_template('visualization.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
     else:
-        return render_template('vizualisation.html', printable=False, list_method=list_method, titre="Bienvenue !")
+        return render_template('visualization.html', printable=False, list_method=list_method, titre="Bienvenue !")
 
 
 @app.errorhandler(404)

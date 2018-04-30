@@ -7,6 +7,7 @@ import json
 import time
 from nltk.corpus import stopwords
 import textwrap
+from urllib.parse import urlparse
 
 
 URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien'
@@ -78,6 +79,51 @@ def get_sub_concepts(method_name, root_uri):
         list_articles.append(dic)
 
     return list_articles
+
+def get_all_articles():
+    """Return a json file with all informations about articles"""
+    query_base =  """
+        SELECT DISTINCT (str(?article) as ?url) ?title (group_concat(?keyword ; separator="; ") as ?keywords) ?abstract
+        WHERE {
+              ?article rdf:type schema:Article.
+              ?article dc:title ?title.
+              OPTIONAL{?article dc:subject ?keyword}
+              OPTIONAL{?article dc:description ?abstract}
+        } GROUP BY ?article ?title ?abstract
+    """
+
+    query = add_prefix_sparql_request(query_base)
+
+    answer = get_response_sparql(query)
+    dic = {}
+
+    for article in answer['results']['bindings']:
+
+        url = article['url']['value']
+        url_decomposed = urlparse(url)
+        article_id = (url_decomposed.query).replace('curid=', '')
+
+        dic[url] = {}
+
+        dic[url]['id'] = article_id
+        dic[url]['title'] = article['title']['value']
+
+        if len(article['keywords']['value']) != 0:
+            dic[url]['keywords'] = article['keywords']['value']
+
+        if len(article['abstract']['value']) != 0:
+            dic[url]['abstract'] = article['abstract']['value']
+
+    data_json = json.dumps(dic, indent=1, ensure_ascii=False)
+    name_file = 'articles.json'
+    upload_folder = 'temp'
+    complete_path = '{}/{}'.format(upload_folder, name_file)
+
+    with open(name_file, 'w') as nf:
+        nf.write(data_json)
+
+    return name_file
+
 
 def get_articles(concept_uri):
     """Give us a list of article which is link for a specific
@@ -225,5 +271,6 @@ if __name__ == '__main__':
 
     config = gf.load_config('config/config_manage_sparql.yml')
 
-    write_informations_for_visualization('onto1_correct')
+    #write_informations_for_visualization('onto1_correct')
     #write_informations_for_visualization('k-means_animals')
+    get_all_articles()

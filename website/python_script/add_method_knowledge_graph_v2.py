@@ -114,4 +114,4 @@ def create_rdf_graph(file_name, output_file):
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_add_method_knowledge_graph.yml')
-    create_rdf_graph('newFormat.json', 'lol.txt')
+    create_rdf_graph('newFormat.yml', 'lol.txt')
