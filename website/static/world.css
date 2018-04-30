@@ -32,6 +32,10 @@
   font-weight: bold;
 }
 
+.keywords {
+  font-weight: bold;
+}
+
 .rect--leaf:hover {
   stroke: #000;
   stroke-width: 1.5px;

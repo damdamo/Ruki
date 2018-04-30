@@ -11,7 +11,7 @@
 
 <form method="post" action="">
   <p>
-    <label for="method_select">Méthodes disponibles</label><br />
+    <label for="method_select">Methods avaible</label><br />
     <select name="method_select" id="method_select">
       {% for method in list_method %}
         <option value="{{method}}">{{method}}</option>
@@ -116,28 +116,14 @@
         tbl.setAttribute('border', '1');
 
 
-
-
-
-        var first_time = true;
         var tbdy = document.createElement('tbody');
         for (el in node.children) {
           var child = node.children[el];
           if(!child.children) {
 
-            //When we create the first time we add label for columns
-            if(first_time == true){
-              var tr_th = document.createElement('tr');
-              for (var i in el_to_display) {
-                var th = document.createElement('th');
-                th.appendChild(document.createTextNode(capitalizeFirstLetter(el_to_display[i])));
-                tr_th.appendChild(th);
-              }
-              tbl.appendChild(tr_th);
-              first_time = false;
-            }
-
               var tr = document.createElement('tr');
+              var td = document.createElement('td');
+
               for (var i in el_to_display) {
                 if (typeof child.data[el_to_display[i]] == 'undefined'){
                   var choice = '---'
@@ -145,17 +131,19 @@
                 else{
                   var choice = child.data[el_to_display[i]];
                 }
-                  var td = document.createElement('td');
-                  td.setAttribute('class', el_to_display[i]);
+                  //var td = document.createElement('td');
+                  var p = document.createElement('p')
+                  p.setAttribute('class', el_to_display[i]);
                   if(el_to_display[i] == 'title'){
                     var link = document.createElement('a')
                     link.setAttribute('href', child.data.url)
                     link.appendChild(document.createTextNode(choice));
-                    td.appendChild(link);
+                    p.appendChild(link);
                   }
                   else{
-                    td.appendChild(document.createTextNode(choice));
+                    p.appendChild(document.createTextNode(choice));
                   }
+                  td.append(p)
                   tr.appendChild(td);
               }
               tbdy.appendChild(tr);
