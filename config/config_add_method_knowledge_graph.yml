@@ -1,4 +1,4 @@
 # Config add method knowledge Graph
 
-informations_to_add: documents/yml_example_to_add_method.yml
+informations_to_add: documents/json_example_to_add_method.json
 output_file: Results/Rdf/add_method_v2.rdf

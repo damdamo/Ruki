@@ -4,7 +4,7 @@ import requests
 
 URL_SERVER = 'http://kr.unige.ch:8080/rdf4j-server/repositories/master_project_damien/statements'
 
-def import_rdf_to_rdf4j(rdf_file):
+def import_rdf_to_rdf4j(rdf_file, method_name):
     """Take an rdf_file and import data in the server rdf4j"""
 
     # We load the file and put it in a string format
@@ -29,14 +29,16 @@ def import_rdf_to_rdf4j(rdf_file):
             else:
                 n3_triples = '{}\n{}'.format(n3_triples, line)
 
+    uri_name = '{}/{}'.format('http://cui.unige.ch', method_name)
+
     # Now we prepare the request
     # insertQuery is what we give with informations to add
     insertQuery = '''%s
                     INSERT DATA{
-                    GRAPH <http://cui.unige.ch/test>{
+                    GRAPH <%s>{
                         %s
                     }
-                    }''' % (prefixes, n3_triples)
+                    }''' % (prefixes, uri_name, n3_triples)
 
     #print(insertQuery)
 
