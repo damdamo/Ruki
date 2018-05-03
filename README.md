@@ -123,7 +123,7 @@ to create a graph where we can rewrite it in a good format. (RDF/n3)
 We use mainly: [RDFLib](https://github.com/RDFLib/rdflib)
 
 This is our rdf graph to vizualise the structure:
-![Structure of Knowledge graph](documents/rdf_scheme_general.png)
+![Structure of Knowledge graph](documents/graph_yed/rdf_scheme_general.png)
 
 We can see two mainly parts but for this part only one will be interresting.
 At the beginning what we have is a lot article with some informations like
