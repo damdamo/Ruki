@@ -4,12 +4,13 @@ import rdflib
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
 from rdflib.namespace import SKOS, RDFS
 from random import randint
-#import python_script.generic_functions as gf
+# import python_script.generic_functions as gf
 import generic_functions as gf
 import re
 import os.path
 import sys
 import json
+import string
 
 
 def extract_json_to_dic(file_name):
@@ -41,6 +42,20 @@ def parse_file_to_dic(file_name):
         sys.exit('Format file isn\'t supported.\nFormat are: .json / .yml')
     return dic_file
 
+def clean_name(name):
+    "Need for Sami's method to parse it and keep only words"
+    name_split = name.split(' ')
+    for i in range(len(name_split)):
+
+        list_char_to_clean = '<()>:'
+        name_split[i] = name_split[i].translate(str.maketrans(
+            list_char_to_clean, ' ' * (len(list_char_to_clean))))
+        name_split[i] = name_split[i].replace(' ', '')
+
+        new_name = '_'.join(name_split)
+
+    return new_name
+
 def dic_to_rdf(dic, rdf_graph, name):
     """dic_to_rdf is a function which takes a dictionnary
     and transform it into rdf. """
@@ -52,21 +67,28 @@ def dic_to_rdf(dic, rdf_graph, name):
     for el in dic['objects']:
         cluster = dic['objects'][el]
         if cluster['type'] == 'cluster':
-            rdf_graph.add((cui[el], RDFS.subClassOf, SKOS.Concept))
-            rdf_graph.add((cui[el], SKOS.inSchema, cui[name]))
-            rdf_graph.add((cui[el], SKOS.prefLabel, Literal(cluster['name'])))
+            name_concept = clean_name(cluster['name'])
+            rdf_graph.add((cui[name_concept], RDFS.subClassOf, SKOS.Concept))
+            rdf_graph.add((cui[name_concept], SKOS.inSchema, cui[name]))
+            rdf_graph.add((cui[name_concept], SKOS.prefLabel, Literal(clean_name(cluster['name']))))
 
     for el in dic['relations']:
         relation = dic['relations'][el]
+
+        name_c1 = clean_name(dic['objects'][relation['domain']]['name'])
+        name_c2 = clean_name(dic['objects'][relation['range']]['name'])
+        # if (relation['type']).lower() == 'subtypeof':
         if (relation['type']).lower() == 'subtypeof':
-            rdf_graph.add((cui[relation['domain']], RDFS.subClassOf, cui[relation['range']]))
+
+            rdf_graph.add((cui[name_c1], RDFS.subClassOf, cui[name_c2]))
 
         elif (relation['type']).lower() == 'belongto':
             index_name = '{}_{}'.format(el, randint(1000,9999))
             blank_node = BNode(index_name)
+            name_a1 = (name_c1.split('.'))[0]
             rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
-            rdf_graph.add((blank_node, cui.has_article, vgiid[str(relation['domain'])]))
-            rdf_graph.add((blank_node, cui.has_concept, cui[relation['range']]))
+            rdf_graph.add((blank_node, cui.has_article, vgiid[name_a1]))
+            rdf_graph.add((blank_node, cui.has_concept, cui[name_c2]))
 
 
 def create_rdf_graph(file_name, output_file):
@@ -105,13 +127,14 @@ def create_rdf_graph(file_name, output_file):
 
     rdf_normalized = rdf_graph.serialize(format='n3')
     rdf_normalized = rdf_normalized.decode('utf-8')
-    print(rdf_normalized)
+    # print(rdf_normalized)
 
-    #gf.write_rdf(output_file, rdf_normalized)
+    gf.write_rdf(output_file, rdf_normalized)
 
     return [rdf_normalized, name]
 
 if __name__ == '__main__':
 
-    config = gf.load_config('config/config_add_method_knowledge_graph.yml')
-    create_rdf_graph('newFormat.yml', 'lol.txt')
+    # config = gf.load_config('config/config_add_method_knowledge_graph.yml')
+    # create_rdf_graph('newFormat.yml', 'lol.txt')
+    create_rdf_graph('clusters_withPatterns_newDForm.json', 'sami.rdf')

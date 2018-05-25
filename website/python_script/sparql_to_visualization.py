@@ -1,7 +1,8 @@
 #! /usr/bin/env python3
 
 import requests
-import python_script.generic_functions as gf
+# import python_script.generic_functions as gf
+import generic_functions as gf
 import csv
 import json
 import time
@@ -254,8 +255,8 @@ def write_informations_for_visualization(method_name):
     # method_name = config['method_name']
     # root = 'owl:Thing
 
-    root = 'http://www.w3.org/2002/07/owl#Thing'
-    #root = 'http://cui.unige.ch/Root'
+    # root = 'http://www.w3.org/2002/07/owl#Thing'
+    root = 'http://cui.unige.ch/root'
 
     dic = {}
     res = explore_recursive(method_name, root, 'root')
@@ -272,5 +273,5 @@ if __name__ == '__main__':
     config = gf.load_config('config/config_manage_sparql.yml')
 
     #write_informations_for_visualization('onto1_correct')
-    #write_informations_for_visualization('k-means_animals')
+    write_informations_for_visualization('FCA-based clustering with pattern-mining as a preprocessing step')
     get_all_articles()
