@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 import requests
-# import python_script.generic_functions as gf
-import generic_functions as gf
+import python_script.generic_functions as gf
+# import generic_functions as gf
 import csv
 import json
 import time
@@ -224,9 +224,12 @@ def explore_recursive(method_name, root_uri, root_name):
 
     else:
         for el in get_sub_concepts(method_name, root_uri):
-            list_rec = [explore_recursive(method_name, el['concepts'], el['name'])]
-            dic['children'] = dic['children'] + list_rec
-        dic['children'] = dic['children'] + get_articles(root_uri)
+            if root_name != el['name']:
+                #print('root name = ' + root_name)
+                #print('sous concept = ' + el['name'])
+                list_rec = [explore_recursive(method_name, el['concepts'], el['name'])]
+                dic['children'] = dic['children'] + list_rec
+            dic['children'] = dic['children'] + get_articles(root_uri)
 
         while '' in dic['children']:
             dic['children'].remove('')
