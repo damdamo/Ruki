@@ -58,11 +58,11 @@ def get_sub_concepts(method_name, root_uri):
     This query allow to get all concept sub class of root_uri in a specific
     method name. We need it to make a Depth-first search
     We return a csv/text which is a list of concepts with their name"""
+
     query_base = '''
         SELECT DISTINCT ?concepts ?name
         WHERE {
-          ?method skos:prefLabel "%s".
-          ?concepts skos:inSchema ?method.
+          ?concepts skos:inSchema cui:%s.
           ?concepts rdfs:subClassOf <%s>.
           ?concepts skos:prefLabel ?name.
         }

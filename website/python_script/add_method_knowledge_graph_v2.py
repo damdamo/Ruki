@@ -4,8 +4,8 @@ import rdflib
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
 from rdflib.namespace import SKOS, RDFS
 from random import randint
-# import python_script.generic_functions as gf
-import generic_functions as gf
+import python_script.generic_functions as gf
+# import generic_functions as gf
 import re
 import os.path
 import sys
