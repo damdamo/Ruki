@@ -23,10 +23,6 @@ app.config['SESSION_TYPE'] = 'filesystem'
 def racine():
     render_template('accueil.html')
 
-@app.route('/test')
-def test_page():
-    return render_template('test.html')
-
 @app.route('/accueil')
 def accueil():
     return render_template('accueil.html')
@@ -78,7 +74,7 @@ def upload_file():
         return render_template('import.html')
 
 
-@app.route('/world', methods=['GET', 'POST'])
+"""app.route('/world', methods=['GET', 'POST'])
 def display_world():
     list_method = get_list_method_schema()
     if request.method == 'POST':
@@ -93,6 +89,7 @@ def display_world():
         return render_template('world.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
     else:
         return render_template('world.html', printable=False, list_method=list_method, titre="Bienvenue !")
+"""
 
 @app.route('/visualization', methods=['GET', 'POST'])
 def vizualisation():
