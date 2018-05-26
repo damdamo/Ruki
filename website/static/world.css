@@ -51,3 +51,15 @@
 .rect {
   pointer-events: none;
 }
+
+/* Just of auto scroll into table */
+
+thead, tbody {
+  display: block;
+}
+
+tbody {
+    height: 1250px;
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}

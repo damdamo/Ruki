@@ -44,7 +44,7 @@ def parse_file_to_dic(file_name):
 
 def clean_name(name):
     "Need for Sami's method to parse it and keep only words"
-    name_split = name.split(' ')
+    """name_split = name.split(' ')
     for i in range(len(name_split)):
 
         list_char_to_clean = '<()>:'
@@ -52,7 +52,8 @@ def clean_name(name):
             list_char_to_clean, ' ' * (len(list_char_to_clean))))
         name_split[i] = name_split[i].replace(' ', '')
 
-        new_name = '_'.join(name_split)
+        new_name = '_'.join(name_split)"""
+    new_name = name.replace(' ', '_')
 
     return new_name
 
@@ -89,6 +90,8 @@ def dic_to_rdf(dic, rdf_graph, name):
             rdf_graph.add((blank_node, RDF.type, cui.art_concept_link))
             rdf_graph.add((blank_node, cui.has_article, vgiid[name_a1]))
             rdf_graph.add((blank_node, cui.has_concept, cui[name_c2]))
+            """weight_cluster = dic['objects'][relation['range']]['size']
+            rdf_graph.add((blank_node, cui.has_number, Literal(weight_cluster)))"""
 
 
 def create_rdf_graph(file_name, output_file):
