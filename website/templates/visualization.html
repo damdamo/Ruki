@@ -15,7 +15,7 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-8">
     <form method="post" action="">
       <p>
         <label for="method_select">Methods avaible:</label><br />
@@ -27,6 +27,10 @@
         <input type="submit" value="Envoyer" />
       </p>
     </form>
+    <h3>Method title: {{method_title}}</h3>
+    <p>
+      Method description: {{method_description}}
+    </p>
   </div>
 </div>
 
@@ -83,8 +87,8 @@
           .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
           //.style("font-size", function(d) {return d.data.name.length > 9? 20 + "px" : 40 + "px" ; })
           //.style("font-size", function(d) { return (2 * d.r - 8) / 500 * 100 + "px"; })
-
-          .text(function(d) { return d.data.name; });
+          .text(function(d) {var frags = (d.data.name).split('_'); return frags.join(' ');});
+          //.text(function(d) { return d.data.name; });
 
       var node = g.selectAll("circle,text");
 
@@ -129,6 +133,17 @@
         tbl.setAttribute('border', '1');
 
         var tbdy = document.createElement('tbody');
+
+
+        var tr = document.createElement('tr');
+        var th = document.createElement('tr');
+        var node_name = node.data['name'];
+        var frags = node_name.split('_');
+        var node_name_with_space = frags.join(' ')
+        th.appendChild(document.createTextNode('Category: '.concat(node_name_with_space)));
+        th.setAttribute('class', 'category')
+        tr.append(th)
+        tbdy.append(tr)
 
         for (el in node.children) {
           var child = node.children[el];
