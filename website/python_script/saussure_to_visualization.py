@@ -59,7 +59,8 @@ def get_dic_saussure():
         if subdiv not in dic[section][box]:
             dic[section][box][subdiv] = []
 
-        dic[section][box][subdiv].append({'abstract':page, 'size':1})
+        #dic[section][box][subdiv].append({'abstract':page, 'size':1})
+        dic[section][box][subdiv].append({'abstract':page, 'size':1, 'title':'titre', 'keywords':'kw', 'url':'url', 'name':'name'})
 
 
     return dic
@@ -82,11 +83,15 @@ def convert_dic_to_flare_json(dic):
 
     list_dic = []
     for el in dic:
-        new_dic['name'] = el
-        new_dic['children'] = []
+        '''new_dic['name'] = el
+        new_dic['children'] = convert_dic_to_flare_json(dic[el])
         print(el)
-        new_dic['children'].append(convert_dic_to_flare_json(dic[el]))
-        list_dic.append(new_dic)
+        #new_dic['children'].append(convert_dic_to_flare_json(dic[el]))
+        list_dic.append(new_dic)'''
+        #if type(dic[el]) is dict:
+        #    list_dic.append({'name':el, 'children':[convert_dic_to_flare_json(dic[el])]})
+        #else:
+        list_dic.append({'name':el, 'children':convert_dic_to_flare_json(dic[el])})
 
     return list_dic
 
@@ -137,7 +142,8 @@ if __name__ == '__main__':
 
     # print(json1_data)
 
-    answer = convert_dic_to_flare_json(json1_data)
+    answer1 = convert_dic_to_flare_json(json1_data)
+    answer = {'name':'Root', 'children':answer1}
 
     data_json = json.dumps(answer, indent=1, ensure_ascii=False)
     name_file = 'lol3.json'
