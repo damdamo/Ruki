@@ -83,14 +83,6 @@ def convert_dic_to_flare_json(dic):
 
     list_dic = []
     for el in dic:
-        '''new_dic['name'] = el
-        new_dic['children'] = convert_dic_to_flare_json(dic[el])
-        print(el)
-        #new_dic['children'].append(convert_dic_to_flare_json(dic[el]))
-        list_dic.append(new_dic)'''
-        #if type(dic[el]) is dict:
-        #    list_dic.append({'name':el, 'children':[convert_dic_to_flare_json(dic[el])]})
-        #else:
         list_dic.append({'name':el, 'children':convert_dic_to_flare_json(dic[el])})
 
     return list_dic
@@ -106,47 +98,37 @@ def get_response_sparql(query):
     result_decode = json.loads(result_decode)
     return result_decode
 
-def write_informations_for_visualization(method_name):
-    """We put a method and create a json file to use it later by
-    our vizualisation"""
-    # method_name = config['method_name']
-    # root = 'owl:Thing
 
-    # root = 'http://www.w3.org/2002/07/owl#Thing'
-    root = 'http://cui.unige.ch/root'
+def write_informations_for_visualization(config):
+    """We create the json file with flare style to print it in our visualization"""
 
-    dic = {}
-    res = explore_recursive(method_name, root, 'root')
-
-    data_json = json.dumps(res, indent=1, ensure_ascii=False)
-    name_file = 'static/method_schema/{}.json'.format(method_name)
+    answer = get_dic_saussure()
+    data_json = json.dumps(answer, indent=1, ensure_ascii=False)
+    name_file = 'saussure_dic.json'
 
     with open(name_file, 'w') as nf:
         nf.write(data_json)
+
+    json1_file = open('saussure_dic.json')
+    json1_str = json1_file.read()
+    json1_data = json.loads(json1_str)
+
+    # We convert dic json data into flare json data
+    flare_json = convert_dic_to_flare_json(json1_data)
+
+    # We add a unique root to our visualization
+    answer = {'name':'Root', 'children':flare_json}
+
+    data_json = json.dumps(answer, indent=1, ensure_ascii=False)
+    name_file = 'static/method_schema/saussure.json'
+
+    with open(name_file, 'w') as nf:
+        nf.write(data_json)
+
 
 
 if __name__ == '__main__':
 
     config = gf.load_config('config/config_manage_sparql.yml')
 
-    answer = get_dic_saussure()
-    data_json = json.dumps(answer, indent=1, ensure_ascii=False)
-    name_file = 'lol.json'
-
-    with open(name_file, 'w') as nf:
-        nf.write(data_json)
-
-    json1_file = open('lol.json')
-    json1_str = json1_file.read()
-    json1_data = json.loads(json1_str)
-
-    # print(json1_data)
-
-    answer1 = convert_dic_to_flare_json(json1_data)
-    answer = {'name':'Root', 'children':answer1}
-
-    data_json = json.dumps(answer, indent=1, ensure_ascii=False)
-    name_file = 'lol3.json'
-
-    with open(name_file, 'w') as nf:
-        nf.write(data_json)
+    write_informations_for_visualization(config)
