@@ -28,25 +28,6 @@ def add_prefix_sparql_request(sparql_request):
     query = '{}{}'.format(prefixes, sparql_request)
     return query
 
-def get_information_method(uri_method):
-    """Return method name and descrption for a specific method"""
-    query_base = '''SELECT DISTINCT ?name ?description
-                    WHERE {
-                      	cui:%s skos:prefLabel ?name.
-                        cui:%s skos:note ?description
-                    }''' % (uri_method, uri_method)
-    query = add_prefix_sparql_request(query_base)
-    answer = get_response_sparql(query)
-
-    if len(answer['results']['bindings']) != 0:
-
-        name = answer['results']['bindings'][0]['name']['value']
-        description = answer['results']['bindings'][0]['description']['value']
-
-        return name,description
-
-    return 'No title','No description'
-
 def get_dic_saussure():
     """We make a sparl query to get all informations about what Saussure wrote
     with the hierarchy which exists. We keep it into a dictionnary"""
@@ -77,7 +58,8 @@ def get_dic_saussure():
             dic[section][box] = {}
         if subdiv not in dic[section][box]:
             dic[section][box][subdiv] = []
-            dic[section][box][subdiv].append({'abstract':page, 'size':1})
+
+        dic[section][box][subdiv].append({'abstract':page, 'size':1})
 
 
     return dic
@@ -94,17 +76,19 @@ def convert_dic_to_flare_json(dic):
     print(type(dic))
 
     if type(dic) is list:
-        print("LOL")
         new_dic = dic
+        print(new_dic)
         return new_dic
 
-    new_dic['children'] = []
+    list_dic = []
     for el in dic:
         new_dic['name'] = el
+        new_dic['children'] = []
         print(el)
         new_dic['children'].append(convert_dic_to_flare_json(dic[el]))
+        list_dic.append(new_dic)
 
-    return new_dic
+    return list_dic
 
 
 def get_response_sparql(query):
