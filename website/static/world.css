@@ -52,6 +52,12 @@
   pointer-events: none;
 }
 
+.category{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Just of auto scroll into table */
 
 thead, tbody {

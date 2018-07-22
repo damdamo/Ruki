@@ -1,0 +1,2754 @@
+{
+ "name": "Root",
+ "children": [
+  {
+   "name": "Geographic object",
+   "children": [
+    {
+     "name": "Cover",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=896",
+       "abstract": "Geo-tagged photographs are used increasingly as a source   Volunteered Geographic Information  , which could potentially be used for land use and land",
+       "keywords": "land cover; land use; Volunteered Geographic Information; Flickr; Geograph; Panoramio; fitness-for-u",
+       "name": "Investigating the Fe",
+       "size": 1,
+       "title": "Investigating the Feasibility of Geo-Tagged Photographs as Sources of Land Cover Input Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=872",
+       "abstract": "Land Use/Land Cover Maps (LULCM), fundamental for many areas of application, are usually generated through the classification of satellite imagery. Ho",
+       "keywords": "OpenStreetMap; Land Use/Cover Map; Conversion; Inconsistencies",
+       "name": "An automated methodo",
+       "size": 1,
+       "title": "An automated methodology for converting OSM data into a land use/cover map"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=894",
+       "abstract": "Volunteered Geographic Information (VGI) represents a growing source of potentially valuable data for many applications, including land cover map vali",
+       "keywords": "Quality; VGI; Crowdsourcing; Land Use/Cover Map; Validation",
+       "name": "Usability of VGI for",
+       "size": 1,
+       "title": "Usability of VGI for validation of land cover maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=923",
+       "abstract": "Volunteered Geographic Information has been increasing exponentially over the last years, capturing the attention of the scientific community. Researc",
+       "keywords": "Volunteered Geographic Information; Flickr; Land Use/Cover Map",
+       "name": "Comparative study of",
+       "size": 1,
+       "title": "Comparative study of Land Use/Cover classification using Flickr photos, satellite imagery and Corine Land Cover database"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1065",
+       "abstract": "Volunteered Geographic Information (VGI) such as data derived from the OpenStreetMap (OSM) project is a popular data source for freely available geogr",
+       "keywords": "Data quality; VGI; ATKIS Base DLM; Crowdsourced information; kappa",
+       "name": "Quality Evaluation o",
+       "size": 1,
+       "title": "Quality Evaluation of VGI Using Authoritative Data—A Comparison with Land Use Data in Southern Germany"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1077",
+       "abstract": "Natural disasters like floods are a worldwide phenomenon and a serious threat to mankind. Flood simulations are applications of disaster control, whic",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; ALS pointcloud; Land Use/Cover Map; floodplain; h",
+       "name": "GIS-Based Roughness ",
+       "size": 1,
+       "title": "GIS-Based Roughness Derivation for Flood Simulations: A Comparison of Orthophotos and LiDAR and Crowdsourced Geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=879",
+       "abstract": "Information about land cover and land use is needed for a wide range of applications such as nature protection and biodiversity, forest and water mana",
+       "keywords": "VGI; Crowdsourcing; Land use; Land cover; Validation",
+       "name": "Harnessing the power",
+       "size": 1,
+       "title": "Harnessing the power of volunteers, the internet and Google Earth to collect and validate global spatial information using Geo-Wiki"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=956",
+       "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+       "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+       "name": "Approaches to passiv",
+       "size": 1,
+       "title": "Approaches to passive mosquito surveillance in the EU"
+      }
+     ]
+    },
+    {
+     "name": "Feature",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=980",
+       "abstract": "Today, a tremendous source of spatio-temporal data is user generated, so-called volunteered geographic information (VGI). Among the many VGI sources, ",
+       "keywords": "Visual knowledge discovery; feature detection   tracking; geospatial visualisation; time varying dat",
+       "name": "Moving on Twitter: U",
+       "size": 1,
+       "title": "Moving on Twitter: Using Episodic Hotspot and Drift Analysis to Detect and Characterise Spatial Trajectories"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1001",
+       "abstract": "The paper presents empirical research on the quality of the toponyms that can be retrieved from OpenStreetMap (OSM) under the purpose of enriching aut",
+       "keywords": "spatial data quality; Data quality; Quality; Quality assessment",
+       "name": "Quality analysis of ",
+       "size": 1,
+       "title": "Quality analysis of the Parisian OSM toponyms evolution"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=722",
+       "abstract": "Abstract  This contribution reports on ongoing research carried on by the authors on the role of Social Media Geographic Information in spatial planni",
+       "keywords": "Spatial Data Infrastructure; Social Media Geographic Information; Social media",
+       "name": "The Role of Social M",
+       "size": 1,
+       "title": "The Role of Social Media Geographic Information (SMGI) in Spatial Planning"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=921",
+       "abstract": "This study intends to evaluate the positional accuracy and compare the completeness of the drainage networks extracted from three sources of free geog",
+       "keywords": "OpenStreetMap; ASTER; DEM; Drainage Networks; SRTM; Waterways",
+       "name": "Assessing positional",
+       "size": 1,
+       "title": "Assessing positional accuracy of drainage networks extracted from ASTER, SRTM and OpenStreetMap"
+      }
+     ]
+    },
+    {
+     "name": "Footprint",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1078",
+       "abstract": "In the past two years, several applications of generating three-dimensional (3D) buildings from OpenStreetMap (OSM) have been made available, for inst",
+       "keywords": "building footprint; Quality assessment; Volunteered Geographic Information; OpenStreetMap",
+       "name": "Quality assessment f",
+       "size": 1,
+       "title": "Quality assessment for building footprints data on OpenStreetMap"
+      }
+     ]
+    },
+    {
+     "name": "Place",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=814",
+       "abstract": "Rapid technological development and the introduction of smart services make it possible for modern cities to o er an enhanced perception of city life ",
+       "keywords": "XMPP; GTFS; Crowdsensing; Public transportation; Smart cities",
+       "name": "Smart Timetable Serv",
+       "size": 1,
+       "title": "Smart Timetable Service Based on Crowdsensed Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=798",
+       "abstract": "In this paper there are two main parts, which aim at exploring the representation of place through georeferenced user-generated information. The first",
+       "keywords": "VGI; Twitter; Web 2.0; User-generated content; Geoweb; geocoding; politics.",
+       "name": "VGI e WEB 2.0: polit",
+       "size": 1,
+       "title": "VGI e WEB 2.0: politics in the time of Twitter"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1048",
+       "abstract": "Georeferenced user-generated datasets like those extracted from Twitter are increasingly gaining the interest of spatial analysts. Such datasets often",
+       "keywords": "Spatial Autocorrelation; Spatial Data Mining; Spatial analysis",
+       "name": "A local scale-sensit",
+       "size": 1,
+       "title": "A local scale-sensitive indicator of spatial autocorrelation for assessing high-and low-value clusters in multi-scale datasets"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=920",
+       "abstract": "Drawing on John Agnew’s (1987) theoretical framework for the analysis of place (location, locale and sense of place) and on Doreen Massey’s (1991) int",
+       "keywords": "VGI; Kilburn High Road; Place; content analysis",
+       "name": "Kilburn High Road Re",
+       "size": 1,
+       "title": "Kilburn High Road Revisited"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=808",
+       "abstract": "Humans perceive and evaluate environments affectively. Some places are experienced as unsafe, while some others as attractive and interesting. These a",
+       "keywords": "crowdsourcing; route planning; affective responses to environments; human wayfinding",
+       "name": "AffectRoute – Consid",
+       "size": 1,
+       "title": "AffectRoute – Considering people’s affective responses to environments for enhancing route planning services"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=964",
+       "abstract": "In this paper we discuss gamification principles in the context of Volunteered Geographic Information (VGI). Our main focus is the quality of the data",
+       "keywords": "Data quality; Gamification; Geogames",
+       "name": "Game Principles for ",
+       "size": 1,
+       "title": "Game Principles for Enhancing the Quality of User-generated Data Collections"
+      }
+     ]
+    },
+    {
+     "name": "Route",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1080",
+       "abstract": "The generation of a routing network for disabled people inherits a number of prerequisites that need special consideration. Widespread routing applica",
+       "keywords": "OpenStreetMap; Collaborative mapping; Disabled People; Route generation; Route planning; Routing Gra",
+       "name": "Generation of a tail",
+       "size": 1,
+       "title": "Generation of a tailored routing network for disabled people based on collaboratively collected geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1076",
+       "abstract": "The development of a wheelchair user friendly route planning application inherits a number of special requirements and details that need to be conside",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap",
+       "name": "Measuring the Reliab",
+       "size": 1,
+       "title": "Measuring the Reliability of Wheelchair User Route Planning based on Volunteered Geographic Information"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=808",
+       "abstract": "Humans perceive and evaluate environments affectively. Some places are experienced as unsafe, while some others as attractive and interesting. These a",
+       "keywords": "crowdsourcing; route planning; affective responses to environments; human wayfinding",
+       "name": "AffectRoute – Consid",
+       "size": 1,
+       "title": "AffectRoute – Considering people’s affective responses to environments for enhancing route planning services"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1026",
+       "abstract": "Collecting data and monitoring our environment give the basis for smart city applications which are getting popular today. However, the traditional ap",
+       "keywords": "Crowd-sourcing; Internet of Things; Publish/subscribe; XMPP",
+       "name": "Publish/Subscribe Co",
+       "size": 1,
+       "title": "Publish/Subscribe Communication for Crowd-sourcing Based Smart City Applications"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1082",
+       "abstract": "Geotagged photos on social media like Flickr explicitly indicate the trajectories of tourists. They can be employed to reveal the tourists’ preference",
+       "keywords": "Spatial Data Mining; Volunteered Geographic Information; Route planning; Geo-tagged photos; Semantic",
+       "name": "Road-based travel re",
+       "size": 1,
+       "title": "Road-based travel recommendation using geo-tagged images"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Information represen",
+   "children": [
+    {
+     "name": "Dataset",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1067",
+       "abstract": "The relevance of geographic information to mobile users must be evaluated by taking into account the usage context. This paper assumes that emerging L",
+       "keywords": "Location-based social network; contextualization; geographic relevance; mobility pattern",
+       "name": "Contextualized Relev",
+       "size": 1,
+       "title": "Contextualized Relevance Evaluation of Geographic Information for Mobile Users in Location-Based Social Networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1080",
+       "abstract": "The generation of a routing network for disabled people inherits a number of prerequisites that need special consideration. Widespread routing applica",
+       "keywords": "OpenStreetMap; Collaborative mapping; Disabled People; Route generation; Route planning; Routing Gra",
+       "name": "Generation of a tail",
+       "size": 1,
+       "title": "Generation of a tailored routing network for disabled people based on collaboratively collected geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1085",
+       "abstract": "Volunteered Geographic Information (VGI) projects and their crowdsourced data have been the focus of a number of scientific analyses and investigation",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Collaborative mapping; Comparison; Urban Areas",
+       "name": "Comparison of Volunt",
+       "size": 1,
+       "title": "Comparison of Volunteered Geographic Information Data Contributions and Community Development for Selected World Regions"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1093",
+       "abstract": "The OpenStreetMap (OSM) project is a prime example in the field of Volunteered Geographic Information (VGI). Worldwide, several hundred thousand peopl",
+       "keywords": "Quality assessment; Volunteered Geographic Information; OpenStreetMap; Germany; Open GeoData; street",
+       "name": "The Street Network E",
+       "size": 1,
+       "title": "The Street Network Evolution of Crowdsourced Maps: OpenStreetMap in Germany 2007–2011"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1048",
+       "abstract": "Georeferenced user-generated datasets like those extracted from Twitter are increasingly gaining the interest of spatial analysts. Such datasets often",
+       "keywords": "Spatial Autocorrelation; Spatial Data Mining; Spatial analysis",
+       "name": "A local scale-sensit",
+       "size": 1,
+       "title": "A local scale-sensitive indicator of spatial autocorrelation for assessing high-and low-value clusters in multi-scale datasets"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=855",
+       "abstract": "OpenStreetMap (OSM) is the largest spatial database of the world. One of the most frequently occurring geospatial elements within this database is the",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Road network; Accuracy; FOSS4G; GRASS; Open Data;",
+       "name": "An automated GRASS-b",
+       "size": 1,
+       "title": "An automated GRASS-based procedure to assess the geometrical accuracy of the OpenStreetMap Paris road network"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1065",
+       "abstract": "Volunteered Geographic Information (VGI) such as data derived from the OpenStreetMap (OSM) project is a popular data source for freely available geogr",
+       "keywords": "Data quality; VGI; ATKIS Base DLM; Crowdsourced information; kappa",
+       "name": "Quality Evaluation o",
+       "size": 1,
+       "title": "Quality Evaluation of VGI Using Authoritative Data—A Comparison with Land Use Data in Southern Germany"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=965",
+       "abstract": "After a first phase of almost unanimous enthusiasm, VGI research identified data quality as a major problem of community-based data acquisition. This ",
+       "keywords": "Gamification; Geogames",
+       "name": "Enhancing the Qualit",
+       "size": 1,
+       "title": "Enhancing the Quality of Volunteered Geographic Information: A Constraint-Based Approach."
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=980",
+       "abstract": "Today, a tremendous source of spatio-temporal data is user generated, so-called volunteered geographic information (VGI). Among the many VGI sources, ",
+       "keywords": "Visual knowledge discovery; feature detection   tracking; geospatial visualisation; time varying dat",
+       "name": "Moving on Twitter: U",
+       "size": 1,
+       "title": "Moving on Twitter: Using Episodic Hotspot and Drift Analysis to Detect and Characterise Spatial Trajectories"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=861",
+       "abstract": "OpenStreetMap (OSM) is currently the largest openly licensed collection of geospatial data. Being OSM increasingly exploited in a variety of applicati",
+       "keywords": "Quality; Volunteered Geographic Information; OpenStreetMap; Accuracy; Open Data; Building",
+       "name": "Positional accuracy ",
+       "size": 1,
+       "title": "Positional accuracy assessment of the OpenStreetMap buildings layer through automatic homologous pairs detection: the method and a case study"
+      }
+     ]
+    },
+    {
+     "name": "Image",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1077",
+       "abstract": "Natural disasters like floods are a worldwide phenomenon and a serious threat to mankind. Flood simulations are applications of disaster control, whic",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; ALS pointcloud; Land Use/Cover Map; floodplain; h",
+       "name": "GIS-Based Roughness ",
+       "size": 1,
+       "title": "GIS-Based Roughness Derivation for Flood Simulations: A Comparison of Orthophotos and LiDAR and Crowdsourced Geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=981",
+       "abstract": "With the increased availability of user generated data, assessing quality and credibility of such data becomes important. In this paper, we propose to",
+       "keywords": "Image- based VGI; credibility; positional uncertainty",
+       "name": "Using Reverse Viewsh",
+       "size": 1,
+       "title": "Using Reverse Viewshed Analysis to Assess the Location Correctness of Visually Generated VGI"
+      }
+     ]
+    },
+    {
+     "name": "Tweet",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=920",
+       "abstract": "Drawing on John Agnew’s (1987) theoretical framework for the analysis of place (location, locale and sense of place) and on Doreen Massey’s (1991) int",
+       "keywords": "VGI; Kilburn High Road; Place; content analysis",
+       "name": "Kilburn High Road Re",
+       "size": 1,
+       "title": "Kilburn High Road Revisited"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1050",
+       "abstract": "Detailed knowledge regarding the whereabouts of people and their social activities in urban areas with high spatial and temporal resolution is still w",
+       "keywords": "Social Media; Twitter; Census Data; London",
+       "name": "Twitter as an indica",
+       "size": 1,
+       "title": "Twitter as an indicator for whereabouts of people? Correlating Twitter with UK census data"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Activity",
+   "children": [
+    {
+     "name": "Control",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=894",
+       "abstract": "Volunteered Geographic Information (VGI) represents a growing source of potentially valuable data for many applications, including land cover map vali",
+       "keywords": "Quality; VGI; Crowdsourcing; Land Use/Cover Map; Validation",
+       "name": "Usability of VGI for",
+       "size": 1,
+       "title": "Usability of VGI for validation of land cover maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=936",
+       "abstract": "Online collaborative mapping projects, such as   OpenStreetMap   (  OSM  ), have been developed not only to provide public and free information about ",
+       "keywords": "OpenStreetMap; Road network; Authoritative data; Positional accuracy; Quality control; Transportatio",
+       "name": "Assessing OSM Road P",
+       "size": 1,
+       "title": "Assessing OSM Road Positional Quality with Authoritative Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1077",
+       "abstract": "Natural disasters like floods are a worldwide phenomenon and a serious threat to mankind. Flood simulations are applications of disaster control, whic",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; ALS pointcloud; Land Use/Cover Map; floodplain; h",
+       "name": "GIS-Based Roughness ",
+       "size": 1,
+       "title": "GIS-Based Roughness Derivation for Flood Simulations: A Comparison of Orthophotos and LiDAR and Crowdsourced Geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      },
+      {
+       "name": "Machine Learning Ass",
+       "size": 1,
+       "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+       "url": "http://vgibox.eu/repository/index.php?curid=953",
+       "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=950",
+       "abstract": "This chapter describes AtrapaelTigre.com, a citizen science project focusing on the Asian tiger mosquito in Spain. Commonly known for its aggressive b",
+       "keywords": "VGI; Citizen science; Asian tiger mosquito; disease vectors; invasive species",
+       "name": "AtrapaelTigre.com: e",
+       "size": 1,
+       "title": "AtrapaelTigre.com: enlisting citizen-scientists in the war on tiger mosquitoes"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1014",
+       "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+       "keywords": "citizen science; crowdsourcing; data quality; data validation",
+       "name": "Data quality in crow",
+       "size": 1,
+       "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+      }
+     ]
+    },
+    {
+     "name": "Extraction",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1057",
+       "abstract": "An increasing number of Volunteered Geographic Information (VGI) and social media platforms have been continuously growing in size, which have provide",
+       "keywords": "Volunteered Geographic Information; Flickr; Instagram; Mapillary; OpenStreetMap",
+       "name": "Technical Guidelines",
+       "size": 1,
+       "title": "Technical Guidelines to Extract and Analyze VGI from Different Platforms"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1059",
+       "abstract": "With the rise of new technologies, citizens can contribute to scientific research via Web 2.0 applications for collecting and distributing geospatial ",
+       "keywords": "Volunteered Geographic Information; Web 2.0; natural hazard analysis",
+       "name": "Volunteered Geograph",
+       "size": 1,
+       "title": "Volunteered Geographic Information in Natural Hazard Analysis: A Systematic Literature Review of Current Approaches with a Focus on Preparedness and Mitigation"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=999",
+       "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+       "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+       "name": "A Hybrid Method for ",
+       "size": 1,
+       "title": "A Hybrid Method for Toponym Recognition"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1073",
+       "abstract": "This study proposes a novel approach for extracting multilane roads from urban road networks in OpenStreetMap (OSM) data sets as functional high-level",
+       "keywords": "OpenStreetMap; Road network; hierarchy; multilane road",
+       "name": "Polygon-based approa",
+       "size": 1,
+       "title": "Polygon-based approach for extracting multilane roads from OpenStreetMap urban road networks"
+      }
+     ]
+    },
+    {
+     "name": "Innovation",
+     "children": [
+      {
+       "name": "Tweeting Politicians",
+       "size": 1,
+       "title": "Tweeting Politicians: il peso della prossimità nella formazione e diffusione dell’opinione politica",
+       "url": "http://vgibox.eu/repository/index.php?curid=800",
+       "abstract": "Innovation technology influences the processes of formation and diffusion of ideas and perceptions, transcending the geographical space. Evolutions in"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=927",
+       "abstract": "This contribution starts from the assumption that volunteered geographic information is a technological, cultural and scientific innovation. It theref",
+       "keywords": "crowdsourced information; geography; volunteered geographic information",
+       "name": "The Nature of Volunt",
+       "size": 1,
+       "title": "The Nature of Volunteered Geographic Information"
+      }
+     ]
+    },
+    {
+     "name": "Investigation",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1066",
+       "abstract": "Due to its relatively high availability and low cost, location-based social network (LBSN) (e.g., Foursquare) data (a popular type of volunteered geog",
+       "keywords": "Volunteered Geographic Information; Location-based social network; GIS; activity space; gender diffe",
+       "name": "Investigation of Tra",
+       "size": 1,
+       "title": "Investigation of Travel and Activity Patterns Using Location-based Social Network Data: A Case Study of Active Mobile Social Media Users"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1061",
+       "abstract": "Contribution inequality widely exists in OpenStreetMap (OSM), which means that most data come from a minority of the contributors, while the majority ",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; inequality",
+       "name": "Temporal Analysis on",
+       "size": 1,
+       "title": "Temporal Analysis on Contribution Inequality in OpenStreetMap: A Comparative Study for Four Countries"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1083",
+       "abstract": "The increasing availability of sensor devices has resulted in important volumes of sensor data, which has raised the issue of making these data fully ",
+       "keywords": "Volunteered Geographic Information; Semantic Interoperability; Semantic Web; Sensor Data",
+       "name": "Semantic Interoperab",
+       "size": 1,
+       "title": "Semantic Interoperability of Sensor Data with Volunteered Geographic Information: A Unified Model"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1064",
+       "abstract": "The investigation of human activity patterns from location-based social networks like Twitter is an established approach of how to infer relationships",
+       "keywords": "Twitter; Point pattern analysis; Self-organizing map; Location-based social network; semantic topic ",
+       "name": "Exploration of spati",
+       "size": 1,
+       "title": "Exploration of spatiotemporal and semantic clusters of Twitter data using unsupervised neural networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1081",
+       "abstract": "OpenStreetMap (OSM) is one of the most popular examples of a Volunteered Geographic Information (VGI) project. In the past years it has become a serio",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap",
+       "name": "A Comprehensive Fram",
+       "size": 1,
+       "title": "A Comprehensive Framework for Intrinsic OpenStreetMap Quality Analysis"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1088",
+       "abstract": "The OpenStreetMap (OSM) project, a well-known source of freely available worldwide geodata collected by volunteers, has experienced a consistent incre",
+       "keywords": "investigation; Volunteered Geographic Information; OpenStreetMap; detection; vandalism",
+       "name": "Towards Automatic Va",
+       "size": 1,
+       "title": "Towards Automatic Vandalism Detection in OpenStreetMap"
+      }
+     ]
+    },
+    {
+     "name": "Navigation",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1093",
+       "abstract": "The OpenStreetMap (OSM) project is a prime example in the field of Volunteered Geographic Information (VGI). Worldwide, several hundred thousand peopl",
+       "keywords": "Quality assessment; Volunteered Geographic Information; OpenStreetMap; Germany; Open GeoData; street",
+       "name": "The Street Network E",
+       "size": 1,
+       "title": "The Street Network Evolution of Crowdsourced Maps: OpenStreetMap in Germany 2007–2011"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=808",
+       "abstract": "Humans perceive and evaluate environments affectively. Some places are experienced as unsafe, while some others as attractive and interesting. These a",
+       "keywords": "crowdsourcing; route planning; affective responses to environments; human wayfinding",
+       "name": "AffectRoute – Consid",
+       "size": 1,
+       "title": "AffectRoute – Considering people’s affective responses to environments for enhancing route planning services"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=812",
+       "abstract": "When travelling in space, humans perceive the environment and evaluate it affectively. This chapter illustrates how mobile crowdsourcing and social me",
+       "keywords": "crowdsourcing; subjective geo-information; Affective responses to environments",
+       "name": "Using mobile crowdso",
+       "size": 1,
+       "title": "Using mobile crowdsourcing and geotagged social media data to study people’s affective responses to environments"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=855",
+       "abstract": "OpenStreetMap (OSM) is the largest spatial database of the world. One of the most frequently occurring geospatial elements within this database is the",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Road network; Accuracy; FOSS4G; GRASS; Open Data;",
+       "name": "An automated GRASS-b",
+       "size": 1,
+       "title": "An automated GRASS-based procedure to assess the geometrical accuracy of the OpenStreetMap Paris road network"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=822",
+       "abstract": "This paper introduces a simulation environment developed for analyzing crowd-sensing based applications in the Smart City application domain. As a cas",
+       "keywords": "Smart City; Crowd-sensing; Simulation; Urban Parking",
+       "name": "Simulation Environme",
+       "size": 1,
+       "title": "Simulation Environment for Investigating Crowd-sensing Based Urban Parking"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=991",
+       "abstract": "Abstract As transport systems are pushed to the limits in many cities, governments have tried to resolve problems of traffic and congestion by increas",
+       "keywords": "VGI; Government; Sustainable Mobility; Transport",
+       "name": "The Potential of Vol",
+       "size": 1,
+       "title": "The Potential of Volunteered Geographic Information (VGI) in Future Transport Systems"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=833",
+       "abstract": "The Smart City connects citizens in novel ways by leveraging the latest advances in information and communication technologies (ICT). Smart citizens h",
+       "keywords": "Crowdsensing; Crowdsourcing",
+       "name": "Mobile crowd-sensing",
+       "size": 1,
+       "title": "Mobile crowd-sensing in the Smart City"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=929",
+       "abstract": "  OpenStreetMap   (OSM) is an extraordinarily large and diverse spatial database of the world. Road networks are amongst the most frequently occurring",
+       "keywords": "fitness for use; Data quality; OpenStreetMap; Road network; FOSS4G; GRASS; Open Data; Positional Acc",
+       "name": "Towards an automated",
+       "size": 1,
+       "title": "Towards an automated comparison of OpenStreetMap with authoritative road datasets"
+      }
+     ]
+    },
+    {
+     "name": "Observation",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1068",
+       "abstract": "The reCAPTCHA concept provides a large amount of valuable information for various applications. First, it provides security, e.g., for a form on a web",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Geo-reCAPTCHA; User-generated geographic content;",
+       "name": "Geo-reCAPTCHA: Crowd",
+       "size": 1,
+       "title": "Geo-reCAPTCHA: Crowdsourcing large amounts of geographic information from earth observation data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1014",
+       "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+       "keywords": "citizen science; crowdsourcing; data quality; data validation",
+       "name": "Data quality in crow",
+       "size": 1,
+       "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+      }
+     ]
+    },
+    {
+     "name": "Procedure",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=855",
+       "abstract": "OpenStreetMap (OSM) is the largest spatial database of the world. One of the most frequently occurring geospatial elements within this database is the",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Road network; Accuracy; FOSS4G; GRASS; Open Data;",
+       "name": "An automated GRASS-b",
+       "size": 1,
+       "title": "An automated GRASS-based procedure to assess the geometrical accuracy of the OpenStreetMap Paris road network"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=936",
+       "abstract": "Online collaborative mapping projects, such as   OpenStreetMap   (  OSM  ), have been developed not only to provide public and free information about ",
+       "keywords": "OpenStreetMap; Road network; Authoritative data; Positional accuracy; Quality control; Transportatio",
+       "name": "Assessing OSM Road P",
+       "size": 1,
+       "title": "Assessing OSM Road Positional Quality with Authoritative Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1058",
+       "abstract": "(1) Background: Due to the advent of Volunteered Geographic Information (VGI), large datasets of user-generated Points of Interest (POI) are now avail",
+       "keywords": "Data quality; VGI; Fitness-for-use; Points Of Interest",
+       "name": "Defining Fitness-for",
+       "size": 1,
+       "title": "Defining Fitness-for-Use for Crowdsourced Points of Interest (POI)"
+      }
+     ]
+    },
+    {
+     "name": "Processing",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=905",
+       "abstract": "In the past few years, volunteered geographic information (VGI) has emerged as a new resource for improving the management of emergencies. Despite the",
+       "keywords": "Volunteered Geographic Information; Emergency management; Simulation; Fire",
+       "name": "How volunteered geog",
+       "size": 1,
+       "title": "How volunteered geographic information can be integrated into emergency management practice? First lessons learned from an urban fire simulation in the city of Coimbra"
+      },
+      {
+       "name": "Participatory Sensin",
+       "size": 1,
+       "title": "Participatory Sensing Based Real-time Public Transport Information Service",
+       "url": "http://vgibox.eu/repository/index.php?curid=1032",
+       "abstract": "Modern cities continuously struggle with infrastructural problems especially when the population is massively growing. One affected area is public tra"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=999",
+       "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+       "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+       "name": "A Hybrid Method for ",
+       "size": 1,
+       "title": "A Hybrid Method for Toponym Recognition"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=753",
+       "abstract": "This article sets forth the early phases of a methodological proposal for designing and developing Volunteered Geographic Information (VGI) initiative",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Community; Methodology; Motivation; Participation",
+       "name": "Volunteered Geograph",
+       "size": 1,
+       "title": "Volunteered Geographic Information System Design: Project and Participation Guidelines"
+      }
+     ]
+    },
+    {
+     "name": "Production",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=895",
+       "abstract": "The proliferation of inexpensive and highly mobile and location aware devices together with Web 2.0 technology have fostered the emergence of the citi",
+       "keywords": "citizen science; VGI; Mapping",
+       "name": "Mapping and the Citi",
+       "size": 1,
+       "title": "Mapping and the Citizen Sensor"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=923",
+       "abstract": "Volunteered Geographic Information has been increasing exponentially over the last years, capturing the attention of the scientific community. Researc",
+       "keywords": "Volunteered Geographic Information; Flickr; Land Use/Cover Map",
+       "name": "Comparative study of",
+       "size": 1,
+       "title": "Comparative study of Land Use/Cover classification using Flickr photos, satellite imagery and Corine Land Cover database"
+      }
+     ]
+    },
+    {
+     "name": "Sharing",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=799",
+       "abstract": "The aim of this paper is to address changes in public communication following the advent of Internet social networking tools and the emerging web 2.0 ",
+       "keywords": "Twitter; Italy; Social networks; Twitter performance index.; comuni; public communication; public in",
+       "name": "Citizens and Institu",
+       "size": 1,
+       "title": "Citizens and Institutions as information prosumers. The case study of Italian municipalities on Twitter"
+      },
+      {
+       "name": "Social media data as",
+       "size": 1,
+       "title": "Social media data as a source for studying people’s perception and knowledge of environments",
+       "url": "http://vgibox.eu/repository/index.php?curid=811",
+       "abstract": "Recently, the increasing availability of online social network and media-sharing services (e.g. Facebook, Foursquare and Flickr) has led to the accumu"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=991",
+       "abstract": "Abstract As transport systems are pushed to the limits in many cities, governments have tried to resolve problems of traffic and congestion by increas",
+       "keywords": "VGI; Government; Sustainable Mobility; Transport",
+       "name": "The Potential of Vol",
+       "size": 1,
+       "title": "The Potential of Volunteered Geographic Information (VGI) in Future Transport Systems"
+      },
+      {
+       "name": "Internet e l'importa",
+       "size": 1,
+       "title": "Internet e l'importanza dei confini 2.0",
+       "url": "http://vgibox.eu/repository/index.php?curid=803",
+       "abstract": "Photos shared on Flickr, one of the most famous photo-sharing site, allow new interpretations and representations of borders. Languages and the influe"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=930",
+       "abstract": "Driven by the rise of Web 2.0 and the non-stop spread of mobile device sensors, the concept of Public Participation GIS (PPGIS) is knowing a revolutio",
+       "keywords": "FOSS4G; FOSS; GeoWeb; PPGIS; Web Mapping; mobile",
+       "name": "Public Participation",
+       "size": 1,
+       "title": "Public Participation GIS: a FOSS architecture enabling field-data collection"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=917",
+       "abstract": "Development of water quality monitoring systems for crowds (citizens, schools, association and professionals). Surveys, laboratory testin, field testi",
+       "keywords": "conference; jarviwiki",
+       "name": "Developing mobile se",
+       "size": 1,
+       "title": "Developing mobile services for in-situ monitoring, data storing and sharing (HALI)."
+      }
+     ]
+    },
+    {
+     "name": "Surveillance",
+     "children": [
+      {
+       "name": "Stalking Pincopallin",
+       "size": 1,
+       "title": "Stalking Pincopallino: sorveglianza, privacy e prossimità al tempo di Twitter",
+       "url": "http://vgibox.eu/repository/index.php?curid=801",
+       "abstract": "Stalking Pincopallino: surveillance, privacy and proximity in the age of Twitter. – Our online behaviour and actions leave digital traces that recent "
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=950",
+       "abstract": "This chapter describes AtrapaelTigre.com, a citizen science project focusing on the Asian tiger mosquito in Spain. Commonly known for its aggressive b",
+       "keywords": "VGI; Citizen science; Asian tiger mosquito; disease vectors; invasive species",
+       "name": "AtrapaelTigre.com: e",
+       "size": 1,
+       "title": "AtrapaelTigre.com: enlisting citizen-scientists in the war on tiger mosquitoes"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=956",
+       "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+       "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+       "name": "Approaches to passiv",
+       "size": 1,
+       "title": "Approaches to passive mosquito surveillance in the EU"
+      }
+     ]
+    },
+    {
+     "name": "Validation",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=896",
+       "abstract": "Geo-tagged photographs are used increasingly as a source   Volunteered Geographic Information  , which could potentially be used for land use and land",
+       "keywords": "land cover; land use; Volunteered Geographic Information; Flickr; Geograph; Panoramio; fitness-for-u",
+       "name": "Investigating the Fe",
+       "size": 1,
+       "title": "Investigating the Feasibility of Geo-Tagged Photographs as Sources of Land Cover Input Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=894",
+       "abstract": "Volunteered Geographic Information (VGI) represents a growing source of potentially valuable data for many applications, including land cover map vali",
+       "keywords": "Quality; VGI; Crowdsourcing; Land Use/Cover Map; Validation",
+       "name": "Usability of VGI for",
+       "size": 1,
+       "title": "Usability of VGI for validation of land cover maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=879",
+       "abstract": "Information about land cover and land use is needed for a wide range of applications such as nature protection and biodiversity, forest and water mana",
+       "keywords": "VGI; Crowdsourcing; Land use; Land cover; Validation",
+       "name": "Harnessing the power",
+       "size": 1,
+       "title": "Harnessing the power of volunteers, the internet and Google Earth to collect and validate global spatial information using Geo-Wiki"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      },
+      {
+       "name": "Machine Learning Ass",
+       "size": 1,
+       "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+       "url": "http://vgibox.eu/repository/index.php?curid=953",
+       "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=950",
+       "abstract": "This chapter describes AtrapaelTigre.com, a citizen science project focusing on the Asian tiger mosquito in Spain. Commonly known for its aggressive b",
+       "keywords": "VGI; Citizen science; Asian tiger mosquito; disease vectors; invasive species",
+       "name": "AtrapaelTigre.com: e",
+       "size": 1,
+       "title": "AtrapaelTigre.com: enlisting citizen-scientists in the war on tiger mosquitoes"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1014",
+       "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+       "keywords": "citizen science; crowdsourcing; data quality; data validation",
+       "name": "Data quality in crow",
+       "size": 1,
+       "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+      }
+     ]
+    },
+    {
+     "name": "Procedure",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=855",
+       "abstract": "OpenStreetMap (OSM) is the largest spatial database of the world. One of the most frequently occurring geospatial elements within this database is the",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Road network; Accuracy; FOSS4G; GRASS; Open Data;",
+       "name": "An automated GRASS-b",
+       "size": 1,
+       "title": "An automated GRASS-based procedure to assess the geometrical accuracy of the OpenStreetMap Paris road network"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=936",
+       "abstract": "Online collaborative mapping projects, such as   OpenStreetMap   (  OSM  ), have been developed not only to provide public and free information about ",
+       "keywords": "OpenStreetMap; Road network; Authoritative data; Positional accuracy; Quality control; Transportatio",
+       "name": "Assessing OSM Road P",
+       "size": 1,
+       "title": "Assessing OSM Road Positional Quality with Authoritative Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1058",
+       "abstract": "(1) Background: Due to the advent of Volunteered Geographic Information (VGI), large datasets of user-generated Points of Interest (POI) are now avail",
+       "keywords": "Data quality; VGI; Fitness-for-use; Points Of Interest",
+       "name": "Defining Fitness-for",
+       "size": 1,
+       "title": "Defining Fitness-for-Use for Crowdsourced Points of Interest (POI)"
+      }
+     ]
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1091",
+     "abstract": "The OpenStreetMap (OSM) project, founded in 2004, has gathered an exceptional amount of interest in recent years and counts as one of the most impress",
+     "keywords": "activity; Volunteered Geographic Information; OpenStreetMap; Community; contributions",
+     "name": "Analyzing the Contri",
+     "size": 1,
+     "title": "Analyzing the Contributor Activity of a Volunteered Geographic Information Project — The Case of OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1066",
+     "abstract": "Due to its relatively high availability and low cost, location-based social network (LBSN) (e.g., Foursquare) data (a popular type of volunteered geog",
+     "keywords": "Volunteered Geographic Information; Location-based social network; GIS; activity space; gender diffe",
+     "name": "Investigation of Tra",
+     "size": 1,
+     "title": "Investigation of Travel and Activity Patterns Using Location-based Social Network Data: A Case Study of Active Mobile Social Media Users"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=889",
+     "abstract": "Citizens are increasingly becoming an important source of geographic information, sometimes entering domains that had until recently been the exclusiv",
+     "keywords": "citizen science; crowdsourcing; mapping; VGI",
+     "name": "Crowdsourcing, Citiz",
+     "size": 1,
+     "title": "Crowdsourcing, Citizen Science or Volunteered Geographic Information? The Current State of Crowdsourced Geographic Information"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1064",
+     "abstract": "The investigation of human activity patterns from location-based social networks like Twitter is an established approach of how to infer relationships",
+     "keywords": "Twitter; Point pattern analysis; Self-organizing map; Location-based social network; semantic topic ",
+     "name": "Exploration of spati",
+     "size": 1,
+     "title": "Exploration of spatiotemporal and semantic clusters of Twitter data using unsupervised neural networks"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=962",
+     "abstract": "The chapter studies the spatial behavior of contributors to OpenStreetMap and links it to gamification mechanisms which provide a solution to issues t",
+     "keywords": "Data quality; Gamification; Geogames",
+     "name": "Participation Patter",
+     "size": 1,
+     "title": "Participation Patterns VGI and Gamification"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1075",
+     "abstract": "dentifying and characterizing variations of human activity – specifically changes in intensity and similarity – in urban environments provide insights",
+     "keywords": "Self-organizing map; Citizen sensing; Geovisual Analytics; Human Behavior; Mobile phone; Urban Dynam",
+     "name": "Mapping collective h",
+     "size": 1,
+     "title": "Mapping collective human activity in an urban environment based on mobile phone data"
+    }
+   ]
+  },
+  {
+   "name": "Attribute",
+   "children": [
+    {
+     "name": "Consistency",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1011",
+       "abstract": "The appearance of OpenStreetMap (OSM) in 2004 sparked a phenomenon known as Volunteered Geographic Information (VGI). Today, VGI comes in many flavour",
+       "keywords": "authoritative data; Quality; VGI; geo-tagged photos",
+       "name": "Using OSM, Geo-Tagge",
+       "size": 1,
+       "title": "Using OSM, Geo-Tagged Flickr Photos and authoritative data: a quality perspective"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      }
+     ]
+    },
+    {
+     "name": "Distribution",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=799",
+       "abstract": "The aim of this paper is to address changes in public communication following the advent of Internet social networking tools and the emerging web 2.0 ",
+       "keywords": "Twitter; Italy; Social networks; Twitter performance index.; comuni; public communication; public in",
+       "name": "Citizens and Institu",
+       "size": 1,
+       "title": "Citizens and Institutions as information prosumers. The case study of Italian municipalities on Twitter"
+      },
+      {
+       "name": "GeoSocial Town: Digi",
+       "size": 1,
+       "title": "GeoSocial Town: Digital Places and Urban Spaces Across Census Tract and Volunteered Geographic Information in Florence",
+       "url": "http://vgibox.eu/repository/index.php?curid=804",
+       "abstract": "This paper is an experiment with the combined use of census tract and geo-tagged data harvested from some of the most popular social media (Twitter, I"
+      },
+      {
+       "name": "Updating the known d",
+       "size": 1,
+       "title": "Updating the known distribution of Aedes albopictus (Skuse 1894) in Spain 2015",
+       "url": "http://vgibox.eu/repository/index.php?curid=1009",
+       "abstract": "Abstract: Highlights •  Known distribution of Aedes albopictus in Spain in 2015. • There are new first records: 70 municipalities and 3 provinces (Hue"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1014",
+       "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+       "keywords": "citizen science; crowdsourcing; data quality; data validation",
+       "name": "Data quality in crow",
+       "size": 1,
+       "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1074",
+       "abstract": "Data on population at building level is required for various purposes. However, to protect privacy, government population data is aggregated. Populati",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Points Of Interest; Areal interpolation; Populati",
+       "name": "Fine-resolution popu",
+       "size": 1,
+       "title": "Fine-resolution population mapping using OpenStreetMap points-of-interest"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=956",
+       "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+       "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+       "name": "Approaches to passiv",
+       "size": 1,
+       "title": "Approaches to passive mosquito surveillance in the EU"
+      }
+     ]
+    },
+    {
+     "name": "Heterogeneity",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=679",
+       "abstract": "Whereas defining the level of detail (LoD) of authoritative data sets is possible, the opposite is true for volunteered geographic information (VGI), ",
+       "keywords": "Data quality; OpenStreetMap; Crowdsourced data; Level of Detail",
+       "name": "Detecting Level-of-D",
+       "size": 1,
+       "title": "Detecting Level-of-Detail Inconsistencies in Volunteered Geographic Information Data Sets"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1064",
+       "abstract": "The investigation of human activity patterns from location-based social networks like Twitter is an established approach of how to infer relationships",
+       "keywords": "Twitter; Point pattern analysis; Self-organizing map; Location-based social network; semantic topic ",
+       "name": "Exploration of spati",
+       "size": 1,
+       "title": "Exploration of spatiotemporal and semantic clusters of Twitter data using unsupervised neural networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1094",
+       "abstract": "In the context of OpenStreetMap (OSM), spatial data quality, in particular completeness, is an essential aspect of its fitness for use in specific app",
+       "keywords": "machine learning; Volunteered Geographic Information; OpenStreetMap; Spatial data quality; United Ki",
+       "name": "Mining urban land-us",
+       "size": 1,
+       "title": "Mining urban land-use patterns from volunteered geographic information by means of genetic algorithms and artificial neural networks"
+      }
+     ]
+    },
+    {
+     "name": "Pattern",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1086",
+       "abstract": "A large number of applications have been launched to gather geo-located information from the public. This article introduces an approach toward genera",
+       "keywords": "OpenStreetMap; Global Monitoring for Environment and Security Urban Atlas; Land use; Vienna; hierach",
+       "name": "Toward mapping land-",
+       "size": 1,
+       "title": "Toward mapping land-use patterns from volunteered geographic information"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1067",
+       "abstract": "The relevance of geographic information to mobile users must be evaluated by taking into account the usage context. This paper assumes that emerging L",
+       "keywords": "Location-based social network; contextualization; geographic relevance; mobility pattern",
+       "name": "Contextualized Relev",
+       "size": 1,
+       "title": "Contextualized Relevance Evaluation of Geographic Information for Mobile Users in Location-Based Social Networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1093",
+       "abstract": "The OpenStreetMap (OSM) project is a prime example in the field of Volunteered Geographic Information (VGI). Worldwide, several hundred thousand peopl",
+       "keywords": "Quality assessment; Volunteered Geographic Information; OpenStreetMap; Germany; Open GeoData; street",
+       "name": "The Street Network E",
+       "size": 1,
+       "title": "The Street Network Evolution of Crowdsourced Maps: OpenStreetMap in Germany 2007–2011"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1064",
+       "abstract": "The investigation of human activity patterns from location-based social networks like Twitter is an established approach of how to infer relationships",
+       "keywords": "Twitter; Point pattern analysis; Self-organizing map; Location-based social network; semantic topic ",
+       "name": "Exploration of spati",
+       "size": 1,
+       "title": "Exploration of spatiotemporal and semantic clusters of Twitter data using unsupervised neural networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1055",
+       "abstract": "Cities are complex systems, where related Human activities are increasingly difficult to explore within. In order to understand urban processes and to",
+       "keywords": "Social Media; Twitter; Human mobility; Point pattern analysis; Self-organizing map",
+       "name": "Mining and correlati",
+       "size": 1,
+       "title": "Mining and correlating traffic events from human sensor observations with official transport data using self-organizing-maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=962",
+       "abstract": "The chapter studies the spatial behavior of contributors to OpenStreetMap and links it to gamification mechanisms which provide a solution to issues t",
+       "keywords": "Data quality; Gamification; Geogames",
+       "name": "Participation Patter",
+       "size": 1,
+       "title": "Participation Patterns VGI and Gamification"
+      }
+     ]
+    },
+    {
+     "name": "Precision",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1056",
+       "abstract": "In the past few years, volunteers have produced geographic information of different kinds, using a variety of different crowdsourcing platforms, withi",
+       "keywords": "Citizen science; Crowdsourcing; Disaster Management; Volunteered Geographic Information",
+       "name": "The Tasks of the Cro",
+       "size": 1,
+       "title": "The Tasks of the Crowd: A Typology of Tasks in Geographic Information Crowdsourcing and a Case Study in Humanitarian Mapping"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=766",
+       "abstract": "The paper analyses the challenges and problems posed by the use of Volunteered Geographic Information (VGI) in citizen science and a proposal is formu",
+       "keywords": "Citizen science; Volunteered Geographic Information; Fuzzy aggregation operator; Information quality",
+       "name": "A Linguistic approac",
+       "size": 1,
+       "title": "A Linguistic approach to Assess the Quality of Volunteer Geographic Information for Citizen Science"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1034",
+       "abstract": "Personal mobile devices are widespread and carried by their users most of the time over the day. Thanks to the integrated sensors they can report abou",
+       "keywords": "Event Detection; Crowdsensing; Energy Efficiency; Mobile Sensing",
+       "name": "Efficient Event Dete",
+       "size": 1,
+       "title": "Efficient Event Detection in Public Transport Tracking"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=925",
+       "abstract": "With the ubiquity of advanced web technologies and location-sensing hand held devices, citizens regardless of their knowledge or expertise, are able t",
+       "keywords": "Spatial Data applications; Spatial quality data; Volunteered geographic information",
+       "name": "A review of voluntee",
+       "size": 1,
+       "title": "A review of volunteered geographic information quality assessment methods"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1063",
+       "abstract": "Matching road networks is an essential step for data enrichment and data quality assessment, among other processes. Conventionally, road networks from",
+       "keywords": "OpenStreetMap; Map matching; Road network; polygon similarity",
+       "name": "A polygon-based appr",
+       "size": 1,
+       "title": "A polygon-based approach for matching OpenStreetMap road networks with regional transit authority data"
+      }
+     ]
+    },
+    {
+     "name": "Profile",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=998",
+       "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+       "keywords": "DS-theory; Microblogs; location estimation",
+       "name": "Evidential estimatio",
+       "size": 1,
+       "title": "Evidential estimation of event locations in microblogs"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=981",
+       "abstract": "With the increased availability of user generated data, assessing quality and credibility of such data becomes important. In this paper, we propose to",
+       "keywords": "Image- based VGI; credibility; positional uncertainty",
+       "name": "Using Reverse Viewsh",
+       "size": 1,
+       "title": "Using Reverse Viewshed Analysis to Assess the Location Correctness of Visually Generated VGI"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=999",
+       "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+       "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+       "name": "A Hybrid Method for ",
+       "size": 1,
+       "title": "A Hybrid Method for Toponym Recognition"
+      }
+     ]
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=998",
+     "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+     "keywords": "DS-theory; Microblogs; location estimation",
+     "name": "Evidential estimatio",
+     "size": 1,
+     "title": "Evidential estimation of event locations in microblogs"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1077",
+     "abstract": "Natural disasters like floods are a worldwide phenomenon and a serious threat to mankind. Flood simulations are applications of disaster control, whic",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; ALS pointcloud; Land Use/Cover Map; floodplain; h",
+     "name": "GIS-Based Roughness ",
+     "size": 1,
+     "title": "GIS-Based Roughness Derivation for Flood Simulations: A Comparison of Orthophotos and LiDAR and Crowdsourced Geodata"
+    }
+   ]
+  },
+  {
+   "name": "Software",
+   "children": [
+    {
+     "name": "Api",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1098",
+       "abstract": "GeoWeb 2.0, laying the foundations of Volunteered Geographic Information (VGI) systems, has led to platforms where users can contribute to the geograp",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Data Collection; Free and Open Source Software; N",
+       "name": "VISUALIZATION OF VGI",
+       "size": 1,
+       "title": "VISUALIZATION OF VGI DATA THROUGH THE NEW NASA WEB WORLD WIND VIRTUAL GLOBE"
+      }
+     ]
+    },
+    {
+     "name": "Editor",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1084",
+       "abstract": "The assessment of OpenStreetMap (OSM) data quality has become an interdisciplinary research area over the recent years. The question of whether the OS",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap",
+       "name": "Assessing the Effect",
+       "size": 1,
+       "title": "Assessing the Effect of Data Imports on the Completeness of OpenStreetMap – A United States Case Study"
+      }
+     ]
+    },
+    {
+     "name": "Interface",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=814",
+       "abstract": "Rapid technological development and the introduction of smart services make it possible for modern cities to o er an enhanced perception of city life ",
+       "keywords": "XMPP; GTFS; Crowdsensing; Public transportation; Smart cities",
+       "name": "Smart Timetable Serv",
+       "size": 1,
+       "title": "Smart Timetable Service Based on Crowdsensed Data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1098",
+       "abstract": "GeoWeb 2.0, laying the foundations of Volunteered Geographic Information (VGI) systems, has led to platforms where users can contribute to the geograp",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Data Collection; Free and Open Source Software; N",
+       "name": "VISUALIZATION OF VGI",
+       "size": 1,
+       "title": "VISUALIZATION OF VGI DATA THROUGH THE NEW NASA WEB WORLD WIND VIRTUAL GLOBE"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=820",
+       "abstract": "Thanks to the development of technology and the emergence of intelligent services smart cities promise to their inhabitants enhanced perception of cit",
+       "keywords": "XMPP; GTFS; Crowdsensing; Smart cities; Android; Public transport; Publish/ subscribe",
+       "name": "Crowdsensing Based P",
+       "size": 1,
+       "title": "Crowdsensing Based Public Transport Information Service in Smart Cities"
+      },
+      {
+       "name": "Leveraging OpenStree",
+       "size": 1,
+       "title": "Leveraging OpenStreetMap to support flood risk management in municipalities: A prototype decision support system",
+       "url": "http://vgibox.eu/repository/index.php?curid=1047",
+       "abstract": "Floods are considered the most common and devastating type of disasters world-wide. Therefore, flood management is a crucial task for municipalities -"
+      }
+     ]
+    },
+    {
+     "name": "Platform",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1057",
+       "abstract": "An increasing number of Volunteered Geographic Information (VGI) and social media platforms have been continuously growing in size, which have provide",
+       "keywords": "Volunteered Geographic Information; Flickr; Instagram; Mapillary; OpenStreetMap",
+       "name": "Technical Guidelines",
+       "size": 1,
+       "title": "Technical Guidelines to Extract and Analyze VGI from Different Platforms"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=910",
+       "abstract": "This article presents research and development of a prototype web application for water resources using latest advancements in Information and Communi",
+       "keywords": "cloud computing; Geospatial integration; Geospatial; web services",
+       "name": "Development of a web",
+       "size": 1,
+       "title": "Development of a web application for water resources based on open source software"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1098",
+       "abstract": "GeoWeb 2.0, laying the foundations of Volunteered Geographic Information (VGI) systems, has led to platforms where users can contribute to the geograp",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Data Collection; Free and Open Source Software; N",
+       "name": "VISUALIZATION OF VGI",
+       "size": 1,
+       "title": "VISUALIZATION OF VGI DATA THROUGH THE NEW NASA WEB WORLD WIND VIRTUAL GLOBE"
+      },
+      {
+       "name": "Machine Learning Ass",
+       "size": 1,
+       "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+       "url": "http://vgibox.eu/repository/index.php?curid=953",
+       "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+      }
+     ]
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1062",
+     "abstract": "Volunteered geographic information (VGI) projects, such as OpenStreetMap (OSM), provide an alternative way to produce geographic data. Research has pr",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; behavior; expertise",
+     "name": "Amateur or Professio",
+     "size": 1,
+     "title": "Amateur or Professional: Assessing the Expertise of Major Contributors in OpenStreetMap Based on Contributing Behaviors"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=680",
+     "abstract": "Volunteered geographic information (VGI) plays an increasing role in current geodata provision. At the same time, due to its lack of structure, it is ",
+     "keywords": "Semantic Web; SPARQL",
+     "name": "Querying VGI by sema",
+     "size": 1,
+     "title": "Querying VGI by semantic enrichment"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=855",
+     "abstract": "OpenStreetMap (OSM) is the largest spatial database of the world. One of the most frequently occurring geospatial elements within this database is the",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; Road network; Accuracy; FOSS4G; GRASS; Open Data;",
+     "name": "An automated GRASS-b",
+     "size": 1,
+     "title": "An automated GRASS-based procedure to assess the geometrical accuracy of the OpenStreetMap Paris road network"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=933",
+     "abstract": "We discuss an   OpenStreetMap   (OSM) mapping party organised during the Free and Open Source Software for Geospatial 2015 (  FOSS4G Europe 2015  ) co",
+     "keywords": "community mapping; OpenStreetMap; Mapping    party; Volunteered  Geographic Information; open    sou",
+     "name": "Observations on an O",
+     "size": 1,
+     "title": "Observations on an OpenStreetMap mapping party organised as a social event during an open source GIS conference"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=960",
+     "abstract": "The 'eGovernance' hype around the potential of mobile phone and geoweb technologies for enhancing 'good governance' is soaring. In East Africa, the ex",
+     "keywords": "eGovernance; iGovernment; informal accountability; institutional analysis; mApp",
+     "name": "Not just a tool. Usi",
+     "size": 1,
+     "title": "Not just a tool. Using context in the development of a mobile App for rural water supply in Tanzania"
+    },
+    {
+     "name": "Joining Spatial Visu",
+     "size": 1,
+     "title": "Joining Spatial Visualization Tools with Social Media Data Using Free and Open Source Software",
+     "url": "http://vgibox.eu/repository/index.php?curid=1101"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=929",
+     "abstract": "  OpenStreetMap   (OSM) is an extraordinarily large and diverse spatial database of the world. Road networks are amongst the most frequently occurring",
+     "keywords": "fitness for use; Data quality; OpenStreetMap; Road network; FOSS4G; GRASS; Open Data; Positional Acc",
+     "name": "Towards an automated",
+     "size": 1,
+     "title": "Towards an automated comparison of OpenStreetMap with authoritative road datasets"
+    },
+    {
+     "name": "European Handbook of",
+     "size": 1,
+     "title": "European Handbook of Crowdsourced Geographic Information",
+     "url": "http://vgibox.eu/repository/index.php?curid=712",
+     "abstract": "This book features contributions stemming from the activities of the ENERGIC (European Network Exploring Research into Geospatial Information Crowdsou"
+    }
+   ]
+  },
+  {
+   "name": "Person",
+   "children": [
+    {
+     "name": "Contributor",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1070",
+       "abstract": "The type of data an individual contributor adds to OpenStreetMap (OSM) varies by region. The local knowledge of a data contributor allows for the coll",
+       "keywords": "clustering; Volunteered Geographic Information; OpenStreetMap; areal delineation; contribution patte",
+       "name": "Areal Delineation of",
+       "size": 1,
+       "title": "Areal Delineation of Home Regions from Contribution and Editing Patterns in OpenStreetMap"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1091",
+       "abstract": "The OpenStreetMap (OSM) project, founded in 2004, has gathered an exceptional amount of interest in recent years and counts as one of the most impress",
+       "keywords": "activity; Volunteered Geographic Information; OpenStreetMap; Community; contributions",
+       "name": "Analyzing the Contri",
+       "size": 1,
+       "title": "Analyzing the Contributor Activity of a Volunteered Geographic Information Project — The Case of OpenStreetMap"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1085",
+       "abstract": "Volunteered Geographic Information (VGI) projects and their crowdsourced data have been the focus of a number of scientific analyses and investigation",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Collaborative mapping; Comparison; Urban Areas",
+       "name": "Comparison of Volunt",
+       "size": 1,
+       "title": "Comparison of Volunteered Geographic Information Data Contributions and Community Development for Selected World Regions"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1079",
+       "abstract": "User-generated content (UGC) platforms on the Internet have experienced a steep increase in data contributions in recent years. The ubiquitous usage o",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; User-generated content; future trends",
+       "name": "Recent Developments ",
+       "size": 1,
+       "title": "Recent Developments and Future Trends in Volunteered Geographic Information Research: The Case of OpenStreetMap"
+      }
+     ]
+    },
+    {
+     "name": "Expert",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=791",
+       "abstract": "European Alpine glaciology has a long tradition of studies and activities, in which researchers have often relied on the field work of some specialize",
+       "keywords": "Data quality; Citizen science; Volunteered Geographic Information; Glaciology",
+       "name": "Alpine Glaciology: a",
+       "size": 1,
+       "title": "Alpine Glaciology: an historical collaboration between volunteers and scientists and the challenge presented by an integrated approach"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1060",
+       "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+       "name": "Guided Classificatio",
+       "size": 1,
+       "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+      },
+      {
+       "name": "Machine Learning Ass",
+       "size": 1,
+       "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+       "url": "http://vgibox.eu/repository/index.php?curid=953",
+       "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=950",
+       "abstract": "This chapter describes AtrapaelTigre.com, a citizen science project focusing on the Asian tiger mosquito in Spain. Commonly known for its aggressive b",
+       "keywords": "VGI; Citizen science; Asian tiger mosquito; disease vectors; invasive species",
+       "name": "AtrapaelTigre.com: e",
+       "size": 1,
+       "title": "AtrapaelTigre.com: enlisting citizen-scientists in the war on tiger mosquitoes"
+      }
+     ]
+    },
+    {
+     "name": "Volunteer",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=766",
+       "abstract": "The paper analyses the challenges and problems posed by the use of Volunteered Geographic Information (VGI) in citizen science and a proposal is formu",
+       "keywords": "Citizen science; Volunteered Geographic Information; Fuzzy aggregation operator; Information quality",
+       "name": "A Linguistic approac",
+       "size": 1,
+       "title": "A Linguistic approach to Assess the Quality of Volunteer Geographic Information for Citizen Science"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=925",
+       "abstract": "With the ubiquity of advanced web technologies and location-sensing hand held devices, citizens regardless of their knowledge or expertise, are able t",
+       "keywords": "Spatial Data applications; Spatial quality data; Volunteered geographic information",
+       "name": "A review of voluntee",
+       "size": 1,
+       "title": "A review of volunteered geographic information quality assessment methods"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=765",
+       "abstract": "This paper offers a rich overview of many scientific projects where geographic contributions are committed to volunteers, to the aim of defining strat",
+       "keywords": "Data quality; Quality assessment; Volunteered Geographic Information",
+       "name": "On predicting and im",
+       "size": 1,
+       "title": "On predicting and improving the Quality of VGI projects"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=791",
+       "abstract": "European Alpine glaciology has a long tradition of studies and activities, in which researchers have often relied on the field work of some specialize",
+       "keywords": "Data quality; Citizen science; Volunteered Geographic Information; Glaciology",
+       "name": "Alpine Glaciology: a",
+       "size": 1,
+       "title": "Alpine Glaciology: an historical collaboration between volunteers and scientists and the challenge presented by an integrated approach"
+      },
+      {
+       "name": "Volunteer Informatio",
+       "size": 1,
+       "title": "Volunteer Information Contribution to Glacier Mapping",
+       "url": "http://vgibox.eu/repository/index.php?curid=790",
+       "keywords": "Citizen science; Crowdsourcing; Volunteered Geographic Information; Data integration"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Method",
+   "children": [
+    {
+     "name": "Algorithm",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1034",
+       "abstract": "Personal mobile devices are widespread and carried by their users most of the time over the day. Thanks to the integrated sensors they can report abou",
+       "keywords": "Event Detection; Crowdsensing; Energy Efficiency; Mobile Sensing",
+       "name": "Efficient Event Dete",
+       "size": 1,
+       "title": "Efficient Event Detection in Public Transport Tracking"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1067",
+       "abstract": "The relevance of geographic information to mobile users must be evaluated by taking into account the usage context. This paper assumes that emerging L",
+       "keywords": "Location-based social network; contextualization; geographic relevance; mobility pattern",
+       "name": "Contextualized Relev",
+       "size": 1,
+       "title": "Contextualized Relevance Evaluation of Geographic Information for Mobile Users in Location-Based Social Networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1080",
+       "abstract": "The generation of a routing network for disabled people inherits a number of prerequisites that need special consideration. Widespread routing applica",
+       "keywords": "OpenStreetMap; Collaborative mapping; Disabled People; Route generation; Route planning; Routing Gra",
+       "name": "Generation of a tail",
+       "size": 1,
+       "title": "Generation of a tailored routing network for disabled people based on collaboratively collected geodata"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1076",
+       "abstract": "The development of a wheelchair user friendly route planning application inherits a number of special requirements and details that need to be conside",
+       "keywords": "Volunteered Geographic Information; OpenStreetMap",
+       "name": "Measuring the Reliab",
+       "size": 1,
+       "title": "Measuring the Reliability of Wheelchair User Route Planning based on Volunteered Geographic Information"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=808",
+       "abstract": "Humans perceive and evaluate environments affectively. Some places are experienced as unsafe, while some others as attractive and interesting. These a",
+       "keywords": "crowdsourcing; route planning; affective responses to environments; human wayfinding",
+       "name": "AffectRoute – Consid",
+       "size": 1,
+       "title": "AffectRoute – Considering people’s affective responses to environments for enhancing route planning services"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1063",
+       "abstract": "Matching road networks is an essential step for data enrichment and data quality assessment, among other processes. Conventionally, road networks from",
+       "keywords": "OpenStreetMap; Map matching; Road network; polygon similarity",
+       "name": "A polygon-based appr",
+       "size": 1,
+       "title": "A polygon-based approach for matching OpenStreetMap road networks with regional transit authority data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=861",
+       "abstract": "OpenStreetMap (OSM) is currently the largest openly licensed collection of geospatial data. Being OSM increasingly exploited in a variety of applicati",
+       "keywords": "Quality; Volunteered Geographic Information; OpenStreetMap; Accuracy; Open Data; Building",
+       "name": "Positional accuracy ",
+       "size": 1,
+       "title": "Positional accuracy assessment of the OpenStreetMap buildings layer through automatic homologous pairs detection: the method and a case study"
+      }
+     ]
+    },
+    {
+     "name": "Analytics",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=721",
+       "abstract": "Abstract This paper introduces the concept of Social Media Geographic Information (SMGI) as an emergent pluralist source of information which – it is ",
+       "keywords": "User-generated content; Geodesign; Social Media Geographic Information; Social media; Spatial planni",
+       "name": "The Geographic Turn ",
+       "size": 1,
+       "title": "The Geographic Turn in Social Media: Opportunities for Spatial Planning and Geodesign"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1075",
+       "abstract": "dentifying and characterizing variations of human activity – specifically changes in intensity and similarity – in urban environments provide insights",
+       "keywords": "Self-organizing map; Citizen sensing; Geovisual Analytics; Human Behavior; Mobile phone; Urban Dynam",
+       "name": "Mapping collective h",
+       "size": 1,
+       "title": "Mapping collective human activity in an urban environment based on mobile phone data"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=720",
+       "abstract": "Abstract: This contribution introduces the concept of Social Media Geographic Information (SMGI) as a specific type of Volunteered Geographic Informat",
+       "keywords": "Volunteered Geographic Information; User-generated content; Geodesign; Social Media Geographic Infor",
+       "name": "Social Media Geograp",
+       "size": 1,
+       "title": "Social Media Geographic Information: Why social is special when it goes spatial?"
+      }
+     ]
+    },
+    {
+     "name": "Clustering",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1070",
+       "abstract": "The type of data an individual contributor adds to OpenStreetMap (OSM) varies by region. The local knowledge of a data contributor allows for the coll",
+       "keywords": "clustering; Volunteered Geographic Information; OpenStreetMap; areal delineation; contribution patte",
+       "name": "Areal Delineation of",
+       "size": 1,
+       "title": "Areal Delineation of Home Regions from Contribution and Editing Patterns in OpenStreetMap"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1082",
+       "abstract": "Geotagged photos on social media like Flickr explicitly indicate the trajectories of tourists. They can be employed to reveal the tourists’ preference",
+       "keywords": "Spatial Data Mining; Volunteered Geographic Information; Route planning; Geo-tagged photos; Semantic",
+       "name": "Road-based travel re",
+       "size": 1,
+       "title": "Road-based travel recommendation using geo-tagged images"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=915",
+       "abstract": "Increasing availability of Geo-Social Media (e.g. Facebook, Foursquare and Flickr) has led to the accumulation of large volumes of social media data. ",
+       "keywords": "volunteered geographic information; Geographic places; geo-social media; semantic similarity; user-g",
+       "name": "Extracting and Compa",
+       "size": 1,
+       "title": "Extracting and Comparing Places Using Geo-social Media."
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1075",
+       "abstract": "dentifying and characterizing variations of human activity – specifically changes in intensity and similarity – in urban environments provide insights",
+       "keywords": "Self-organizing map; Citizen sensing; Geovisual Analytics; Human Behavior; Mobile phone; Urban Dynam",
+       "name": "Mapping collective h",
+       "size": 1,
+       "title": "Mapping collective human activity in an urban environment based on mobile phone data"
+      }
+     ]
+    },
+    {
+     "name": "Mining",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1048",
+       "abstract": "Georeferenced user-generated datasets like those extracted from Twitter are increasingly gaining the interest of spatial analysts. Such datasets often",
+       "keywords": "Spatial Autocorrelation; Spatial Data Mining; Spatial analysis",
+       "name": "A local scale-sensit",
+       "size": 1,
+       "title": "A local scale-sensitive indicator of spatial autocorrelation for assessing high-and low-value clusters in multi-scale datasets"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=925",
+       "abstract": "With the ubiquity of advanced web technologies and location-sensing hand held devices, citizens regardless of their knowledge or expertise, are able t",
+       "keywords": "Spatial Data applications; Spatial quality data; Volunteered geographic information",
+       "name": "A review of voluntee",
+       "size": 1,
+       "title": "A review of volunteered geographic information quality assessment methods"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1082",
+       "abstract": "Geotagged photos on social media like Flickr explicitly indicate the trajectories of tourists. They can be employed to reveal the tourists’ preference",
+       "keywords": "Spatial Data Mining; Volunteered Geographic Information; Route planning; Geo-tagged photos; Semantic",
+       "name": "Road-based travel re",
+       "size": 1,
+       "title": "Road-based travel recommendation using geo-tagged images"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1055",
+       "abstract": "Cities are complex systems, where related Human activities are increasingly difficult to explore within. In order to understand urban processes and to",
+       "keywords": "Social Media; Twitter; Human mobility; Point pattern analysis; Self-organizing map",
+       "name": "Mining and correlati",
+       "size": 1,
+       "title": "Mining and correlating traffic events from human sensor observations with official transport data using self-organizing-maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1094",
+       "abstract": "In the context of OpenStreetMap (OSM), spatial data quality, in particular completeness, is an essential aspect of its fitness for use in specific app",
+       "keywords": "machine learning; Volunteered Geographic Information; OpenStreetMap; Spatial data quality; United Ki",
+       "name": "Mining urban land-us",
+       "size": 1,
+       "title": "Mining urban land-use patterns from volunteered geographic information by means of genetic algorithms and artificial neural networks"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Authority",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1063",
+     "abstract": "Matching road networks is an essential step for data enrichment and data quality assessment, among other processes. Conventionally, road networks from",
+     "keywords": "OpenStreetMap; Map matching; Road network; polygon similarity",
+     "name": "A polygon-based appr",
+     "size": 1,
+     "title": "A polygon-based approach for matching OpenStreetMap road networks with regional transit authority data"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1078",
+     "abstract": "In the past two years, several applications of generating three-dimensional (3D) buildings from OpenStreetMap (OSM) have been made available, for inst",
+     "keywords": "building footprint; Quality assessment; Volunteered Geographic Information; OpenStreetMap",
+     "name": "Quality assessment f",
+     "size": 1,
+     "title": "Quality assessment for building footprints data on OpenStreetMap"
+    }
+   ]
+  },
+  {
+   "name": "Automation",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=929",
+     "abstract": "  OpenStreetMap   (OSM) is an extraordinarily large and diverse spatial database of the world. Road networks are amongst the most frequently occurring",
+     "keywords": "fitness for use; Data quality; OpenStreetMap; Road network; FOSS4G; GRASS; Open Data; Positional Acc",
+     "name": "Towards an automated",
+     "size": 1,
+     "title": "Towards an automated comparison of OpenStreetMap with authoritative road datasets"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=861",
+     "abstract": "OpenStreetMap (OSM) is currently the largest openly licensed collection of geospatial data. Being OSM increasingly exploited in a variety of applicati",
+     "keywords": "Quality; Volunteered Geographic Information; OpenStreetMap; Accuracy; Open Data; Building",
+     "name": "Positional accuracy ",
+     "size": 1,
+     "title": "Positional accuracy assessment of the OpenStreetMap buildings layer through automatic homologous pairs detection: the method and a case study"
+    }
+   ]
+  },
+  {
+   "name": "Instrumentation",
+   "children": [
+    {
+     "name": "Device",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=998",
+       "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+       "keywords": "DS-theory; Microblogs; location estimation",
+       "name": "Evidential estimatio",
+       "size": 1,
+       "title": "Evidential estimation of event locations in microblogs"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=930",
+       "abstract": "Driven by the rise of Web 2.0 and the non-stop spread of mobile device sensors, the concept of Public Participation GIS (PPGIS) is knowing a revolutio",
+       "keywords": "FOSS4G; FOSS; GeoWeb; PPGIS; Web Mapping; mobile",
+       "name": "Public Participation",
+       "size": 1,
+       "title": "Public Participation GIS: a FOSS architecture enabling field-data collection"
+      }
+     ]
+    },
+    {
+     "name": "Machine",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1082",
+       "abstract": "Geotagged photos on social media like Flickr explicitly indicate the trajectories of tourists. They can be employed to reveal the tourists’ preference",
+       "keywords": "Spatial Data Mining; Volunteered Geographic Information; Route planning; Geo-tagged photos; Semantic",
+       "name": "Road-based travel re",
+       "size": 1,
+       "title": "Road-based travel recommendation using geo-tagged images"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1098",
+       "abstract": "GeoWeb 2.0, laying the foundations of Volunteered Geographic Information (VGI) systems, has led to platforms where users can contribute to the geograp",
+       "keywords": "Crowdsourcing; Volunteered Geographic Information; Data Collection; Free and Open Source Software; N",
+       "name": "VISUALIZATION OF VGI",
+       "size": 1,
+       "title": "VISUALIZATION OF VGI DATA THROUGH THE NEW NASA WEB WORLD WIND VIRTUAL GLOBE"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1094",
+       "abstract": "In the context of OpenStreetMap (OSM), spatial data quality, in particular completeness, is an essential aspect of its fitness for use in specific app",
+       "keywords": "machine learning; Volunteered Geographic Information; OpenStreetMap; Spatial data quality; United Ki",
+       "name": "Mining urban land-us",
+       "size": 1,
+       "title": "Mining urban land-use patterns from volunteered geographic information by means of genetic algorithms and artificial neural networks"
+      },
+      {
+       "name": "Machine Learning Ass",
+       "size": 1,
+       "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+       "url": "http://vgibox.eu/repository/index.php?curid=953",
+       "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=999",
+       "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+       "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+       "name": "A Hybrid Method for ",
+       "size": 1,
+       "title": "A Hybrid Method for Toponym Recognition"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1073",
+       "abstract": "This study proposes a novel approach for extracting multilane roads from urban road networks in OpenStreetMap (OSM) data sets as functional high-level",
+       "keywords": "OpenStreetMap; Road network; hierarchy; multilane road",
+       "name": "Polygon-based approa",
+       "size": 1,
+       "title": "Polygon-based approach for extracting multilane roads from OpenStreetMap urban road networks"
+      }
+     ]
+    },
+    {
+     "name": "Sensor",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1034",
+       "abstract": "Personal mobile devices are widespread and carried by their users most of the time over the day. Thanks to the integrated sensors they can report abou",
+       "keywords": "Event Detection; Crowdsensing; Energy Efficiency; Mobile Sensing",
+       "name": "Efficient Event Dete",
+       "size": 1,
+       "title": "Efficient Event Detection in Public Transport Tracking"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=998",
+       "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+       "keywords": "DS-theory; Microblogs; location estimation",
+       "name": "Evidential estimatio",
+       "size": 1,
+       "title": "Evidential estimation of event locations in microblogs"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=895",
+       "abstract": "The proliferation of inexpensive and highly mobile and location aware devices together with Web 2.0 technology have fostered the emergence of the citi",
+       "keywords": "citizen science; VGI; Mapping",
+       "name": "Mapping and the Citi",
+       "size": 1,
+       "title": "Mapping and the Citizen Sensor"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1083",
+       "abstract": "The increasing availability of sensor devices has resulted in important volumes of sensor data, which has raised the issue of making these data fully ",
+       "keywords": "Volunteered Geographic Information; Semantic Interoperability; Semantic Web; Sensor Data",
+       "name": "Semantic Interoperab",
+       "size": 1,
+       "title": "Semantic Interoperability of Sensor Data with Volunteered Geographic Information: A Unified Model"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1055",
+       "abstract": "Cities are complex systems, where related Human activities are increasingly difficult to explore within. In order to understand urban processes and to",
+       "keywords": "Social Media; Twitter; Human mobility; Point pattern analysis; Self-organizing map",
+       "name": "Mining and correlati",
+       "size": 1,
+       "title": "Mining and correlating traffic events from human sensor observations with official transport data using self-organizing-maps"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Discipline",
+   "children": [
+    {
+     "name": "Geography",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1071",
+       "abstract": "Until recently, land surveys and digital interpretation of remotely sensed imagery have been used to generate land use inventories. These techniques h",
+       "keywords": "Citizen science; OpenStreetMap; Collaborative mapping; Comparative Assessment; GMESUA; Landuse mappi",
+       "name": "An assessment of a c",
+       "size": 1,
+       "title": "An assessment of a collaborative mapping approach for exploring land use patterns for several European metropolises"
+      },
+      {
+       "name": "Internet e l'importa",
+       "size": 1,
+       "title": "Internet e l'importanza dei confini 2.0",
+       "url": "http://vgibox.eu/repository/index.php?curid=803",
+       "abstract": "Photos shared on Flickr, one of the most famous photo-sharing site, allow new interpretations and representations of borders. Languages and the influe"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=927",
+       "abstract": "This contribution starts from the assumption that volunteered geographic information is a technological, cultural and scientific innovation. It theref",
+       "keywords": "crowdsourced information; geography; volunteered geographic information",
+       "name": "The Nature of Volunt",
+       "size": 1,
+       "title": "The Nature of Volunteered Geographic Information"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=915",
+       "abstract": "Increasing availability of Geo-Social Media (e.g. Facebook, Foursquare and Flickr) has led to the accumulation of large volumes of social media data. ",
+       "keywords": "volunteered geographic information; Geographic places; geo-social media; semantic similarity; user-g",
+       "name": "Extracting and Compa",
+       "size": 1,
+       "title": "Extracting and Comparing Places Using Geo-social Media."
+      }
+     ]
+    },
+    {
+     "name": "Mobility",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1067",
+       "abstract": "The relevance of geographic information to mobile users must be evaluated by taking into account the usage context. This paper assumes that emerging L",
+       "keywords": "Location-based social network; contextualization; geographic relevance; mobility pattern",
+       "name": "Contextualized Relev",
+       "size": 1,
+       "title": "Contextualized Relevance Evaluation of Geographic Information for Mobile Users in Location-Based Social Networks"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=991",
+       "abstract": "Abstract As transport systems are pushed to the limits in many cities, governments have tried to resolve problems of traffic and congestion by increas",
+       "keywords": "VGI; Government; Sustainable Mobility; Transport",
+       "name": "The Potential of Vol",
+       "size": 1,
+       "title": "The Potential of Volunteered Geographic Information (VGI) in Future Transport Systems"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1055",
+       "abstract": "Cities are complex systems, where related Human activities are increasingly difficult to explore within. In order to understand urban processes and to",
+       "keywords": "Social Media; Twitter; Human mobility; Point pattern analysis; Self-organizing map",
+       "name": "Mining and correlati",
+       "size": 1,
+       "title": "Mining and correlating traffic events from human sensor observations with official transport data using self-organizing-maps"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1050",
+       "abstract": "Detailed knowledge regarding the whereabouts of people and their social activities in urban areas with high spatial and temporal resolution is still w",
+       "keywords": "Social Media; Twitter; Census Data; London",
+       "name": "Twitter as an indica",
+       "size": 1,
+       "title": "Twitter as an indicator for whereabouts of people? Correlating Twitter with UK census data"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Event",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=814",
+     "abstract": "Rapid technological development and the introduction of smart services make it possible for modern cities to o er an enhanced perception of city life ",
+     "keywords": "XMPP; GTFS; Crowdsensing; Public transportation; Smart cities",
+     "name": "Smart Timetable Serv",
+     "size": 1,
+     "title": "Smart Timetable Service Based on Crowdsensed Data"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1034",
+     "abstract": "Personal mobile devices are widespread and carried by their users most of the time over the day. Thanks to the integrated sensors they can report abou",
+     "keywords": "Event Detection; Crowdsensing; Energy Efficiency; Mobile Sensing",
+     "name": "Efficient Event Dete",
+     "size": 1,
+     "title": "Efficient Event Detection in Public Transport Tracking"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=998",
+     "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+     "keywords": "DS-theory; Microblogs; location estimation",
+     "name": "Evidential estimatio",
+     "size": 1,
+     "title": "Evidential estimation of event locations in microblogs"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=933",
+     "abstract": "We discuss an   OpenStreetMap   (OSM) mapping party organised during the Free and Open Source Software for Geospatial 2015 (  FOSS4G Europe 2015  ) co",
+     "keywords": "community mapping; OpenStreetMap; Mapping    party; Volunteered  Geographic Information; open    sou",
+     "name": "Observations on an O",
+     "size": 1,
+     "title": "Observations on an OpenStreetMap mapping party organised as a social event during an open source GIS conference"
+    },
+    {
+     "name": "Extracting Location ",
+     "size": 1,
+     "title": "Extracting Location Information from Crowd-sourced Social Network Data",
+     "url": "http://vgibox.eu/repository/index.php?curid=1000",
+     "keywords": "Event Detection; Location Estimation; Named- Entity Recognition (NER); Semantic Vector Expansion"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=820",
+     "abstract": "Thanks to the development of technology and the emergence of intelligent services smart cities promise to their inhabitants enhanced perception of cit",
+     "keywords": "XMPP; GTFS; Crowdsensing; Smart cities; Android; Public transport; Publish/ subscribe",
+     "name": "Crowdsensing Based P",
+     "size": 1,
+     "title": "Crowdsensing Based Public Transport Information Service in Smart Cities"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=999",
+     "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+     "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+     "name": "A Hybrid Method for ",
+     "size": 1,
+     "title": "A Hybrid Method for Toponym Recognition"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=831",
+     "abstract": "The primary goal of this paper is to investigate what could have made successful Google’s OpenSpot, a crowdsensing based parking assistance applicatio",
+     "keywords": "Crowdsensing; Simulation",
+     "name": "How many drivers doe",
+     "size": 1,
+     "title": "How many drivers does it take to spot an OpenSpot?"
+    }
+   ]
+  },
+  {
+   "name": "Experience",
+   "children": [
+    {
+     "name": "Live Public Transpor",
+     "size": 1,
+     "title": "Live Public Transport Information Service Using Crowdsourced Data: Demo paper",
+     "url": "http://vgibox.eu/repository/index.php?curid=1025",
+     "abstract": "Infrastructural problems of modern cities cannot be solved through sheer power of will alone. The public transportation system is one of the most effe"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1059",
+     "abstract": "With the rise of new technologies, citizens can contribute to scientific research via Web 2.0 applications for collecting and distributing geospatial ",
+     "keywords": "Volunteered Geographic Information; Web 2.0; natural hazard analysis",
+     "name": "Volunteered Geograph",
+     "size": 1,
+     "title": "Volunteered Geographic Information in Natural Hazard Analysis: A Systematic Literature Review of Current Approaches with a Focus on Preparedness and Mitigation"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1014",
+     "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+     "keywords": "citizen science; crowdsourcing; data quality; data validation",
+     "name": "Data quality in crow",
+     "size": 1,
+     "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+    }
+   ]
+  },
+  {
+   "name": "Process",
+   "children": [
+    {
+     "name": "Recognition",
+     "children": [
+      {
+       "name": "Extracting Location ",
+       "size": 1,
+       "title": "Extracting Location Information from Crowd-sourced Social Network Data",
+       "url": "http://vgibox.eu/repository/index.php?curid=1000",
+       "keywords": "Event Detection; Location Estimation; Named- Entity Recognition (NER); Semantic Vector Expansion"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=999",
+       "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+       "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+       "name": "A Hybrid Method for ",
+       "size": 1,
+       "title": "A Hybrid Method for Toponym Recognition"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=956",
+       "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+       "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+       "name": "Approaches to passiv",
+       "size": 1,
+       "title": "Approaches to passive mosquito surveillance in the EU"
+      }
+     ]
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1070",
+     "abstract": "The type of data an individual contributor adds to OpenStreetMap (OSM) varies by region. The local knowledge of a data contributor allows for the coll",
+     "keywords": "clustering; Volunteered Geographic Information; OpenStreetMap; areal delineation; contribution patte",
+     "name": "Areal Delineation of",
+     "size": 1,
+     "title": "Areal Delineation of Home Regions from Contribution and Editing Patterns in OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1067",
+     "abstract": "The relevance of geographic information to mobile users must be evaluated by taking into account the usage context. This paper assumes that emerging L",
+     "keywords": "Location-based social network; contextualization; geographic relevance; mobility pattern",
+     "name": "Contextualized Relev",
+     "size": 1,
+     "title": "Contextualized Relevance Evaluation of Geographic Information for Mobile Users in Location-Based Social Networks"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1063",
+     "abstract": "Matching road networks is an essential step for data enrichment and data quality assessment, among other processes. Conventionally, road networks from",
+     "keywords": "OpenStreetMap; Map matching; Road network; polygon similarity",
+     "name": "A polygon-based appr",
+     "size": 1,
+     "title": "A polygon-based approach for matching OpenStreetMap road networks with regional transit authority data"
+    },
+    {
+     "name": "Live Public Transpor",
+     "size": 1,
+     "title": "Live Public Transport Information Service Using Crowdsourced Data: Demo paper",
+     "url": "http://vgibox.eu/repository/index.php?curid=1025",
+     "abstract": "Infrastructural problems of modern cities cannot be solved through sheer power of will alone. The public transportation system is one of the most effe"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1083",
+     "abstract": "The increasing availability of sensor devices has resulted in important volumes of sensor data, which has raised the issue of making these data fully ",
+     "keywords": "Volunteered Geographic Information; Semantic Interoperability; Semantic Web; Sensor Data",
+     "name": "Semantic Interoperab",
+     "size": 1,
+     "title": "Semantic Interoperability of Sensor Data with Volunteered Geographic Information: A Unified Model"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=930",
+     "abstract": "Driven by the rise of Web 2.0 and the non-stop spread of mobile device sensors, the concept of Public Participation GIS (PPGIS) is knowing a revolutio",
+     "keywords": "FOSS4G; FOSS; GeoWeb; PPGIS; Web Mapping; mobile",
+     "name": "Public Participation",
+     "size": 1,
+     "title": "Public Participation GIS: a FOSS architecture enabling field-data collection"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1014",
+     "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+     "keywords": "citizen science; crowdsourcing; data quality; data validation",
+     "name": "Data quality in crow",
+     "size": 1,
+     "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1074",
+     "abstract": "Data on population at building level is required for various purposes. However, to protect privacy, government population data is aggregated. Populati",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; Points Of Interest; Areal interpolation; Populati",
+     "name": "Fine-resolution popu",
+     "size": 1,
+     "title": "Fine-resolution population mapping using OpenStreetMap points-of-interest"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1078",
+     "abstract": "In the past two years, several applications of generating three-dimensional (3D) buildings from OpenStreetMap (OSM) have been made available, for inst",
+     "keywords": "building footprint; Quality assessment; Volunteered Geographic Information; OpenStreetMap",
+     "name": "Quality assessment f",
+     "size": 1,
+     "title": "Quality assessment for building footprints data on OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=753",
+     "abstract": "This article sets forth the early phases of a methodological proposal for designing and developing Volunteered Geographic Information (VGI) initiative",
+     "keywords": "Crowdsourcing; Volunteered Geographic Information; Community; Methodology; Motivation; Participation",
+     "name": "Volunteered Geograph",
+     "size": 1,
+     "title": "Volunteered Geographic Information System Design: Project and Participation Guidelines"
+    }
+   ]
+  },
+  {
+   "name": "Filter",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=766",
+     "abstract": "The paper analyses the challenges and problems posed by the use of Volunteered Geographic Information (VGI) in citizen science and a proposal is formu",
+     "keywords": "Citizen science; Volunteered Geographic Information; Fuzzy aggregation operator; Information quality",
+     "name": "A Linguistic approac",
+     "size": 1,
+     "title": "A Linguistic approach to Assess the Quality of Volunteer Geographic Information for Citizen Science"
+    }
+   ]
+  },
+  {
+   "name": "Organization",
+   "children": [
+    {
+     "name": "Administration",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1027",
+       "abstract": "Smart cities offer services to their inhabitants which make everyday life easier beyond providing a feedback channel to the city administration. For i",
+       "keywords": "XMPP; Participatory Sensing; Public Transport; Smart Campus; Smart City; Soccer",
+       "name": "Framework for smart ",
+       "size": 1,
+       "title": "Framework for smart city applications based on participatory sensing"
+      },
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=960",
+       "abstract": "The 'eGovernance' hype around the potential of mobile phone and geoweb technologies for enhancing 'good governance' is soaring. In East Africa, the ex",
+       "keywords": "eGovernance; iGovernment; informal accountability; institutional analysis; mApp",
+       "name": "Not just a tool. Usi",
+       "size": 1,
+       "title": "Not just a tool. Using context in the development of a mobile App for rural water supply in Tanzania"
+      }
+     ]
+    },
+    {
+     "name": "Agency",
+     "children": [
+      {
+       "url": "http://vgibox.eu/repository/index.php?curid=1027",
+       "abstract": "Smart cities offer services to their inhabitants which make everyday life easier beyond providing a feedback channel to the city administration. For i",
+       "keywords": "XMPP; Participatory Sensing; Public Transport; Smart Campus; Smart City; Soccer",
+       "name": "Framework for smart ",
+       "size": 1,
+       "title": "Framework for smart city applications based on participatory sensing"
+      }
+     ]
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=753",
+     "abstract": "This article sets forth the early phases of a methodological proposal for designing and developing Volunteered Geographic Information (VGI) initiative",
+     "keywords": "Crowdsourcing; Volunteered Geographic Information; Community; Methodology; Motivation; Participation",
+     "name": "Volunteered Geograph",
+     "size": 1,
+     "title": "Volunteered Geographic Information System Design: Project and Participation Guidelines"
+    }
+   ]
+  },
+  {
+   "name": "Intelligence",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1027",
+     "abstract": "Smart cities offer services to their inhabitants which make everyday life easier beyond providing a feedback channel to the city administration. For i",
+     "keywords": "XMPP; Participatory Sensing; Public Transport; Smart Campus; Smart City; Soccer",
+     "name": "Framework for smart ",
+     "size": 1,
+     "title": "Framework for smart city applications based on participatory sensing"
+    }
+   ]
+  },
+  {
+   "name": "Interaction",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=963",
+     "abstract": "The interaction of the editing operations from different OpenStreetMap (OSM) contributors provides valuable information on collaboration patterns. Thi",
+     "keywords": "OpenStreetMap; Location-based social network",
+     "name": "Spatial Collaboratio",
+     "size": 1,
+     "title": "Spatial Collaboration Networks of OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=812",
+     "abstract": "When travelling in space, humans perceive the environment and evaluate it affectively. This chapter illustrates how mobile crowdsourcing and social me",
+     "keywords": "crowdsourcing; subjective geo-information; Affective responses to environments",
+     "name": "Using mobile crowdso",
+     "size": 1,
+     "title": "Using mobile crowdsourcing and geotagged social media data to study people’s affective responses to environments"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=962",
+     "abstract": "The chapter studies the spatial behavior of contributors to OpenStreetMap and links it to gamification mechanisms which provide a solution to issues t",
+     "keywords": "Data quality; Gamification; Geogames",
+     "name": "Participation Patter",
+     "size": 1,
+     "title": "Participation Patterns VGI and Gamification"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=926",
+     "abstract": "Driven by the recent trends in the GIS domain including Volunteered Geographic Information, geo-crowdsourcing and citizen science, and fostered by the",
+     "keywords": "participation; Volunteered Geographic Information; GIS; Mobile; Web mapping",
+     "name": "Participation in GIS",
+     "size": 1,
+     "title": "Participation in GIS via mobile applications"
+    }
+   ]
+  },
+  {
+   "name": "Measurement",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=963",
+     "abstract": "The interaction of the editing operations from different OpenStreetMap (OSM) contributors provides valuable information on collaboration patterns. Thi",
+     "keywords": "OpenStreetMap; Location-based social network",
+     "name": "Spatial Collaboratio",
+     "size": 1,
+     "title": "Spatial Collaboration Networks of OpenStreetMap"
+    }
+   ]
+  },
+  {
+   "name": "Message",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=999",
+     "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+     "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+     "name": "A Hybrid Method for ",
+     "size": 1,
+     "title": "A Hybrid Method for Toponym Recognition"
+    }
+   ]
+  },
+  {
+   "name": "Metadata",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=896",
+     "abstract": "Geo-tagged photographs are used increasingly as a source   Volunteered Geographic Information  , which could potentially be used for land use and land",
+     "keywords": "land cover; land use; Volunteered Geographic Information; Flickr; Geograph; Panoramio; fitness-for-u",
+     "name": "Investigating the Fe",
+     "size": 1,
+     "title": "Investigating the Feasibility of Geo-Tagged Photographs as Sources of Land Cover Input Data"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=998",
+     "abstract": "Detecting real-world events by following posts in microblogs has been the motivation of numerous recent studies. In this work, we focus on the spatio-",
+     "keywords": "DS-theory; Microblogs; location estimation",
+     "name": "Evidential estimatio",
+     "size": 1,
+     "title": "Evidential estimation of event locations in microblogs"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=981",
+     "abstract": "With the increased availability of user generated data, assessing quality and credibility of such data becomes important. In this paper, we propose to",
+     "keywords": "Image- based VGI; credibility; positional uncertainty",
+     "name": "Using Reverse Viewsh",
+     "size": 1,
+     "title": "Using Reverse Viewshed Analysis to Assess the Location Correctness of Visually Generated VGI"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=979",
+     "abstract": "There exist many popular crowdsourcing and social services (Volunteered Geographic Information (VGI)) to share information and documents such as Flick",
+     "keywords": "Flickr; Semantic enrichment; Tag categorization",
+     "name": "A simple tag categor",
+     "size": 1,
+     "title": "A simple tag categorization framework using spatial coverage to discover geospatial semantics"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=926",
+     "abstract": "Driven by the recent trends in the GIS domain including Volunteered Geographic Information, geo-crowdsourcing and citizen science, and fostered by the",
+     "keywords": "participation; Volunteered Geographic Information; GIS; Mobile; Web mapping",
+     "name": "Participation in GIS",
+     "size": 1,
+     "title": "Participation in GIS via mobile applications"
+    }
+   ]
+  },
+  {
+   "name": "Paradigm",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1027",
+     "abstract": "Smart cities offer services to their inhabitants which make everyday life easier beyond providing a feedback channel to the city administration. For i",
+     "keywords": "XMPP; Participatory Sensing; Public Transport; Smart Campus; Smart City; Soccer",
+     "name": "Framework for smart ",
+     "size": 1,
+     "title": "Framework for smart city applications based on participatory sensing"
+    }
+   ]
+  },
+  {
+   "name": "Phenomena",
+   "children": [
+    {
+     "name": "Stalking Pincopallin",
+     "size": 1,
+     "title": "Stalking Pincopallino: sorveglianza, privacy e prossimità al tempo di Twitter",
+     "url": "http://vgibox.eu/repository/index.php?curid=801",
+     "abstract": "Stalking Pincopallino: surveillance, privacy and proximity in the age of Twitter. – Our online behaviour and actions leave digital traces that recent "
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1048",
+     "abstract": "Georeferenced user-generated datasets like those extracted from Twitter are increasingly gaining the interest of spatial analysts. Such datasets often",
+     "keywords": "Spatial Autocorrelation; Spatial Data Mining; Spatial analysis",
+     "name": "A local scale-sensit",
+     "size": 1,
+     "title": "A local scale-sensitive indicator of spatial autocorrelation for assessing high-and low-value clusters in multi-scale datasets"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=895",
+     "abstract": "The proliferation of inexpensive and highly mobile and location aware devices together with Web 2.0 technology have fostered the emergence of the citi",
+     "keywords": "citizen science; VGI; Mapping",
+     "name": "Mapping and the Citi",
+     "size": 1,
+     "title": "Mapping and the Citizen Sensor"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=925",
+     "abstract": "With the ubiquity of advanced web technologies and location-sensing hand held devices, citizens regardless of their knowledge or expertise, are able t",
+     "keywords": "Spatial Data applications; Spatial quality data; Volunteered geographic information",
+     "name": "A review of voluntee",
+     "size": 1,
+     "title": "A review of volunteered geographic information quality assessment methods"
+    },
+    {
+     "name": "Tweeting Politicians",
+     "size": 1,
+     "title": "Tweeting Politicians: il peso della prossimità nella formazione e diffusione dell’opinione politica",
+     "url": "http://vgibox.eu/repository/index.php?curid=800",
+     "abstract": "Innovation technology influences the processes of formation and diffusion of ideas and perceptions, transcending the geographical space. Evolutions in"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1089",
+     "abstract": "Crowdsourced geodata has been proven to be a rich and major data source for environmental simulations and analysis, as well as the visualization of sp",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; Emergency management; IndoorOSM; MATSim; Spatial ",
+     "name": "Using Crowdsourced G",
+     "size": 1,
+     "title": "Using Crowdsourced Geodata for Agent-Based Indoor Evacuation Simulations"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1049",
+     "abstract": "Twitter and related social media feeds have become valuable data sources to many fields of research. Numerous researchers have thereby used social med",
+     "keywords": "Spatial Autocorrelation; Spatial analysis; Social Media; Twitter",
+     "name": "Abundant Topological",
+     "size": 1,
+     "title": "Abundant Topological Outliers in Social Media Data and Their Effect on Spatial Analysis"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=980",
+     "abstract": "Today, a tremendous source of spatio-temporal data is user generated, so-called volunteered geographic information (VGI). Among the many VGI sources, ",
+     "keywords": "Visual knowledge discovery; feature detection   tracking; geospatial visualisation; time varying dat",
+     "name": "Moving on Twitter: U",
+     "size": 1,
+     "title": "Moving on Twitter: Using Episodic Hotspot and Drift Analysis to Detect and Characterise Spatial Trajectories"
+    }
+   ]
+  },
+  {
+   "name": "Practice",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1062",
+     "abstract": "Volunteered geographic information (VGI) projects, such as OpenStreetMap (OSM), provide an alternative way to produce geographic data. Research has pr",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; behavior; expertise",
+     "name": "Amateur or Professio",
+     "size": 1,
+     "title": "Amateur or Professional: Assessing the Expertise of Major Contributors in OpenStreetMap Based on Contributing Behaviors"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=905",
+     "abstract": "In the past few years, volunteered geographic information (VGI) has emerged as a new resource for improving the management of emergencies. Despite the",
+     "keywords": "Volunteered Geographic Information; Emergency management; Simulation; Fire",
+     "name": "How volunteered geog",
+     "size": 1,
+     "title": "How volunteered geographic information can be integrated into emergency management practice? First lessons learned from an urban fire simulation in the city of Coimbra"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=911",
+     "abstract": "Assessing the data quality of Volunteered Geographic Information (VGI) is important for determining the fitness-for-use of VGI for different applicati",
+     "keywords": "Quality; Voluntereed Geographic Information; Credibility; Positional Accuracy; Thematic Accuracy",
+     "name": "Good Practice Guidel",
+     "size": 1,
+     "title": "Good Practice Guidelines for Assessing VGI Data Quality"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=721",
+     "abstract": "Abstract This paper introduces the concept of Social Media Geographic Information (SMGI) as an emergent pluralist source of information which – it is ",
+     "keywords": "User-generated content; Geodesign; Social Media Geographic Information; Social media; Spatial planni",
+     "name": "The Geographic Turn ",
+     "size": 1,
+     "title": "The Geographic Turn in Social Media: Opportunities for Spatial Planning and Geodesign"
+    }
+   ]
+  },
+  {
+   "name": "Query",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=710",
+     "abstract": "The increasing volume of Volunteered Geo-information (VGI) often remains hidden and unconnected to other sources of information, and therefore hamperi",
+     "keywords": "Linked Data; Ontology design; Semantic enrichment; Volunteered Geo-information (VGI)",
+     "name": "Linked Data and onto",
+     "size": 1,
+     "title": "Linked Data and ontology development for the semantic enrichment of volunteered geo-information"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1098",
+     "abstract": "GeoWeb 2.0, laying the foundations of Volunteered Geographic Information (VGI) systems, has led to platforms where users can contribute to the geograp",
+     "keywords": "Crowdsourcing; Volunteered Geographic Information; Data Collection; Free and Open Source Software; N",
+     "name": "VISUALIZATION OF VGI",
+     "size": 1,
+     "title": "VISUALIZATION OF VGI DATA THROUGH THE NEW NASA WEB WORLD WIND VIRTUAL GLOBE"
+    }
+   ]
+  },
+  {
+   "name": "Scenario",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=822",
+     "abstract": "This paper introduces a simulation environment developed for analyzing crowd-sensing based applications in the Smart City application domain. As a cas",
+     "keywords": "Smart City; Crowd-sensing; Simulation; Urban Parking",
+     "name": "Simulation Environme",
+     "size": 1,
+     "title": "Simulation Environment for Investigating Crowd-sensing Based Urban Parking"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=965",
+     "abstract": "After a first phase of almost unanimous enthusiasm, VGI research identified data quality as a major problem of community-based data acquisition. This ",
+     "keywords": "Gamification; Geogames",
+     "name": "Enhancing the Qualit",
+     "size": 1,
+     "title": "Enhancing the Quality of Volunteered Geographic Information: A Constraint-Based Approach."
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=826",
+     "abstract": "The goal of this paper is to analyze existing simulation engines and assess how well-suited they are for simulating the formation, existence and disso",
+     "keywords": "Crowdsensing; Comparison; Simulation; Discrete events; Geospatial integration",
+     "name": "Evaluation of Simula",
+     "size": 1,
+     "title": "Evaluation of Simulation Engines for Crowdsensing Activities"
+    },
+    {
+     "name": "Leveraging OpenStree",
+     "size": 1,
+     "title": "Leveraging OpenStreetMap to support flood risk management in municipalities: A prototype decision support system",
+     "url": "http://vgibox.eu/repository/index.php?curid=1047",
+     "abstract": "Floods are considered the most common and devastating type of disasters world-wide. Therefore, flood management is a crucial task for municipalities -"
+    }
+   ]
+  },
+  {
+   "name": "Species",
+   "children": [
+    {
+     "name": "First record of Asia",
+     "size": 1,
+     "title": "First record of Asian tiger mosquito Aedes albopictus (Diptera Culicidae) in Andalusia and first corroboration of the data from Tigatrapp application",
+     "url": "http://vgibox.eu/repository/index.php?curid=1008",
+     "abstract": "Abstract First record of Asian tiger mosquito, Aedes albopictus  (Diptera, Culicidae), in Andalusia and first corroboration of the data from Tigatrapp"
+    },
+    {
+     "name": "Machine Learning Ass",
+     "size": 1,
+     "title": "Machine Learning Assists the Classification of Reports by Citizens on Disease-Carrying Mosquitoes",
+     "url": "http://vgibox.eu/repository/index.php?curid=953",
+     "abstract": "Mosquito Alert (www.mosquitoalert.com/en) is an expertvalidated citizen science platform for tracking and controlling diseasecarrying mosquitoes. Citi"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=950",
+     "abstract": "This chapter describes AtrapaelTigre.com, a citizen science project focusing on the Asian tiger mosquito in Spain. Commonly known for its aggressive b",
+     "keywords": "VGI; Citizen science; Asian tiger mosquito; disease vectors; invasive species",
+     "name": "AtrapaelTigre.com: e",
+     "size": 1,
+     "title": "AtrapaelTigre.com: enlisting citizen-scientists in the war on tiger mosquitoes"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1014",
+     "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+     "keywords": "citizen science; crowdsourcing; data quality; data validation",
+     "name": "Data quality in crow",
+     "size": 1,
+     "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=956",
+     "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+     "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+     "name": "Approaches to passiv",
+     "size": 1,
+     "title": "Approaches to passive mosquito surveillance in the EU"
+    }
+   ]
+  },
+  {
+   "name": "Standard",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1060",
+     "abstract": "The increased development of Volunteered Geographic Information (VGI) and its potential role in GIScience studies raises questions about the resulting",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; Spatial data quality; classification",
+     "name": "Guided Classificatio",
+     "size": 1,
+     "title": "Guided Classification System for Conceptual Overlapping Classes in OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1092",
+     "abstract": "Routing services for outdoor areas are omnipresent and also three-dimensional (3D) visualization is quite common within this area. Recent research eff",
+     "keywords": "OpenStreetMap; IndoorOSM; 3D-GIS; 3D-routing; Crowdsourced data; XML3D; future internet; indoor LBS;",
+     "name": "Using Crowdsourced I",
+     "size": 1,
+     "title": "Using Crowdsourced Indoor Geodata for the Creation of a Three-Dimensional Indoor Routing Web Application"
+    }
+   ]
+  },
+  {
+   "name": "Structure",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=680",
+     "abstract": "Volunteered geographic information (VGI) plays an increasing role in current geodata provision. At the same time, due to its lack of structure, it is ",
+     "keywords": "Semantic Web; SPARQL",
+     "name": "Querying VGI by sema",
+     "size": 1,
+     "title": "Querying VGI by semantic enrichment"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=933",
+     "abstract": "We discuss an   OpenStreetMap   (OSM) mapping party organised during the Free and Open Source Software for Geospatial 2015 (  FOSS4G Europe 2015  ) co",
+     "keywords": "community mapping; OpenStreetMap; Mapping    party; Volunteered  Geographic Information; open    sou",
+     "name": "Observations on an O",
+     "size": 1,
+     "title": "Observations on an OpenStreetMap mapping party organised as a social event during an open source GIS conference"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1077",
+     "abstract": "Natural disasters like floods are a worldwide phenomenon and a serious threat to mankind. Flood simulations are applications of disaster control, whic",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; ALS pointcloud; Land Use/Cover Map; floodplain; h",
+     "name": "GIS-Based Roughness ",
+     "size": 1,
+     "title": "GIS-Based Roughness Derivation for Flood Simulations: A Comparison of Orthophotos and LiDAR and Crowdsourced Geodata"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=791",
+     "abstract": "European Alpine glaciology has a long tradition of studies and activities, in which researchers have often relied on the field work of some specialize",
+     "keywords": "Data quality; Citizen science; Volunteered Geographic Information; Glaciology",
+     "name": "Alpine Glaciology: a",
+     "size": 1,
+     "title": "Alpine Glaciology: an historical collaboration between volunteers and scientists and the challenge presented by an integrated approach"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1014",
+     "abstract": "The last few years have seen the emergence of a large number of worldwide web portals where volunteers report and collect observations of plants and a",
+     "keywords": "citizen science; crowdsourcing; data quality; data validation",
+     "name": "Data quality in crow",
+     "size": 1,
+     "title": "Data quality in crowdsourcing for biodiversity research: issues and examples"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1090",
+     "abstract": "About one decade has passed since US vice president Al Gore articulated his vision of Digital Earth (DE). Within this decade, a global multi-resolutio",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; 3D building modeling; 3D city model; CityGML",
+     "name": "Towards generating h",
+     "size": 1,
+     "title": "Towards generating highly detailed 3D CityGML models from OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=915",
+     "abstract": "Increasing availability of Geo-Social Media (e.g. Facebook, Foursquare and Flickr) has led to the accumulation of large volumes of social media data. ",
+     "keywords": "volunteered geographic information; Geographic places; geo-social media; semantic similarity; user-g",
+     "name": "Extracting and Compa",
+     "size": 1,
+     "title": "Extracting and Comparing Places Using Geo-social Media."
+    }
+   ]
+  },
+  {
+   "name": "Survey",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1066",
+     "abstract": "Due to its relatively high availability and low cost, location-based social network (LBSN) (e.g., Foursquare) data (a popular type of volunteered geog",
+     "keywords": "Volunteered Geographic Information; Location-based social network; GIS; activity space; gender diffe",
+     "name": "Investigation of Tra",
+     "size": 1,
+     "title": "Investigation of Travel and Activity Patterns Using Location-based Social Network Data: A Case Study of Active Mobile Social Media Users"
+    },
+    {
+     "name": "Developmen of citize",
+     "size": 1,
+     "title": "Developmen of citizen backpacks (survey, laboratory testing, field testing) - in Finnish",
+     "url": "http://vgibox.eu/repository/index.php?curid=909",
+     "abstract": "Development of citizen backpacks (survey, laboratory testing, field testing) - in Finnish"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=956",
+     "abstract": "Abstract  The recent emergence in Europe of invasive mosquitoes and mosquito-borne disease associated with both invasive and native mosquito species h",
+     "keywords": "Citizen science; Community participation; Invasive mosquitoes; Mosquito; Passive surveillance; Vecto",
+     "name": "Approaches to passiv",
+     "size": 1,
+     "title": "Approaches to passive mosquito surveillance in the EU"
+    }
+   ]
+  },
+  {
+   "name": "Task",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1056",
+     "abstract": "In the past few years, volunteers have produced geographic information of different kinds, using a variety of different crowdsourcing platforms, withi",
+     "keywords": "Citizen science; Crowdsourcing; Disaster Management; Volunteered Geographic Information",
+     "name": "The Tasks of the Cro",
+     "size": 1,
+     "title": "The Tasks of the Crowd: A Typology of Tasks in Geographic Information Crowdsourcing and a Case Study in Humanitarian Mapping"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1080",
+     "abstract": "The generation of a routing network for disabled people inherits a number of prerequisites that need special consideration. Widespread routing applica",
+     "keywords": "OpenStreetMap; Collaborative mapping; Disabled People; Route generation; Route planning; Routing Gra",
+     "name": "Generation of a tail",
+     "size": 1,
+     "title": "Generation of a tailored routing network for disabled people based on collaboratively collected geodata"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1076",
+     "abstract": "The development of a wheelchair user friendly route planning application inherits a number of special requirements and details that need to be conside",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap",
+     "name": "Measuring the Reliab",
+     "size": 1,
+     "title": "Measuring the Reliability of Wheelchair User Route Planning based on Volunteered Geographic Information"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1058",
+     "abstract": "(1) Background: Due to the advent of Volunteered Geographic Information (VGI), large datasets of user-generated Points of Interest (POI) are now avail",
+     "keywords": "Data quality; VGI; Fitness-for-use; Points Of Interest",
+     "name": "Defining Fitness-for",
+     "size": 1,
+     "title": "Defining Fitness-for-Use for Crowdsourced Points of Interest (POI)"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=929",
+     "abstract": "  OpenStreetMap   (OSM) is an extraordinarily large and diverse spatial database of the world. Road networks are amongst the most frequently occurring",
+     "keywords": "fitness for use; Data quality; OpenStreetMap; Road network; FOSS4G; GRASS; Open Data; Positional Acc",
+     "name": "Towards an automated",
+     "size": 1,
+     "title": "Towards an automated comparison of OpenStreetMap with authoritative road datasets"
+    },
+    {
+     "name": "Leveraging OpenStree",
+     "size": 1,
+     "title": "Leveraging OpenStreetMap to support flood risk management in municipalities: A prototype decision support system",
+     "url": "http://vgibox.eu/repository/index.php?curid=1047",
+     "abstract": "Floods are considered the most common and devastating type of disasters world-wide. Therefore, flood management is a crucial task for municipalities -"
+    },
+    {
+     "name": "Enhancing the manage",
+     "size": 1,
+     "title": "Enhancing the management of quality of VGI: contributions from context and task modelling",
+     "url": "http://vgibox.eu/repository/index.php?curid=713",
+     "keywords": "Quality; User-generated content; Context; Specfication; Task modelling"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=753",
+     "abstract": "This article sets forth the early phases of a methodological proposal for designing and developing Volunteered Geographic Information (VGI) initiative",
+     "keywords": "Crowdsourcing; Volunteered Geographic Information; Community; Methodology; Motivation; Participation",
+     "name": "Volunteered Geograph",
+     "size": 1,
+     "title": "Volunteered Geographic Information System Design: Project and Participation Guidelines"
+    }
+   ]
+  },
+  {
+   "name": "Technique",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=964",
+     "abstract": "In this paper we discuss gamification principles in the context of Volunteered Geographic Information (VGI). Our main focus is the quality of the data",
+     "keywords": "Data quality; Gamification; Geogames",
+     "name": "Game Principles for ",
+     "size": 1,
+     "title": "Game Principles for Enhancing the Quality of User-generated Data Collections"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1075",
+     "abstract": "dentifying and characterizing variations of human activity – specifically changes in intensity and similarity – in urban environments provide insights",
+     "keywords": "Self-organizing map; Citizen sensing; Geovisual Analytics; Human Behavior; Mobile phone; Urban Dynam",
+     "name": "Mapping collective h",
+     "size": 1,
+     "title": "Mapping collective human activity in an urban environment based on mobile phone data"
+    }
+   ]
+  },
+  {
+   "name": "Tool",
+   "children": [
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=960",
+     "abstract": "The 'eGovernance' hype around the potential of mobile phone and geoweb technologies for enhancing 'good governance' is soaring. In East Africa, the ex",
+     "keywords": "eGovernance; iGovernment; informal accountability; institutional analysis; mApp",
+     "name": "Not just a tool. Usi",
+     "size": 1,
+     "title": "Not just a tool. Using context in the development of a mobile App for rural water supply in Tanzania"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=721",
+     "abstract": "Abstract This paper introduces the concept of Social Media Geographic Information (SMGI) as an emergent pluralist source of information which – it is ",
+     "keywords": "User-generated content; Geodesign; Social Media Geographic Information; Social media; Spatial planni",
+     "name": "The Geographic Turn ",
+     "size": 1,
+     "title": "The Geographic Turn in Social Media: Opportunities for Spatial Planning and Geodesign"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=879",
+     "abstract": "Information about land cover and land use is needed for a wide range of applications such as nature protection and biodiversity, forest and water mana",
+     "keywords": "VGI; Crowdsourcing; Land use; Land cover; Validation",
+     "name": "Harnessing the power",
+     "size": 1,
+     "title": "Harnessing the power of volunteers, the internet and Google Earth to collect and validate global spatial information using Geo-Wiki"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=999",
+     "abstract": "Prominence of social media such as Twitter and Facebook led to a huge collection of data over which event detection provides useful results. An import",
+     "keywords": "Social Media; Conditional Random Fields (CRF); Hybrid Method; Informal text; Toponym Recognition",
+     "name": "A Hybrid Method for ",
+     "size": 1,
+     "title": "A Hybrid Method for Toponym Recognition"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=1090",
+     "abstract": "About one decade has passed since US vice president Al Gore articulated his vision of Digital Earth (DE). Within this decade, a global multi-resolutio",
+     "keywords": "Volunteered Geographic Information; OpenStreetMap; 3D building modeling; 3D city model; CityGML",
+     "name": "Towards generating h",
+     "size": 1,
+     "title": "Towards generating highly detailed 3D CityGML models from OpenStreetMap"
+    },
+    {
+     "url": "http://vgibox.eu/repository/index.php?curid=753",
+     "abstract": "This article sets forth the early phases of a methodological proposal for designing and developing Volunteered Geographic Information (VGI) initiative",
+     "keywords": "Crowdsourcing; Volunteered Geographic Information; Community; Methodology; Motivation; Participation",
+     "name": "Volunteered Geograph",
+     "size": 1,
+     "title": "Volunteered Geographic Information System Design: Project and Participation Guidelines"
+    }
+   ]
+  }
+ ]
+}

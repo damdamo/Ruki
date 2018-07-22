@@ -37,6 +37,25 @@ def add_prefix_sparql_request(sparql_request):
     query = '{}{}'.format(prefixes, sparql_request)
     return query
 
+def get_information_method(uri_method):
+    """Return method name and descrption for a specific method"""
+    query_base = '''SELECT DISTINCT ?name ?description
+                    WHERE {
+                      	cui:%s skos:prefLabel ?name.
+                        cui:%s skos:note ?description
+                    }''' % (uri_method, uri_method)
+    query = add_prefix_sparql_request(query_base)
+    answer = get_response_sparql(query)
+
+    if len(answer['results']['bindings']) != 0:
+
+        name = answer['results']['bindings'][0]['name']['value']
+        description = answer['results']['bindings'][0]['description']['value']
+
+        return name,description
+
+    return 'No title','No description'
+
 def get_list_method():
     """We make a sparl query to get all method that we have in our knowledge graph
     Return a list of string with all method name"""

@@ -1,0 +1,99 @@
+PREFIX s: <http://saussure.com/ressource/>
+PREFIX p: <http://saussure.com/property/>
+
+select distinct ?s (group_concat(?surf ; separator="; ") as ?page)
+where {
+  ?s a s:Surface_d_ecriture;
+    p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?surf
+} GROUP BY ?s
+
+# ------------------------
+
+PREFIX s: <http://saussure.com/ressource/>
+PREFIX p: <http://saussure.com/property/>
+
+select distinct ?s ?box ?subdiv (group_concat(?surf ; separator="; ") as ?page)
+where {
+  ?s a s:Section.
+  ?box a s:ArchiveBox.
+  ?subdiv a s:Subdivisions.
+  ?l a s:Surface_d_ecriture.
+
+  ?s p:hasArchiveBox ?box.
+  OPTIONAL{?box p:hasSubdivisions ?subdiv}
+  #OPTIONAL{?subdiv p:hasSurfaceEcriture ?l}
+  ?box p:hasSurfaceEcriture ?l.
+  ?l p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?surf
+
+} GROUP BY ?s ?box ?subdiv
+
+#----------------------------
+
+PREFIX s: <http://saussure.com/ressource/>
+PREFIX p: <http://saussure.com/property/>
+
+select distinct ?s ?box ?subdiv ?l (group_concat(?surf ; separator="; ") as ?page)
+where {
+  ?s a s:Section.
+  ?box a s:ArchiveBox.
+  ?subdiv a s:Subdivisions.
+  ?l a s:Surface_d_ecriture.
+
+  ?s p:hasArchiveBox ?box.
+  OPTIONAL{?box p:hasSubdivisions ?subdiv}
+  OPTIONAL{?subdiv p:hasSurfaceEcriture ?l}
+  ?box p:hasSurfaceEcriture ?l.
+  ?l p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?surf
+
+} GROUP BY ?s ?box ?subdiv ?l
+
+#--------------------------------------
+
+SELECT DISTINCT ?s ?box ?subdiv ?surf (group_concat(?text ; separator="; ") as ?page)
+                  where {
+                    ?s a s:Section.
+                    ?box a s:ArchiveBox.
+                    ?subdiv a s:Subdivisions.
+                    ?surf a s:Surface_d_ecriture.
+
+                    ?s p:hasArchiveBox ?box.
+                    OPTIONAL{?box p:hasSubdivisions ?subdiv}
+                    OPTIONAL{?subdiv p:hasSurfaceEcriture ?surf}
+                    ?box p:hasSurfaceEcriture ?surf.
+                    ?surf p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?text
+
+                  } GROUP BY ?s ?box ?subdiv ?surf
+
+#----------------------------------------
+
+PREFIX s: <http://saussure.com/ressource/>
+PREFIX p: <http://saussure.com/property/>
+
+SELECT DISTINCT ?section ?box ?subdiv ?surf (group_concat(?text ; separator="; ") as ?page)
+where {
+  ?section a s:Section.
+  ?box a s:ArchiveBox.
+  ?subdiv a s:Subdivisions.
+  ?surf a s:Surface_d_ecriture.
+
+  ?section p:hasArchiveBox ?box.
+  ?box p:hasSubdivisions ?subdiv.
+  ?subdiv p:hasSurfaceEcriture ?surf.
+  ?surf p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?text
+
+} GROUP BY ?section ?box ?subdiv ?surf
+
+#----------------------------------------------
+
+PREFIX s: <http://saussure.com/ressource/>
+PREFIX p: <http://saussure.com/property/>
+
+SELECT DISTINCT ?section ?box ?subdiv ?surf (group_concat(?text ; separator="; ") as ?page)
+where {
+
+  ?section p:hasArchiveBox ?box.
+  ?box p:hasSubdivisions ?subdiv.
+  ?subdiv p:hasSurfaceEcriture ?surf.
+  ?surf p:hasPhoto/p:contient/p:hasTranscriptionElement/p:rawText ?text
+
+} GROUP BY ?section ?box ?subdiv ?surf

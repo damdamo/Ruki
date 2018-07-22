@@ -102,8 +102,11 @@ def vizualisation():
         # We insert element selected in first position and we pop the old position
         list_method.insert(0, method_select)
         list_method.pop(index+1)
-        print(name_file)
-        return render_template('visualization.html', printable=True, list_method=list_method, name_file=name_file, titre="Bienvenue !")
+        informations_method = visualization.get_information_method(method_select)
+        method_title = informations_method[0]
+        method_description = informations_method[1]
+        print(visualization.get_information_method(method_select))
+        return render_template('visualization.html', printable=True, list_method=list_method, name_file=name_file, method_title=method_title, method_description=method_description)
     else:
         return render_template('visualization.html', printable=False, list_method=list_method, titre="Bienvenue !")
 
